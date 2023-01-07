@@ -1,0 +1,37 @@
+:root {
+  --primaryColor: #7c3aed;
+  --white: #ffffff;
+}
+.siteNvigation{
+    margin-top: 0.5rem;
+    width: 70vw;
+    padding: 1rem;
+    background-color: var(--white);
+    color: var(--primaryColor);
+    box-shadow: 1px 1px 12px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.siteNvigation div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.iconBlock{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    gap: 0.5rem;
+    background-color: var(--primaryColor);
+    color: var(--white);
+}
+.iconBlock:hover{
+    background-color: #5b21b6;
+
+}

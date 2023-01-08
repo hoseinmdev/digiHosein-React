@@ -1,37 +1,94 @@
 :root {
-  --primaryColor: #7c3aed;
+  --primaryColor: #1e293b;
   --white: #ffffff;
 }
-.siteNvigation{
-    margin-top: 0.5rem;
-    width: 70vw;
-    padding: 1rem;
-    background-color: var(--white);
-    color: var(--primaryColor);
-    box-shadow: 1px 1px 12px 1px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.siteNvigation {
+  margin-top: 0.5rem;
+  width: 70vw;
+  padding: 1rem;
+  background-color: var(--white);
+  color: var(--primaryColor);
+  box-shadow: 1px 1px 12px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.siteNvigation div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+.siteNvigation div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
-.iconBlock{
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    gap: 0.5rem;
-    background-color: var(--primaryColor);
-    color: var(--white);
+.siteNvigation div label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
-.iconBlock:hover{
-    background-color: #5b21b6;
+.siteNvigation div label div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f8fafc;
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+.siteNvigation div label input {
+  border: none;
+}
+.iconBlock {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 0.2rem;
+  text-decoration: none;
+  transition: 0.2s ease-out;
+}
+.iconBlock div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 0.5rem;
 
+  gap: 0.5rem;
+  color: var(--primaryColor);
+}
+.iconBlock span {
+  width: 0%;
+  height: 2px;
+  background-color: var(--primaryColor);
+}
+.iconBlock:hover span {
+  width: 100%;
+}
+.isActive {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 0.3rem;
+  text-decoration: none;
+  transition: 0.2s ease-out;
+}
+.isActive div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1e40af;
+  padding: 0rem 0.5rem;
+}
+.isActive span {
+  width: 100%;
+  border-radius: 50px;
+  height: 2px;
+  background-color: #1e40af;
 }

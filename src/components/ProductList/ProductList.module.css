@@ -1,0 +1,9 @@
+.productsBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 70vw;
+  gap: 2rem;
+  max-width: 1170px;
+}

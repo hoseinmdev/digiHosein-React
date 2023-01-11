@@ -1,9 +1,14 @@
+import ProductList from "../../components/ProductList/ProductList";
 import Layout from "../../layout/Layout";
 
 const HomePage = () => {
-    return ( <Layout>
-        {/* <h1>childreeeeen</h1> */}
-    </Layout> );
-}
- 
+  return (
+    <div>
+      <Layout>
+        <ProductList />
+      </Layout>
+    </div>
+  );
+};
+
 export default HomePage;

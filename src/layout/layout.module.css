@@ -1,6 +1,14 @@
-.siteLayout{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.siteLayout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #7c3aed;
+  border-radius: 15px;
 }

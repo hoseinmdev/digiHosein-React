@@ -1,7 +1,6 @@
 import styles from "./navigation.module.css";
-import { FaShoppingCart, FaHome, FaSearch } from "react-icons/fa";
-import { FcShop } from "react-icons/fc";
-import { Link, NavLink } from "react-router-dom";
+import { FaShoppingCart, FaHome, FaSearch} from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
@@ -34,9 +33,8 @@ const Navigation = () => {
       </div>
       <div>
         <label>
-          جستجو کنید :
           <div>
-            <FaSearch />
+            <FaSearch className={styles.searchIcon}/>
             <input placeholder="جستجو برای ... " />
           </div>
         </label>

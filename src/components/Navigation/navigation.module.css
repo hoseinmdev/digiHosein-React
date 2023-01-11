@@ -3,6 +3,7 @@
   --white: #ffffff;
 }
 .siteNvigation {
+  margin: 2rem;
   margin-top: 0.5rem;
   width: 70vw;
   padding: 1rem;
@@ -83,12 +84,16 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  color: #1e40af;
+  color: #7c3aed;
   padding: 0rem 0.5rem;
 }
 .isActive span {
   width: 100%;
   border-radius: 50px;
   height: 2px;
-  background-color: #1e40af;
+  background-color: #7c3aed;
+}
+.searchIcon:hover{
+  cursor: pointer;
+  rotate: 720deg;
 }

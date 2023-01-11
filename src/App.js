@@ -9,8 +9,6 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="cart" element={<CartPage />} />
-
-        {/* <HomePage /> */}
       </Routes>
     </div>
   );

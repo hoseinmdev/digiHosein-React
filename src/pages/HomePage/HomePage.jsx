@@ -3,11 +3,11 @@ import Layout from "../../layout/Layout";
 
 const HomePage = () => {
   return (
-    <div>
+    <>
       <Layout>
         <ProductList />
       </Layout>
-    </div>
+    </>
   );
 };
 

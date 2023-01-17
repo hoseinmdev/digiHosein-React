@@ -1,8 +1,10 @@
 import styles from "./navigation.module.css";
-import { FaShoppingCart, FaHome, FaSearch} from "react-icons/fa";
+import { FaShoppingCart, FaHome, FaSearch } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { useCart } from "../../context/CartProvider";
 
 const Navigation = () => {
+  const { state } = useCart();
   return (
     <div className={styles.siteNvigation}>
       <div>
@@ -18,6 +20,7 @@ const Navigation = () => {
           </div>
           <span></span>
         </NavLink>
+        <span className={styles.productCounter}>{state.cart.length}</span>
         <NavLink
           className={({ isActive }) =>
             isActive ? `${styles.isActive}` : `${styles.iconBlock}`
@@ -34,7 +37,7 @@ const Navigation = () => {
       <div>
         <label>
           <div>
-            <FaSearch className={styles.searchIcon}/>
+            <FaSearch className={styles.searchIcon} />
             <input placeholder="جستجو برای ... " />
           </div>
         </label>

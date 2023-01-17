@@ -1,0 +1,57 @@
+:root {
+  --primaryColor: #1e293b;
+  --secondaryColor: #7c3aed;
+  --white: #ffffff;
+}
+.cartBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.cartBlock div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.cartProductsBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  padding: 2rem;
+  max-height: 31rem;
+  overflow: auto;
+  border-radius: 8px;
+  gap: 1rem;
+}
+.cartProductsBlock span {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.emptyCartBlock {
+  border: 1px solid #e2e8f0;
+  width: 50vw;
+  height: 30rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.emptyCartBlock button {
+  cursor: pointer;
+  width: 18rem;
+  background-color: var(--secondaryColor);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+.emptyCartBlock button:hover{
+  background-color: var(--primaryColor);
+}

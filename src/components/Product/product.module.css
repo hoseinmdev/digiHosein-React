@@ -17,9 +17,11 @@
   align-items: center;
   gap: 0.8rem;
 }
-.productBtn {
+.productBlock:hover {
+  rotate: 2deg;
+}
+.addToCart {
   cursor: pointer;
-  /* font-weight: bold; */
   background-color: var(--primaryColor);
   color: var(--white);
   border: none;
@@ -28,11 +30,21 @@
   width: 8rem;
   transition: all 0.2s;
 }
-.productBtn:hover {
+.addToCart:hover {
   background-color: var(--secondaryColor);
 }
 .imageStyle {
   width: 85%;
   height: 60%;
   cursor: pointer;
+}
+.inCart {
+  cursor: pointer;
+  background-color: var(--secondaryColor);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  padding: 0.3rem;
+  width: 8rem;
+  text-decoration: none;
 }

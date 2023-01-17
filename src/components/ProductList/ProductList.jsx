@@ -7,7 +7,6 @@ import Loading from "../Loading/Loading";
 const ProductList = () => {
   const [products, setProducts] = useState("");
   const [fade, setFade] = useState(0);
-
   useEffect(() => {
     setTimeout(() => setProducts(productsData), 300);
     setTimeout(() => setFade(1), 350);
@@ -30,7 +29,7 @@ const ProductList = () => {
           })}
         </div>
       ) : (
-        <Loading />
+        <Loading/>
       )}
     </div>
   );

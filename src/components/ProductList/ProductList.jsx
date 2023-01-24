@@ -24,6 +24,8 @@ const ProductList = () => {
                 title={p.title}
                 price={p.price}
                 imageURL={p.imageURL}
+                Specifications={p.Specifications}
+                comment={p.comment}
               />
             );
           })}

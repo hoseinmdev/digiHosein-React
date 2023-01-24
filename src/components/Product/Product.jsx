@@ -1,16 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useCart } from "../../context/CartProvider";
 import styles from "./product.module.css";
-
-const Product = ({ title, price, imageURL, id }) => {
-  const history = useNavigate()
+import { AiFillTag, AiOutlineShoppingCart } from "react-icons/ai";
+const Product = ({ title, price, imageURL, id, Specifications , comment}) => {
   const { state, dispatch } = useCart();
-  const openInNewTab = (url) => {
-    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
-    if (newWindow) newWindow.opener = null;
-  };
+  const [product, setProduct] = useState({})
+  useEffect(() => setProduct({title, price, imageURL, id, Specifications, comment}), [])
+  const history = useNavigate();
+
+
+  // const openInNewTab = (url) => {
+  //   const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+  //   if (newWindow) newWindow.opener = null;
+  // };
+
+
   const isInCart = state.cart.find((p) => p.id === id);
   const clickHandler = () => {
     toast.success("به سبد خرید اضافه شد");
@@ -26,33 +32,41 @@ const Product = ({ title, price, imageURL, id }) => {
     });
   };
   const renderProductPage = () => {
-    history("product")
-  }
+    history(
+      { pathname: `product/${id}` },
+      {
+        state: product
+      }
+    );
+  };
   return (
-
-      <div className={styles.productBlock}>
-        <img
-          className={styles.imageStyle}
-          src={imageURL}
-          alt={title}
-          onClick={renderProductPage}
-        />
-        <h4>{title}</h4>
-        <button
-          className={isInCart ? styles.inCart : styles.addToCart}
-          disabled={isInCart}
-          onClick={clickHandler}
-        >
-          {isInCart ? (
-            <Link className={styles.inCart} to="cart">
-              در سبد خرید
-            </Link>
-          ) : (
-            "افزودن به سبد خرید"
-          )}
-        </button>
-        <h4>{price.toLocaleString("en")} تومان</h4>
-      </div>
+    <div className={styles.productBlock}>
+      <img
+        className={styles.imageStyle}
+        src={imageURL}
+        alt={title}
+        onClick={renderProductPage}
+      />
+      <h4 className={styles.productTitle} onClick={renderProductPage}>
+        {title}
+      </h4>
+      <button disabled={isInCart} onClick={clickHandler}>
+        {isInCart ? (
+          <Link style={{ textDecoration: "none" }} to="cart">
+            <div className={styles.inCart}>
+              <AiFillTag />
+              <p>در سبد خرید</p>
+            </div>
+          </Link>
+        ) : (
+          <div className={styles.addToCart}>
+            <AiOutlineShoppingCart style={{ transform: "scaleX(-1)" }} />
+            <p>افزودن به سبد خرید</p>
+          </div>
+        )}
+      </button>
+      <p>{price.toLocaleString("en")} تومان</p>
+    </div>
   );
 };
 

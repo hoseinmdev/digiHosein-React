@@ -1,5 +1,15 @@
+import Layout from "../../layout/Layout";
+import { useLocation } from "react-router-dom";
+import SingleProduct from "../../components/SingleProduct/SingleProduct";
 const SingleProductPage = () => {
-    return ( <h1>dsaadsaadsadsa</h1> );
-}
- 
+  const { state } = useLocation();
+  return (
+    <>
+      <Layout>
+        <SingleProduct product={state} />
+      </Layout>
+    </>
+  );
+};
+
 export default SingleProductPage;

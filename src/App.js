@@ -9,12 +9,12 @@ import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
 function App() {
   return (
     <div className="App">
-      <CartProvider>
         <Toast />
+      <CartProvider>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="cart" element={<CartPage />} />
-          <Route path="product" element={<SingleProductPage/>}/>
+          <Route path="product/:id" element={<SingleProductPage />} />
         </Routes>
       </CartProvider>
     </div>

@@ -19,11 +19,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #f8fafc ;
 }
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 9px;
+  background-color: #e2e8f0;
+  margin: 0.2rem;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--primaryColor);
+  background: #334155;
   border-radius: 15px;
 }

@@ -1,6 +1,6 @@
 import CartProduct from "../CartProduct/CartProduct";
 import styles from "./cartProductList.module.css";
-import { FaAngleDoubleLeft } from "react-icons/fa";
+import { FaAngleDoubleLeft, FaShoppingCart } from "react-icons/fa";
 import { useCart } from "../../context/CartProvider";
 import emptyCart from "../../Accets/images/empty-shopping-trolley.png";
 import { NavLink } from "react-router-dom";
@@ -12,23 +12,30 @@ const CartProductList = () => {
       return (
         <div className={styles.cartBlock}>
           <div>
+            <FaShoppingCart style={{ transform: "scaleX(-1)" }} />
             <h2>سبد خرید شما</h2>
-            <FaAngleDoubleLeft />
+            {/* <FaAngleDoubleLeft /> */}
             <p>جمع کل : {state.total.toLocaleString("en")} تومان</p>
           </div>
-          <div className={styles.cartProductsBlock}>
-            {state.cart.map((p) => {
-              return (
-                <CartProduct
-                  key={p.id}
-                  title={p.title}
-                  price={p.price}
-                  imageURL={p.imageURL}
-                  quantity={p.quantity}
-                  id={p.id}
-                />
-              );
-            })}
+          <div className={styles.productsCheckoutBlock}>
+            <div className={styles.productsBlock}>
+              {state.cart.map((p) => {
+                return (
+                  <CartProduct
+                    key={p.id}
+                    title={p.title}
+                    price={p.price}
+                    imageURL={p.imageURL}
+                    quantity={p.quantity}
+                    id={p.id}
+                  />
+                );
+              })}
+            </div>
+            <div className={styles.checkoutBlock}>
+              <h3>قیمت کالا ها : {state.total.toLocaleString("en")} تومان</h3>
+              <button>به خرید ادامه بده</button>
+            </div>
           </div>
         </div>
       );

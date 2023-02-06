@@ -1,0 +1,178 @@
+.checkProductBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.checkProductBlock p {
+  color: #64748b;
+  font-size: 1.1rem;
+}
+.checkProductTitle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkProductTitle p {
+  color: #7c3aed;
+  width: 27%;
+  font-size: 2rem;
+}
+.checkProductTitle hr {
+  height: 3px;
+  background-color: black;
+}
+
+.positivePointsBlock {
+  width: 100%;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-radius: 5px;
+  gap: 0.3rem;
+  background-color: #ede9fe;
+}
+.positivePointsTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #6d28d9;
+}
+.positivePoints {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.2rem;
+  color: #8b5cf6;
+  font-size: 1.15rem;
+  padding: 0rem 0.5rem;
+}
+.positivePoint {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.negativePointsBlock {
+  width: 100%;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-radius: 5px;
+  gap: 0.3rem;
+  background-color: #ffe4e6;
+}
+.negativePointsTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #be123c;
+}
+.negativePoints {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.2rem;
+  color: #f43f5e;
+  font-size: 1.15rem;
+  padding: 0rem 0.5rem;
+}
+.negativePoint {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scoresBlock {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-top: 2rem;
+  margin-right: 2rem;
+}
+.scoresBlock hr {
+  width: 1px;
+  height: 14rem;
+}
+.scores {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 30rem;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.score {
+  width: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  color: #475569;
+}
+.score span {
+  cursor: default;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.4rem;
+  border-radius: 100%;
+  border: 2px solid #8b5cf6;
+  border-top-width: 5px;
+  border-right-width: 3px;
+}
+.scoreResult {
+  width: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.6rem;
+  color: #475569;
+}
+.scoreResult span {
+  cursor: default;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5.5rem;
+  height: 5.5rem;
+  font-size: 2rem;
+  border-radius: 100%;
+  border: 2px solid #10b981;
+  border-top-width: 5px;
+  border-right-width: 3px;
+  transition: 0.3s ease-in-out;
+}
+.scoreResult span:hover {
+  border-top-width: 8px;
+  border-right-width: 5px;
+  rotate: 360deg;
+  scale: 1.1;
+}
+.score span:hover {
+  border-top-width: 8px;
+  border-right-width: 5px;
+  rotate: 360deg;
+  scale: 1.1;
+}

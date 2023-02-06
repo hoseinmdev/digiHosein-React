@@ -1,47 +1,49 @@
-.productPage {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  background-color: white;
-  padding: 2rem;
-  width: 78vw;
-}
-.productPage button{
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  font-size: 1rem;
-  padding: 0.6rem;
-  border: none;
-  border-radius: 8px;
-  background-color: #7c3aed;
-  color: #ffffff;
-}
-.productPage button:hover{
-  background-color: #1e293b;
+:root {
+  --primaryColor: #1e293b;
+  --secondaryColor: #7c3aed;
+  --white: #ffffff;
 }
 hr {
   width: 100%;
 }
-.productBlock {
+.productPage {
   width: 100%;
-  max-width: 1170px;
-  /* box-shadow: 1px 1px 12px 1px rgba(0, 0, 0, 0.1); */
+  max-width: 1250px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 1rem;
-  /* padding: 2rem; */
+  border-radius: 8px;
+  gap: 3rem;
+  background-color: #ffffff;
+  padding: 2rem;
+}
+.productBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
   border-radius: 8px;
 }
+.productBlock section {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.productBlock section hr{
+  width: 1px;
+}
+
 .labelsBlock {
   display: flex;
   gap: 2rem;
+}
+.labelsBlock span {
+  color: #7c3aed;
+  font-weight: 700;
 }
 .labelsBlock div {
   cursor: pointer;
@@ -53,92 +55,4 @@ hr {
   background-color: #f1f5f9;
   padding: 0.5rem;
   border-radius: 8px;
-}
-.imageStyle {
-  width: 20rem;
-}
-.imageAndInfoBlock {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.infoBlock {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 0.3rem;
-}
-.infoBlock div {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 1rem;
-  font-size: 1.2rem;
-  border-bottom: 1px solid #cbd5e1;
-  padding: 0.3rem;
-}
-.infoBlock div p {
-  font-size: 1rem;
-}
-.iconBlock {
-  font-size: 1.6rem;
-  padding: 0.2rem;
-  background-color: #94a3b8;
-  color: #ffffff;
-  border-radius: 8px;
-}
-
-.checkProductBlock {
-  width: 100%;
-  max-width: 1170px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1rem;
-}
-.checkProductBlock div {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* gap: 2rem; */
-}
-.checkProductBlock div p {
-  width: 27%;
-  font-size: 2rem;
-  color: #7c3aed;
-}
-.checkProductBlock div hr {
-  height: 3px;
-  background-color: black;
-}
-
-.usersCommentsBlock {
-  width: 100%;  
-  max-width: 1170px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1rem;
-}
-.usersCommentsBlock div {
-  width: 100%;
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
-  /* gap: 2rem; */
-}
-.usersCommentsBlock div p {
-  width: 27%;
-  font-size: 2rem;
-  color: #7c3aed;
-}
-.usersCommentsBlock div hr {
-  height: 3px;
-  background-color: black;
 }

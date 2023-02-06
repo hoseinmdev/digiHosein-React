@@ -1,0 +1,33 @@
+.backToUpBlock{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0rem 1rem 0rem;
+}
+.backToUpBtn {
+    transition: all 0.2s;
+    font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  border-radius: 30px;
+  /* background-color: #8b5cf6; */
+  background: none;
+  border: 1px solid #8b5cf6;
+  color: #8b5cf6;
+  padding: 0.5rem 0.8rem;
+}
+.UpIcon{
+    font-size: 1.3rem;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.backToUpBtn:hover{
+  /* padding: 0.5rem 1.5rem; */
+  background-color: #8b5cf6;
+  color: #ffffff;
+}
+.backToUpBtn:hover .UpIcon{
+    scale: 1.2;
+}

@@ -1,0 +1,41 @@
+.imageStyle {
+  width: 18rem;
+}
+.imageAndInfoBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 30rem;
+}
+.infoList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.3rem;
+}
+.infoList div {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #cbd5e1;
+  padding: 0.3rem;
+}
+.infoList div p {
+  font-size: 1rem;
+}
+.iconBlock {
+  font-size: 1.6rem;
+  padding: 0.2rem;
+  background-color: #94a3b8;
+  color: #ffffff;
+  border-radius: 8px;
+}

@@ -1,0 +1,138 @@
+.commentBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+  box-shadow: 1px 1px 12px 1px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.starOfProductIcon{
+  color: #facc15;
+  font-size: 2rem;
+}
+.starOfProductText{
+  font-size: 1.3rem;
+}
+.headerOfCommentBlock {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.likeDislikeProductBlock {
+  margin: 0.5rem;
+  display: flex;
+  gap: 1rem;
+}
+.likeDislikeProductBlock button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.2rem;
+  /* background-color: #e2e8f0; */
+  border: 1px solid  #9ca3af;
+  color: #4b5563;
+  background: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.likeDislikeProductBlock span {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+}
+.likeProduct {
+  background-color: #e2e8f0;
+}
+.dislikeProduct {
+  background-color: #e2e8f0;
+}
+.liked {
+  background-color: #bbf7d0;
+}
+.disliked {
+  background-color: #ffe4e6;
+}
+.commentInformation {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  color: #475569;
+}
+.commentText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  overflow: auto;
+  padding-right: 0.7rem;
+  border-right: 3px solid #cbd5e1;
+  margin-right: 1rem;
+}
+.commentText span {
+  width: 45rem;
+  max-height: 7rem;
+  overflow: auto;
+}
+.positiveAndNegativePoints {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+.positiveAndNegativePoints div {
+  display: flex;
+  gap: 0.4rem;
+}
+.positiveAndNegativePoints div p {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+.pisitivePointIcon{
+  color: #22c55e;
+}
+.negativePointIcon{
+  color: #f43f5e;
+}
+.positivePoints{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.replyComment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-right: 3px solid #475569;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  box-shadow: 1px 1px 12px 1px rgba(0, 0, 0, 0.1);
+  gap: 0.5rem;
+  border-radius: 5px;
+}
+.replyComment div {
+  margin-right: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+.replyComment p {
+  margin-right: 0.5rem;
+}
+.adminIcon{
+  color: #64748b;
+  font-size: 1.1rem;
+}

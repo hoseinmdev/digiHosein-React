@@ -1,0 +1,23 @@
+.usersCommentsBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.usersCommentsBlock div {
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* gap: 2rem; */
+}
+.userCommentsTitle p{
+  width: 27%;
+  font-size: 2rem;
+  color: #7c3aed;
+}
+.usersCommentsBlock div hr {
+  height: 3px;
+  background-color: black;
+}

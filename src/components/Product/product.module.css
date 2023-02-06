@@ -32,38 +32,31 @@
 .productBlock button{
   border: none;
 }
-.addToCart {
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.4rem;
-  background-color: var(--primaryColor);
-  color: var(--white);
-  border: none;
-  border-radius: 5px;
-  padding: 0.5rem;
-  transition: all 0.2s;
-}
-.addToCart:hover {
-  background-color: var(--secondaryColor);
-}
 .imageStyle {
   width: 85%;
   height: 60%;
   cursor: pointer;
 }
-.inCart {
-  cursor: pointer;
-  background-color: var(--secondaryColor);
+
+.productButton {
+  width: 9rem;
+  height: 2.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  color: var(--white);
-  border: none;
+  gap: 0.3rem;
   border-radius: 5px;
-  padding: 0.5rem;
-  width: 8rem;
-  text-decoration: none;
+  padding: 0.6rem;
+  transition: all 0.2s;
+}
+.addToCart {
+  background-color: var(--primaryColor);
+  color: var(--white);
+}
+.addToCart:hover {
+  background-color: var(--secondaryColor);
+}
+.inCart {
+  background-color: var(--secondaryColor);
+  color: #ffffff;
 }

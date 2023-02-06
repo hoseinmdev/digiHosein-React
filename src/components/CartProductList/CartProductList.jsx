@@ -1,6 +1,6 @@
 import CartProduct from "../CartProduct/CartProduct";
 import styles from "./cartProductList.module.css";
-import { FaAngleDoubleLeft, FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 import { useCart } from "../../context/CartProvider";
 import emptyCart from "../../Accets/images/empty-shopping-trolley.png";
 import { NavLink } from "react-router-dom";
@@ -14,22 +14,25 @@ const CartProductList = () => {
           <div>
             <FaShoppingCart style={{ transform: "scaleX(-1)" }} />
             <h2>سبد خرید شما</h2>
-            {/* <FaAngleDoubleLeft /> */}
             <p>جمع کل : {state.total.toLocaleString("en")} تومان</p>
           </div>
           <div className={styles.productsCheckoutBlock}>
             <div className={styles.productsBlock}>
               {state.cart.map((p) => {
-                return (
-                  <CartProduct
-                    key={p.id}
-                    title={p.title}
-                    price={p.price}
-                    imageURL={p.imageURL}
-                    quantity={p.quantity}
-                    id={p.id}
-                  />
-                );
+                const product = {
+                  id: p.id,
+                  type: p.type,
+                  title: p.title,
+                  price: p.price,
+                  imageURL: p.imageURL,
+                  Specifications: p.Specifications,
+                  comments: p.comments,
+                  quantity: p.quantity,
+                  technicalCheck: p.technicalCheck,
+                  positivePoints: p.positivePoints,
+                  negativePoints: p.negativePoints,
+                };
+                return <CartProduct key={p.id} product={product} />;
               })}
             </div>
             <div className={styles.checkoutBlock}>

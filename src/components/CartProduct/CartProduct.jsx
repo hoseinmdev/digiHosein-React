@@ -5,21 +5,17 @@ import { AiOutlineClose, AiOutlineMinus } from "react-icons/ai";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const CartProduct = ({ title, price, imageURL, quantity, id }) => {
+const CartProduct = ({ product }) => {
+  const { title, price, imageURL, quantity, id } = product;
   const { dispatch } = useCart();
   const [fade, setFade] = useState(1);
   const history = useNavigate();
+
   const renderProductPage = () => {
     history(
       { pathname: `/product/${id}` },
       {
-        state: {
-          title,
-          price,
-          imageURL,
-          id,
-          // Specifications,
-        },
+        state: product,
       }
     );
   };
@@ -29,7 +25,7 @@ const CartProduct = ({ title, price, imageURL, quantity, id }) => {
   const decreaseHandler = () => {
     if (quantity === 1) {
       setFade(0);
-      setTimeout(() => dispatch({ type: "DELETE", price: price, id: id }), 200);
+      setTimeout(() => dispatch({ type: "DELETE", id: id }), 200);
     } else {
       dispatch({ type: "DECREASE", price: price, id: id });
     }

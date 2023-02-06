@@ -4,7 +4,7 @@
   --white: #ffffff;
 }
 
-*{
+* {
   font-family: "Vazir";
   margin: 0px;
   padding: 0px;
@@ -13,18 +13,24 @@
   box-sizing: border-box;
   transition: 0.3s;
 }
+a {
+  text-decoration: none;
+}
+button{
+  border: none;
+  cursor: pointer;
+}
 .App {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #f8fafc ;
+  /* background-color: #f8fafc; */
 }
 ::-webkit-scrollbar {
-  width: 9px;
+  width: 7px;
   background-color: #e2e8f0;
-  margin: 0.2rem;
 }
 ::-webkit-scrollbar-thumb {
   background: #334155;

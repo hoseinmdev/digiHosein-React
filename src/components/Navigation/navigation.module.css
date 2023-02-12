@@ -3,13 +3,13 @@
   --white: #ffffff;
 }
 .siteNvigation {
+  width: 100%;
+  max-width: 1360px;
   position: sticky;
   top: 0;
   left: 0;
   z-index: 20;
-  margin: 2rem;
-  margin-top: 0.5rem;
-  width: 70vw;
+  margin-bottom: 2rem;
   padding: 1rem;
   background-color: var(--white);
   color: var(--primaryColor);

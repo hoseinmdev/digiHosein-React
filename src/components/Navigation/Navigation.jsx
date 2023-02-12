@@ -1,5 +1,5 @@
 import styles from "./navigation.module.css";
-import { FaShoppingCart, FaHome, FaSearch } from "react-icons/fa";
+import { FaShoppingCart, FaHome, FaSearch , FaUser} from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { useCart } from "../../context/CartProvider";
 
@@ -28,13 +28,16 @@ const Navigation = () => {
           to="/cart"
         >
           <div>
-            <FaShoppingCart />
+            <FaShoppingCart style={{ transform: "scaleX(-1)" }} />
             سبد خرید
           </div>
           <span></span>
         </NavLink>
       </div>
       <div>
+        <div>
+          <FaUser/>
+        </div>
         <label>
           <div>
             <FaSearch className={styles.searchIcon} />

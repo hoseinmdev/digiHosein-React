@@ -1,0 +1,70 @@
+:root {
+  --primaryColor: #1e293b;
+  --secondaryColor: #7c3aed;
+  --white: #ffffff;
+}
+* {
+  margin: 0;
+}
+.productBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 45rem;
+  box-shadow: 1px 1px 12px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: var(--white);
+  padding: 1rem;
+}
+.productBlock div button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 15px;
+  background-color: #334155;
+  border: none;
+  color: white;
+}
+.productBlock div button:hover {
+  background-color: #7c3aed;
+  scale: 1.1;
+}
+.imageStyle {
+  width: 6.5rem;
+  height: 6rem;
+  cursor: pointer;
+}
+.productInfoBlock{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.productInfoBlock h4{
+  cursor: pointer;
+}
+.productNumberController{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e2e8f0;
+  border-radius: 15px;
+  width: 5rem;
+}
+.productOptions{
+  width: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.productOptions div{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}

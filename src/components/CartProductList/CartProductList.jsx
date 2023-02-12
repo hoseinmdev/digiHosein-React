@@ -1,4 +1,4 @@
-import CartProduct from "../CartProduct/CartProduct";
+import CartProduct from "../CartProductList/CartProduct/CartProduct";
 import styles from "./cartProductList.module.css";
 import { FaShoppingCart } from "react-icons/fa";
 import { useCart } from "../../context/CartProvider";

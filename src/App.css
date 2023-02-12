@@ -26,7 +26,6 @@ button{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* background-color: #f8fafc; */
 }
 ::-webkit-scrollbar {
   width: 7px;

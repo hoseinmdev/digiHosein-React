@@ -5,7 +5,7 @@
   align-items: flex-start;
   gap: 1rem;
 }
-.usersCommentsBlock div {
+.userCommentsTitle {
   width: 100%;
   display: flex;
   /* justify-content: center; */

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Footer from "../components/Footer/Footer";
-import Loading from "../components/Loading/Loading";
+import Loading from "../components/Skeleton/Skeleton";
 import Navigation from "../components/Navigation/Navigation";
 import styles from "./layout.module.css";
 const Layout = ({ children }) => {
@@ -14,10 +14,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navigation />
-      <div>
-        <div style={{ opacity: fade }}>{children}</div>
-      </div>
-      <Footer/>
+      <div style={{ opacity: fade }}>{children}</div>
+
+      <Footer />
     </>
   );
 };

@@ -10,11 +10,11 @@
   width: 100%;
   margin-bottom: 1rem;
 }
-.starOfProductIcon{
+.starOfProductIcon {
   color: #facc15;
   font-size: 2rem;
 }
-.starOfProductText{
+.starOfProductText {
   font-size: 1.3rem;
 }
 .headerOfCommentBlock {
@@ -27,14 +27,14 @@
   display: flex;
   gap: 1rem;
 }
-.likeDislikeProductBlock button{
+.likeDislikeProductBlock button {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
   padding: 0.4rem 1.2rem;
   /* background-color: #e2e8f0; */
-  border: 1px solid  #9ca3af;
+  border: 1px solid #9ca3af;
   color: #4b5563;
   background: none;
   border-radius: 8px;
@@ -90,6 +90,7 @@
   gap: 0.6rem;
 }
 .positiveAndNegativePoints div {
+  width: 100%;  
   display: flex;
   gap: 0.4rem;
 }
@@ -97,13 +98,13 @@
   color: #94a3b8;
   font-size: 1rem;
 }
-.pisitivePointIcon{
+.pisitivePointIcon {
   color: #22c55e;
 }
-.negativePointIcon{
+.negativePointIcon {
   color: #f43f5e;
 }
-.positivePoints{
+.positivePoints {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -132,7 +133,28 @@
 .replyComment p {
   margin-right: 0.5rem;
 }
-.adminIcon{
+.adminIcon {
   color: #64748b;
   font-size: 1.1rem;
+}
+
+.replyCommentBlock {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 50;
+  opacity: 0;
+}
+.replyCommentBlock div {
+  width: 40rem;
+  height: 30rem;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  border-radius: 8px;
 }

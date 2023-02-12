@@ -1,4 +1,4 @@
-import styles from "./userComment.module.css";
+import styles from "./comment.module.css";
 import {
   AiFillStar,
   AiOutlineMinusCircle,
@@ -7,9 +7,10 @@ import {
 import { AiOutlineLike, AiOutlineDislike } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import { BsReply, BsReplyFill, BsStarHalf } from "react-icons/bs";
+import { BsReply, BsStarHalf } from "react-icons/bs";
+import ReplyComment from "../ReplyComment/ReplyComment";
 
-const UserComment = ({ id, comment }) => {
+const Comment = ({ id, comment, setReplyComment }) => {
   const {
     userName,
     date,
@@ -111,9 +112,9 @@ const UserComment = ({ id, comment }) => {
           <span>{userName}</span>
         </section>
         <section className={styles.likeDislikeProductBlock}>
-          <button>
+          <button onClick={() => setReplyComment(1)}>
             پاسخ دهید
-            <BsReply/>
+            <BsReply />
           </button>
           {renderLikeComponent()}
           {renderDislikeComponent()}
@@ -137,4 +138,4 @@ const UserComment = ({ id, comment }) => {
   );
 };
 
-export default UserComment;
+export default Comment;

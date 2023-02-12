@@ -37,7 +37,7 @@ const CartProvider = ({ children }) => {
   };
   const deleteProduct = (state, action) => {
     const deleteProduct = state.cart.filter((p) => p.id !== action.id);
-    return { cart: deleteProduct, total: state.total - action.price };
+    return { ...state, cart: deleteProduct, total: state.total - action.price };
   };
 
   const reducer = (state, action) => {

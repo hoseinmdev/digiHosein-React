@@ -3,7 +3,16 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 85vw;
-  gap: 2rem;
-  max-width: 1170px;
+  margin: 1rem;
+  gap: 1rem;
+  max-width: 1360px;
+}
+.productSkeleton {
+  width: 12rem;
+  height: 18.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }

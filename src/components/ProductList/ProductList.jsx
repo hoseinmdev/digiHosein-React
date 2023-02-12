@@ -1,40 +1,73 @@
-import Product from "../Product/Product";
+import Product from "../ProductList/Product/Product";
 import styles from "./ProductList.module.css";
-import { productsData } from "../../db";
 import { useEffect, useState } from "react";
-import Loading from "../Loading/Loading";
+import Skeleton from "../Skeleton/Skeleton";
+import { useProducts } from "../../context/ProductsProvider";
+import InsideSkeleton from "../Skeleton/InsideSkeleton";
 
 const ProductList = () => {
-  const [products, setProducts] = useState("");
   const [fade, setFade] = useState(0);
+  const [products, setProducts] = useState(0);
+  const { productState } = useProducts();
+
   useEffect(() => {
-    setTimeout(() => setProducts(productsData), 300);
-    setTimeout(() => setFade(1), 350);
+    setTimeout(() => setProducts(productState), 1500);
+    setTimeout(() => setFade(1), 1510);
   }, []);
 
-  return (
-    <div>
-      {products ? (
+  const renderProducts = () => {
+    if (products) {
+      return (
         <div className={styles.productsBlock} style={{ opacity: fade }}>
-          {products.map((p) => {
+          {productState.products.map((p) => {
+            const product = {
+              id: p.id,
+              type: p.type,
+              title: p.title,
+              price: p.price,
+              imageURL: p.imageURL,
+              Specifications: p.Specifications,
+              comments: p.comments,
+              quantity: p.quantity,
+              technicalCheck: p.technicalCheck,
+              positivePoints: p.positivePoints,
+              negativePoints: p.negativePoints,
+            };
+            return <Product key={p.id} product={product} />;
+          })}
+        </div>
+      );
+    }
+    if (products === 0) {
+      return (
+        <div className={styles.productsBlock}>
+          {productState.products.map((p) => {
             return (
-              <Product
-                key={p.id}
-                id={p.id}
-                title={p.title}
-                price={p.price}
-                imageURL={p.imageURL}
-                Specifications={p.Specifications}
-                comment={p.comment}
-              />
+              <Skeleton key={p.id} className={styles.productSkeleton}>
+                <InsideSkeleton width={"40%"} height={"10rem"} radius={"8px"} />
+                <InsideSkeleton
+                  width={"85%"}
+                  height={"1.5rem"}
+                  radius={"30px"}
+                />
+                <InsideSkeleton
+                  width={"75%"}
+                  height={"1.5rem"}
+                  radius={"30px"}
+                />
+                <InsideSkeleton
+                  width={"55%"}
+                  height={"1.5rem"}
+                  radius={"30px"}
+                />
+              </Skeleton>
             );
           })}
         </div>
-      ) : (
-        <Loading/>
-      )}
-    </div>
-  );
+      );
+    }
+  };
+  return renderProducts();
 };
 
 export default ProductList;

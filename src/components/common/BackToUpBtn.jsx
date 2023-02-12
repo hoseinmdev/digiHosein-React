@@ -1,23 +1,14 @@
-import { AiOutlineArrowUp } from "react-icons/ai";
-import { BsArrow90DegUp, BsFillArrowUpCircleFill } from "react-icons/bs";
 import styles from "./backToUpBtn.module.css";
-const BackToUpBtn = () => {
+import { AiOutlineArrowUp } from "react-icons/ai";
+import backToUp from "./BackToUp";
+const BackToUp = () => {
   return (
-    <div className={styles.backToUpBlock}>
-      <button
-        className={styles.backToUpBtn}
-        onClick={() => {
-          window.scrollTo({
-            top: -1000,
-            behavior: "smooth",
-          });
-        }}
-      >
-        <AiOutlineArrowUp className={styles.UpIcon} />
-        بازگشت به بالا
+    <div className={styles.backToUpPosition}>
+      <button className={styles.backToUp} onClick={() => backToUp()}>
+        <AiOutlineArrowUp /> بازگشت به بالا
       </button>
     </div>
   );
 };
 
-export default BackToUpBtn;
+export default BackToUp;

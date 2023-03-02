@@ -7,15 +7,20 @@ import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
 import ProductsProvider from "./context/ProductsProvider";
 import "react-toastify/dist/ReactToastify.css";
 import CustomToast from "./components/CustomToast/CustomToast";
+import CategorizedProducts from "layout/CategorizedProduts/CategorizedProducts";
 function App() {
   return (
     <div className="App">
-      <CustomToast/>
+      <CustomToast />
       <ProductsProvider>
         <CartProvider>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="cart" element={<CartPage />} />
+            <Route
+              path="categories/:category"
+              element={<CategorizedProducts />}
+            />
             <Route path="product/:id" element={<SingleProductPage />} />
           </Routes>
         </CartProvider>

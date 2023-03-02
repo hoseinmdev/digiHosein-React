@@ -1,13 +1,13 @@
-import Layout from "../../layout/Layout";
 import { useLocation } from "react-router-dom";
-import SingleProduct from "../../components/SingleProduct/SingleProduct";
+import SingleProduct from "../../components/SingleProduct/SingleProduct/SingleProduct";
+import SiteLayout from "../../layout/SiteLayout/SiteLayout";
 const SingleProductPage = () => {
   const { state } = useLocation();
   return (
     <>
-      <Layout>
+      <SiteLayout>
         <SingleProduct product={state} />
-      </Layout>
+      </SiteLayout>
     </>
   );
 };

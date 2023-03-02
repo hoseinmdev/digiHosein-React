@@ -2,6 +2,7 @@ import styles from "./slider.module.css";
 import mobileBanner from "../../Accets/images/bannerMobile.webp";
 import consoleBanner from "../../Accets/images/bannerConsole.webp";
 import airpodsBanner from "../../Accets/images/bannerAirpods.webp";
+import airpodsBanner2 from "../../Accets/images/bannerAirpods2.webp";
 import digitalWatchBanner from "../../Accets/images/bannerDigitalWatch.webp";
 import ramHardBanner from "../../Accets/images/bannerRamHard.webp";
 import speakerBanner from "../../Accets/images/bannerSpeaker.webp";
@@ -10,7 +11,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import SliderSkeleton from "./SliderSkeleton";
+import Skeleton from "../Skeleton/Skeleton";
 const allSlides = [
   {
     src: consoleBanner,
@@ -18,7 +19,11 @@ const allSlides = [
   },
   {
     src: mobileBanner,
-    link: "mobiles",
+    link: "categories/phones",
+  },
+  {
+    src: airpodsBanner2,
+    link: "airpods",
   },
   {
     src: ramHardBanner,
@@ -55,7 +60,7 @@ const Slider = () => {
       }, 1500);
     };
     setAllSlides();
-    setTimeout(() => setFade(1), 1600);
+    setFade(1);
   }, []);
   useEffect(() => {
     const autoSlideChanger = () => {
@@ -65,7 +70,7 @@ const Slider = () => {
   }, [index]);
 
   const fadeShowSlide = (action) => {
-    setFade(0.2);
+    setFade(0);
     clearTimeout(timer);
     if (action === "NEXT_SLIDE") {
       setTimeout(() => {
@@ -75,7 +80,7 @@ const Slider = () => {
           setIndex(0);
         }
         setFade(1);
-      }, 180);
+      }, 250);
     }
     if (action === "BACK_SLIDE") {
       setTimeout(() => {
@@ -85,7 +90,7 @@ const Slider = () => {
           setIndex(6);
         }
         setFade(1);
-      }, 200);
+      }, 250);
     }
   };
   const nextSlide = () => {
@@ -96,7 +101,7 @@ const Slider = () => {
   };
   const renderSlider = () => {
     if (!slides) {
-      return <SliderSkeleton />;
+      return <Skeleton width={"95%"} height={"17rem"} radius={"15px"} />;
     }
     if (slides) {
       return (

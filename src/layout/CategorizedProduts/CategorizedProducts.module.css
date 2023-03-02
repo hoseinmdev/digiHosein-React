@@ -1,0 +1,121 @@
+.allContentContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+  gap: 1rem;
+}
+.filterOptionsContainer {
+  width: 18rem;
+  padding: 0.5rem;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-right: 1rem;
+}
+.filterOptionsTitle {
+  color: #334155;
+  padding: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.filterOptionsTitle button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 1rem;
+  border-radius: 15px;
+  background-color: #d4d4d4;
+  color: #ffffff;
+  padding: 0.3rem 0.5rem;
+}
+.filterOptionsTitle button:hover {
+  background-color: #dc2626;
+}
+.filterOption {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1rem;
+  padding: 0.5rem 0.8rem;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+}
+.optionsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.3rem;
+}
+.optionsContainer label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.optionsContainer label input{
+  width: 0.8rem;
+  height: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+  border-radius: 15px;
+  border: none;
+}
+.option {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.activeOption {
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #7c3aed;
+}
+.subFilterOptions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.productsContainer {
+  background-color: #f4f4f5;
+  padding: 1.5rem;
+  width: 70rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  border-radius: 15px;
+}
+
+.productSkeleton {
+  width: 12rem;
+  height: 18.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid #ddd;
+}

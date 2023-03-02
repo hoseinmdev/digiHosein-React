@@ -1,9 +1,10 @@
-import styles from "./sceleton.module.css";
-const Skeleton = ({ className, children }) => {
+import styles from "./Skeleton.module.css";
+const Skeleton = ({ width, height, radius }) => {
   return (
-    <div className={`${className} , ${styles.skeletonAnimation}`}>
-      {children}
-    </div>
+    <div
+      className={styles.skeletonAnimation}
+      style={{ width, height, borderRadius: radius }}
+    ></div>
   );
 };
 

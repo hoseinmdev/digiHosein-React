@@ -1,6 +1,5 @@
-.innerSkeletonAnimation {
+.skeletonAnimation {
   background-color: #ddd;
-
   animation: internalmove 1s infinite alternate ease-in-out;
 }
 @keyframes internalmove {

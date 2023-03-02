@@ -1,0 +1,11 @@
+.siteLayout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  max-width: 1360px;
+  /* min-width: 1300px; */
+gap: 1.5rem;
+}

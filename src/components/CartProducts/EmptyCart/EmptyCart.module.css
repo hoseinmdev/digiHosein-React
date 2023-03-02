@@ -1,0 +1,26 @@
+.emptyCartBlock {
+  border: 1px solid #e2e8f0;
+  width: 90%;
+  height: 29rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.backToHomeBtn {
+  width: 20rem;
+  background-color: #7c3aed;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  transition: all 0.3s;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+.backToHomeBtn:hover {
+  background-color: #1e293b;
+}

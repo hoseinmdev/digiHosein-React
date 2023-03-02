@@ -1,18 +1,26 @@
-import CircleCategories from "../../components/CircleCategories/CircleCategories";
-import BackToUpBtn from "../../components/common/BackToUpBtn";
-import ProductList from "../../components/ProductList/ProductList";
+import LandingBanner from "components/LandingBanner/LandingBanner";
+import HomeLaptops from "components/Laptops/HomeLaptops";
+import PhoneFilterBasedOnPrice from "components/PhoneFilterBasedOnPrice/PhoneFilterBasedOnPrice";
+import HomePhones from "components/Phones/HomePhones";
+import BestSellerProducts from "../../components/BestSellerProducts/BestSellerProducts";
+import CircleCategories from "../../components/CircleCategories/CircleCategories/CircleCategories";
+import BackToUpBtn from "../../components/common/BackToUpBtn/BackToUpBtn";
 import Slider from "../../components/Slider/Slider";
-import Layout from "../../layout/Layout";
-
+import SiteLayout from "../../layout/SiteLayout/SiteLayout";
 const HomePage = () => {
   return (
     <>
-      <Layout>
+      <SiteLayout>
         <Slider />
-        <CircleCategories/>
-        <ProductList />
+        <CircleCategories />
+        <BestSellerProducts />
+        <LandingBanner />
+        <HomePhones />
+        <PhoneFilterBasedOnPrice />
+        <HomeLaptops />
+        {/* <Products /> */}
         <BackToUpBtn />
-      </Layout>
+      </SiteLayout>
     </>
   );
 };

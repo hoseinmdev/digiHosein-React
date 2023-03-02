@@ -163,6 +163,15 @@
   border-top-width: 5px;
   border-right-width: 3px;
   transition: 0.3s ease-in-out;
+  animation: scoreResult 2s infinite alternate ease-in-out;
+}
+@keyframes scoreResult {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.05;
+  }
 }
 .scoreResult span:hover {
   border-top-width: 8px;

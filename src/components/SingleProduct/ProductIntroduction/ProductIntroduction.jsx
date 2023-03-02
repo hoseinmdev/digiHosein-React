@@ -7,7 +7,7 @@ import { CgSmartphoneRam } from "react-icons/cg";
 import styles from "./productIntroduction.module.css";
 const ProductIntroduction = ({ product }) => {
   const renderProductProperties = () => {
-    if (product.type === "PHONE") {
+    if (product.category === "phones") {
       return (
         <div className={styles.infoList}>
           <div>
@@ -37,7 +37,7 @@ const ProductIntroduction = ({ product }) => {
         </div>
       );
     }
-    if (product.type === "LAPTOP") {
+    if (product.type === "laptops") {
       return (
         <div className={styles.infoList}>
           <div>
@@ -63,7 +63,7 @@ const ProductIntroduction = ({ product }) => {
         </div>
       );
     }
-    if (product.type === "GAME_CONSOLE") {
+    if (product.type === "consoles") {
       return (
         <div className={styles.infoList}>
           <div>

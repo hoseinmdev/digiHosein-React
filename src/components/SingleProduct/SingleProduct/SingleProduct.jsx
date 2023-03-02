@@ -1,22 +1,26 @@
 import styles from "./singleProduct.module.css";
 import { useEffect, useRef, useState } from "react";
-import ProductCheckout from "./ProductCheckout/ProductCheckout";
-import ProductIntroduction from "./ProductIntroduction/ProductIntroduction";
-import ProductComments from "./ProductComments/ProductComments";
-import ProductTechnicalCheck from "./ProductTechnicalCheck/ProductTechnicalCheck";
-import BackToUpBtn from "../common/BackToUpBtn";
-import SingleProductSkeleton from "./SingleProductSkeleton/SingleProductSkeleton";
-import backToUp from "../common/BackToUp";
+import ProductCheckout from "../ProductCheckout/ProductCheckout";
+import ProductIntroduction from "../ProductIntroduction/ProductIntroduction";
+import ProductComments from "../ProductComments/ProductComments";
+import ProductTechnicalCheck from "../ProductTechnicalCheck/ProductTechnicalCheck";
+import BackToUpBtn from "../../common/BackToUpBtn/BackToUpBtn";
+import SingleProductSkeleton from "../SingleProductSkeleton/SingleProductSkeleton";
+import { useProducts } from "context/ProductsProvider";
+import { useLocation, useNavigate } from "react-router-dom";
 
-const SingleProduct = ({ product }) => {
+const SingleProduct = () => {
+  const history = useLocation();
   const technicalCheckPart = useRef();
   const userComments = useRef();
   const headerOfPage = useRef();
   const [singleProduct, setSingleproduct] = useState(0);
   const [replyComment, setReplyComment] = useState(0);
+  const { productState } = useProducts();
+  const product = productState.allProducts.find((p) => p.id === history.state);
+
   useEffect(() => {
-    setTimeout(() => setSingleproduct(product), 1500);
-    backToUp()
+    setTimeout(() => setSingleproduct(1), 1500);
   }, []);
 
   const renderSingleProduct = () => {

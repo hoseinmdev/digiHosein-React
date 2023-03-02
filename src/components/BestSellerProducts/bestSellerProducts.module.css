@@ -1,0 +1,93 @@
+.bestSellerProductsBlock {
+  background-color: #0f172a;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem 4rem 1rem;
+  position: relative;
+  /* overflow: hidden; */
+}
+.shapes {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: moveShapes 2s infinite alternate ease-in-out;
+  z-index: 1;
+  position: absolute;
+}
+@keyframes moveShapes {
+  from {
+    gap: 2rem;
+  }
+  to {
+    gap: 5rem;
+  }
+}
+
+.productsBlock {
+  width: 1260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  overflow: hidden;
+  z-index: 2;
+}
+.productsTitle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+}
+.productsTitle p {
+  width: 25%;
+  font-size: 1.5rem;
+}
+.productsTitle hr {
+  height: 2px;
+  border: none;
+  background-color: #a78bfa;
+}
+.products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.nextProduct {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  color: #334155;
+  border-radius: 100%;
+  z-index: 5;
+  right: 0;
+  margin-right: 3.5rem;
+  position: absolute;
+  background-color: #f8fafc;
+  box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.3);
+}
+.backProduct {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  color: #334155;
+  border-radius: 100%;
+  z-index: 5;
+  left: 0;
+  margin-left: 3.5rem;
+  position: absolute;
+  background-color: #f8fafc;
+  box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.3);
+}

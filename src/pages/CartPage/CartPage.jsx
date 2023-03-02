@@ -1,11 +1,11 @@
-import Layout from "../../layout/Layout";
-import CartProductList from "../../components/CartProductList/CartProductList";
+import CartProducts from "../../components/CartProducts/CartProducts/CartProducts";
+import SiteLayout from "../../layout/SiteLayout/SiteLayout";
 const CartPage = () => {
   return (
     <>
-      <Layout>
-        <CartProductList />
-      </Layout>
+      <SiteLayout>
+        <CartProducts />
+      </SiteLayout>
     </>
   );
 };

@@ -1,5 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
-import { productsData } from "../db.js";
+import { allProducts, bestSellerProducts, filters } from "../db.js";
+
 export const ProductsContext = createContext();
 
 // const productContentChanger = (state, action, actionToDo) => {
@@ -23,7 +24,9 @@ const ProductsProvider = ({ children }) => {
     }
   };
   const initialState = {
-    products: productsData,
+    allProducts,
+    filters,
+    bestSellerProducts,
   };
   const [state, dispatch] = useReducer(reducer, initialState);
   const value = { productState: state, productDispatch: dispatch };

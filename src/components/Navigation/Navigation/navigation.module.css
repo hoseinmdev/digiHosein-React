@@ -1,0 +1,143 @@
+:root {
+  --primaryColor: #1e293b;
+  --white: #ffffff;
+}
+.siteNvigation {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 1rem 2rem 0.7rem 2rem;
+  display: flex;
+  background-color: #ffffff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: 1px 1px 12px 1px rgba(0, 0, 0, 0.1);
+}
+
+.downOfNavigation {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.7rem;
+}
+.optionContainer {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  text-decoration: none;
+  transition: 0.2s ease-out;
+}
+.optionContainer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 0.5rem;
+  gap: 0.3rem;
+  font-size: 1rem;
+  color: #475569;
+}
+.optionContainer span {
+  width: 0%;
+  transition: 0.3s;
+  height: 2px;
+  background-color: #8b5cf6;
+}
+.optionContainer:hover span {
+  width: 100%;
+}
+
+.isActive div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: #8b5cf6;
+  padding: 0rem 1.3rem;
+}
+.isActive span {
+  width: 100%;
+  height: 2px;
+  background-color: #8b5cf6;
+}
+
+.topOfNavigation {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topOfNavigation div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.topOfNavigation div img {
+  width: 9rem;
+  height: 4.5rem;
+  animation: img 1s infinite alternate ease-in-out;
+}
+@keyframes img {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.submitButton {
+  border: 1px solid #8b5cf6;
+  padding: 0.5rem 2rem;
+  font-size: 0.9rem;
+  background-color: #ffffff;
+  color: #1e293b;
+  border-radius: 8px;
+}
+.cartButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #475569;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  font-size: 1.3rem;
+  /* box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1); */
+  position: relative;
+}
+.productsInCartCounter {
+  right: 0;
+  top: 0;
+  position: absolute;
+  width: 0.9rem;
+  font-size: 0.7rem;
+  margin: 0.2rem;
+  margin-left: 0.2rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  background-color: #8b5cf6;
+}
+/* .productCounter {
+  width: 0.9rem;
+  font-size: 0.7rem;
+  margin-bottom: 1.3rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  color: var(--white);
+  background-color: #7c3aed;
+} */

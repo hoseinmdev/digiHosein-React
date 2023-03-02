@@ -3,12 +3,14 @@ import { toast } from "react-toastify";
 import { useCart } from "../../context/CartProvider";
 import styles from "./product.module.css";
 import { AiFillTag, AiOutlineShoppingCart } from "react-icons/ai";
+import { RiChatDeleteFill } from "react-icons/ri";
+import { FaTrash } from "react-icons/fa";
 
 const Product = ({ product }) => {
   const { id, title, price, imageURL } = product;
   const { state, dispatch } = useCart();
+  const isInCart = state.cart.find((p) => p.id === id);
   const history = useNavigate();
-
   const clickHandler = () => {
     toast.success("به سبد خرید اضافه شد");
     dispatch({
@@ -16,22 +18,50 @@ const Product = ({ product }) => {
       product,
     });
   };
+  const increaseHandler = () => {
+    dispatch({ type: "INCREASE", price: price, id: id });
+  };
+  const decreaseHandler = () => {
+    if (isInCart.quantity === 1) {
+      toast.error("محصول حذف شد", {
+        icon: <RiChatDeleteFill />,
+        bodyClassName: styles.toastText,
+        progressClassName: styles.toastLine,
+      });
+      dispatch({ type: "DELETE", price: price, id: id });
+    } else {
+      dispatch({ type: "DECREASE", price: price, id: id });
+    }
+  };
   const renderProductPage = () => {
     history(
-      { pathname: `product/${id}` },
+      { pathname: `/product/${id}` },
       {
-        state: product,
+        state: id,
       }
     );
   };
   const renderAddToCartButton = () => {
-    const isInCart = state.cart.find((p) => p.id === id);
     if (isInCart) {
       return (
-        <Link to="/cart" className={`${styles.productButton} ${styles.inCart}`}>
-          <AiFillTag />
-          <p>در سبد خرید</p>
-        </Link>
+        <div className={styles.inCartBlock}>
+          <button onClick={increaseHandler}>+</button>
+          <Link
+            to="/cart"
+            className={`${styles.productButton} ${styles.inCart}`}
+          >
+            <AiFillTag />
+            <p>در سبد خرید</p>
+            <p className={styles.quantityOfProduct}>{isInCart.quantity}</p>
+          </Link>
+          <button onClick={decreaseHandler}>
+            {isInCart.quantity === 1 ? (
+              <FaTrash className={styles.deleteIcon} />
+            ) : (
+              "−"
+            )}
+          </button>
+        </div>
       );
     } else {
       return (
@@ -39,7 +69,7 @@ const Product = ({ product }) => {
           className={`${styles.productButton} ${styles.addToCart}`}
           onClick={clickHandler}
         >
-          <AiOutlineShoppingCart style={{ transform: "scaleX(-1)" }} />
+          <AiOutlineShoppingCart />
           <p>افزودن به سبد خرید</p>
         </button>
       );

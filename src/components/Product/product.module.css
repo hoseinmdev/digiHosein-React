@@ -5,9 +5,10 @@
 }
 .productBlock {
   box-shadow: 1px 1px 12px 1px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
   transition: all 0.2s ease-in-out;
   overflow: hidden;
-  width: 12rem;
+  width: 12.2rem;
   height: 18.5rem;
   padding: 0.5rem;
   font-size: 0.9rem;
@@ -17,7 +18,7 @@
   align-items: center;
   gap: 0.8rem;
 }
-.productTitle{
+.productTitle {
   cursor: pointer;
   width: 15rem;
   /* font-weight: 500; */
@@ -26,16 +27,17 @@
   align-items: center;
   flex-wrap: nowrap;
 }
-.productBlock:hover {
-  rotate: 2deg;
-}
-.productBlock button{
+.productBlock button {
   border: none;
 }
 .imageStyle {
   width: 85%;
   height: 60%;
   cursor: pointer;
+}
+.imageStyle:hover{
+  rotate: 2deg;
+  scale: 1.04;
 }
 
 .productButton {
@@ -45,18 +47,55 @@
   justify-content: center;
   align-items: center;
   gap: 0.3rem;
-  border-radius: 5px;
   padding: 0.6rem;
   transition: all 0.2s;
+  border-radius: 10px;
 }
 .addToCart {
   background-color: var(--primaryColor);
   color: var(--white);
+  transition: 0.3s;
 }
 .addToCart:hover {
-  background-color: var(--secondaryColor);
+  background-color: #7c3aed;
+}
+
+.inCartBlock {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .inCart {
+  font-size: 0.8rem;
+  min-width: 7rem;
+  max-width: 7.8rem;
   background-color: var(--secondaryColor);
   color: #ffffff;
+}
+.deleteIcon {
+  font-size: 0.7rem;
+}
+.inCartBlock button {
+  width: 1.4rem;
+  height: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: #1e293b;
+  color: #ffffff;
+}
+.inCartBlock button:hover {
+  background-color: #7c3aed;
+}
+.quantityOfProduct {
+  font-size: 0.65rem;
+}
+
+.toastText {
+  color: #e11d48;
+}
+.toastLine {
+  background-color: #e11d48;
 }

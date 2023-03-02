@@ -1,6 +1,6 @@
 import { MdAddTask } from "react-icons/md";
 import { ToastContainer } from "react-toastify";
-import styles from "./customToast.module.css"
+import styles from "./customToast.module.css";
 const CustomToast = () => {
   return (
     <>
@@ -10,7 +10,7 @@ const CustomToast = () => {
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
-        rtl={false}
+        rtl
         pauseOnFocusLoss
         draggable
         pauseOnHover
@@ -18,10 +18,10 @@ const CustomToast = () => {
         bodyClassName={styles.toastText}
         progressClassName={styles.toastLine}
         toastClassName={styles.toast}
-        icon={<MdAddTask style={{fontSize:"2.5rem"}}/>}
+        icon={<MdAddTask style={{ fontSize: "2.5rem" }} />}
       />
     </>
   );
 };
- 
+
 export default CustomToast;

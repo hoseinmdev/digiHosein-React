@@ -1,6 +1,5 @@
 import LandingBanner from "components/LandingBanner/LandingBanner";
 import HomeLaptops from "components/Laptops/HomeLaptops";
-import PhoneFilterBasedOnPrice from "components/PhoneFilterBasedOnPrice/PhoneFilterBasedOnPrice";
 import HomePhones from "components/Phones/HomePhones";
 import BestSellerProducts from "../../components/BestSellerProducts/BestSellerProducts";
 import CircleCategories from "../../components/CircleCategories/CircleCategories/CircleCategories";

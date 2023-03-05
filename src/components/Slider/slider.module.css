@@ -4,11 +4,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin: 0rem 1.5rem 3rem 1.5rem; */
   border-radius: 15px;
   overflow: hidden;
   position: relative;
-  /* object-fit: contain; */
   background-color: #0f172a;
   box-shadow: 4px 4px 12px 4px rgba(0, 0, 0, 0.2);
 }

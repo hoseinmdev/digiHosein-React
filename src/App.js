@@ -8,6 +8,7 @@ import ProductsProvider from "./context/ProductsProvider";
 import "react-toastify/dist/ReactToastify.css";
 import CustomToast from "./components/CustomToast/CustomToast";
 import CategorizedProducts from "layout/CategorizedProduts/CategorizedProducts";
+import NotFoundPage from "pages/NotFoundPage/NotFoundPage";
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
       <ProductsProvider>
         <CartProvider>
           <Routes>
+            <Route path="*" element={<NotFoundPage/>} />
             <Route path="/" element={<HomePage />} />
             <Route path="cart" element={<CartPage />} />
             <Route

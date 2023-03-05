@@ -5,7 +5,7 @@ const EmptyCart = () => {
   return (
     <div className={styles.emptyCartBlock}>
       <img
-        style={{ width: "13rem", height: "13rem" }}
+        style={{ width: "13rem"}}
         src={emptyCart}
         alt="سبد شما خالی است"
       ></img>

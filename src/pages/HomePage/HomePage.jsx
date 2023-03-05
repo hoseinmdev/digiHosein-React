@@ -16,9 +16,7 @@ const HomePage = () => {
         <BestSellerProducts />
         <LandingBanner />
         <HomePhones />
-        <PhoneFilterBasedOnPrice />
         <HomeLaptops />
-        {/* <Products /> */}
         <BackToUpBtn />
       </SiteLayout>
     </>

@@ -18,13 +18,17 @@ import thinkBook from "./Accets/images/lenovo-thinkbook.webp";
 export const allProducts = [
   {
     id: 1,
-    camera: 12,
     quantity: 1,
     category: "phones",
     title: "موبایل اپل مدل iPhone 13",
     price: 52439000,
     imageURL: iphone13,
     simcard: 2,
+    camera: 12,
+    ram: 4,
+    storage: 256,
+    system: 0,
+    battery: 3000,
     positivePoints: [
       "طراحی زیبا و شیک با بدنه‌ای مقاوم و کاملا ضد آب",
       "صفحه نمایش OLED درخشان با پشتیبانی از HDR10 و Dolby Vision",
@@ -93,6 +97,11 @@ export const allProducts = [
     title: " موبایل سامسونگ Galaxy s21",
     price: 37199000,
     simcard: 2,
+    camera: 12,
+    ram: 8,
+    storage: 256,
+    system: 1,
+    battery: 4000,
     imageURL: galaxyS21,
     technicalCheck: `در بخش طراحی به نظر من سامسونگ خوب عمل کرده. فریم دور گوشی روی قاب پشت گوشی آمده و روی آن سه دوربین زیر هم قرار گرفته است و فلش هم روی قاب پلاستیکی گوشی قرار دارد و جدا از دوربین ها است.
 جنس بدنه پشتی پلاستیک است و این ویژگی خوبی نیست چون امکان خش پذیری آن افزایش پیدا می کند ولی قاب آن طراحی مات جذابی دارد و اثر انگشت هم کم روی آن می ماند.
@@ -147,9 +156,14 @@ export const allProducts = [
     id: 3,
     quantity: 1,
     category: "phones",
-    phonesSimcard: "simcard2",
     title: "موبایل اپل مدل iPhone 14",
     price: 48000000,
+    simcard: 2,
+    camera: 12,
+    ram: 6,
+    storage: 512,
+    system: 0,
+    battery: 3000,
     imageURL: iphone14,
     technicalCheck: `آیفون ۱۴ پرو با نوآوری‌های سال ۲۰۲۲ اپل از راه رسید تا همانند نسل قبل به یکی از پرفروش‌ترین گوشی‌های بازار جهان بدل شود. اپل امسال نوآوری‌های خود را به دو عضو حرفه‌ای خانواده آیفون ۱۴ یعنی مدل‌های پرو و پرو مکس محدود کرده است. چیپ پیشرفته A16 Bionic، داینامیک آیلند، نمایشگر همیشه روشن و دوربین اصلی ۴۸ مگاپیکسلی، ویژگی‌های جدیدی هستند که از آنها صحبت می‌کنیم. بنابراین برای نخستین بار، آیفون ۱۴ و آیفون ۱۴ پلاس از همه‌نظر پایین‌تر از مدل‌های پرو قرار می‌گیرند و برای دستیابی به جدیدترین ویژگی‌ها باید حتما مدل‌های پرو را بخرید. از این‌ها که بگذریم، آیفون ۱۴ پرو با قیمت پایه ۱۰۰۰ دلاری را پیش رو داریم که پیشرفته‌ترین گوشی اپل محسوب می‌شود. مثل هر سال با چیپ قوی‌تر، نمایشگر بهتر و دوربین پیشرفته‌تر روبرو هستیم. همچنین برای نخستین بار، آیفون‌ها توانایی برقراری ارتباط ماهواره‌ای را نیز به‌دست آورده‌اند اما از آنجا که این قابلیت هنوز بسیار محدود است، در مورد آن صحبت نمی‌کنیم. حتی وضعیت فروش آیفون ۱۴ نیز در ایران در هاله‌ای از ابهام قرار دارد و هنوز شاهد فروش رسمی آن نیستیم. مهم‌ترین تفاوت طراحی آیفون ۱۴ پرو نسبت به نسل قبل به حذف ناچ برمی‌گردد. ناچ معروف آیفون که به‌سرعت راه خود را به دنیای اندروید هم باز کرد، حالا به کپسول عریضی تبدیل شده که اپل آن را داینامیک آیلند (Dynamic Island) یا جزیره پویا می‌نامد. در واقع اپل تنها شرکتی است که حتی حفره داخل نمایشگر را نیز به یک برند خاص تبدیل کرده است.
 اپل می‌گوید داینامیک آیلند، نحوه تعامل شما با گوشی را متحول می‌کند. این کپسول که از دوربین سلفی و تجهیزات فیس‌تایم تشکیل شده، ابعاد ثابتی ندارد و در شرایط مختلف، تغییر می‌کند. به‌عنوان مثال اگر اپلیکیشن زمان‌سنج را فعال کرده و به صفحه هوم برگردید، تایمر در کنار کپسول نمایش داده می‌شود. اپ‌های پخش محتوای صوتی مانند پادکست، اپل موزیک یا اسپاتیفای نیز اطلاعات موزیک در حال پخش را در کنار ناچ به نمایش می‌گذارند. اگر این جزیره پویا را لمس کنید، اپ مربوط به آن باز می‌شود و با لمس طولانی می‌توانید ویجت بزرگ‌تری را برای تعامل با اپلیکیشن در اختیار داشته باشید. شکی نیست که آیفون‌ها همیشه بهترین نمایشگر دنیای موبایل را در اختیار داشته‌اند. آیفون ۱۴ پرو از نمایشگر ۶.۱ اینچی سوپر رتینا XDR با پنل اولد بهره می‌برد که با رزولوشن ۱۱۷۹ در ۲۵۵۶ پیکسل، محتوا را با تراکم ۴۶۰ پیکسل در هر اینچ به نمایش می‌گذارد. تا اینجا تفاوتی بین این نمایشگر و نسل قبل وجود ندارد اما امسال برای نخستین بار قابلیت نمایشگر همیشه روشن به دنیای آیفون آمده است.  آیفون‌ها همیشه از قدرتمندترین گوشی‌های دنیای موبایل بوده‌اند و آیفون ۱۴ پرو نیز از این قاعده مستثنی نیست. قلب تپنده این گوشی چیپ A16 Bionic است. این تراشه ۴ نانومتری از پردازنده ۶ هسته‌ای با ۲ هسته قدرتمند و ۴ هسته کم‌مصرف استفاده می‌کند که حداکثر فرکانس آن‌ها به‌ترتیب به ۳.۴۶ و ۲.۰۲ گیگاهرتز می‌‎رسد. اپل ادعا می‌کند که پردازنده A16 Bionic نسبت به قبل ۲۰ درصد مصرف انرژی کم‌تری دارد و همزمان نسبت به رقبا ۴۰ درصد قدرتمندتر است. کوپرتینیویی‌ها پهنای باند پردازنده گرافیکی ۵ هسته‌ای این گوشی را نیز ۵۰ درصد بیشتر کرده‌اند. این گوشی در نسخه‌های مختلفی با ۱۲۸، ۲۵۶، ۵۱۲ یا ۱۰۲۴ گیگابایت حافظه داخلی قابل خریداریست و میزان حافظه رم در تمام نسخه‌ها برابر با ۶ گیگابایت است. آیفون ۱۴ پرو قوی‌ترین گوشی دنیای موبایل است و ایراد خاصی نمی‌توان به آن گرفت. یکپارچگی بین سخت‌افزار و نرم‌افزار در بالاترین سطح ممکن، مجموعه دوربین‌های فوق‌العاده، نمایشگر بی‌رقیب و شارژدهی خوب، بهترین تجربه ممکن از یک گوشی هوشمند را در اختیار شما قرار می‌دهند. این‌ها بخش شیرین ماجراست.
@@ -201,10 +215,14 @@ export const allProducts = [
     id: 4,
     quantity: 1,
     category: "phones",
-    phonesSimcard: "simcard1",
-
     title: "موبایل شیائومی مدل Poco M4",
     price: 6799000,
+    simcard: 2,
+    camera: 50,
+    ram: 8,
+    storage: 256,
+    system: 1,
+    battery: 5000,
     imageURL: xiaomiPocoM4,
     technicalCheck: `باید اعتراف کنیم که پوکو ام 4 پرو 5G بسیار جذاب است. قاب پشتی نسبتاً منحنی به همراه پوشش پلاستیکی مات و ترکیب رنگ خاکستری تیره در کنار برآمدگی مشکی رنگ دوربین و محل درج لوگوی پوکو (خیره‌کننده ولی عجیب)، بی‌شک چشم‌نواز خواهند بود. می‌توانیم بگوییم که پوشش مات به کار رفته روی قاب پشتی کیفیت بسیار بالایی دارد زیرا وقتی آن را لمس می‌کنید احساس فوق‌العاده‌ای به شما منتقل خواهد کرد و این‌گونه حس خواهید کرد که به جای پلاستیک، در حال لمس شیشه هستید.
 پنل پشتی خاکستری تیره بسیار دوست‌داشتنی است ولی در عین حال اثرات انگشت و آلودگی‌ها را به سرعت جذب می‌کند و پس از گذشت تنها چند دقیقه کثیف می‌شود. اگر نمی‌خواهید این اتفاق رخ دهد، شاید بهتر باشد سراغ نمونه‌های آبی یا زرد رنگ این موبایل بروید که آنها هم در بالای قاب پشتی خود قسمت مشکی برآمده را دارند.
@@ -262,10 +280,14 @@ export const allProducts = [
     id: 5,
     quantity: 1,
     category: "phones",
-    phonesSimcard: "simcard2",
-
     title: "موبایل سامسونگ Galaxy A51",
     price: 8200000,
+    simcard: 2,
+    camera: 48,
+    ram: 8,
+    storage: 256,
+    system: 1,
+    battery: 4000,
     imageURL: galaxyA51,
     technicalCheck: `طبق آمارهای ارائه شده توسط موسسه‌های تحقیقاتی، Galaxy A51 تا اینجای سال 2020، پرفروش‌ترین گوشی اندرویدی جهان است. امروز با بررسی گلکسی A51 سامسونگ قصد داریم دلیل این موضوع را کشف کنیم.
 سامسونگ در سال 2019 گوشی‌های سری گلکسی A را دستخوش تغییراتی اساسی کرد، اما شاید خوشبین‌ترین طرفدار این برند هم انتظار اینچنین استقبالی را از گوشی‌های نسل جدید این سری نداشت. گوشی‌های کهکشانی اقتصادی و میان‌رده A در سال گذشته فروش بسیار خوبی در سراسر جهان داشتند و همین فروش خوب نشان‌دهنده این بود که سامسونگ مسیر درستی را برای گوشی‌های میان‌رده خود در پیش گرفته است.
@@ -442,6 +464,12 @@ export const allProducts = [
     category: "laptops",
     title: "لپتاپ Asus ROG Strix",
     price: 39648000,
+    cpuCompany: 0,
+    cpuModel: 1,
+    ram: 32,
+    ramModel: 0,
+    storage: 1000,
+    storageModel: 1,
     imageURL: asusRogStrix,
     technicalCheck: `شاید در میان انبوه لپ‌تاپ‌های گیمینگ ایسوس که در بین آن‌ها محصولات پرقدرتی همچون Strix Scar یا سری Zephyrus S با سخت‌افزار دیوانه‌وار و برچسب‌های قیمتی نجومی‌شان نگاه‌ها را به خود خیره می‌کنند، دستگاه‌های سری Strix G کمتر به‌چشم بیایند؛ اما امسال به‌لطف عملکرد شگفت‌انگیز پردازنده‌‌‌ی Ryzen 9 5900HX در دل لپ‌تاپ‌های جدید Strix G513، وضعیت کمی به سود خانواده‌ی میان‌رده‌ی Strix G تغییر کرده است.
 لپ‌تاپ‌های Strix G513 چندین عضو با پردازنده‌های Ryzen 9 5900HX و Ryzen 7 4800H به‌همراه گرافیک‌های RTX 3050، RTX 3060 و RTX 3070 وجود دارد؛ اما شاید جذاب‌ترین و ارزشمندترین مدل در میان آن‌ها، یکی از مدل‌های میانی موسوم به Strix G513QM با پردازنده‌ی پرقدرت Ryzen 9 و گرافیک RTX 3060 باشد. این لپ‌تاپ به‌ویژه در نسخه‌ی Full-HD در ترکیب با باتری بسیار حجیم ۹۰ وات‌ساعتی‌اش، حداقل روی کاغذ، جزو معدود لپ‌تاپ‌های گیمینگی به‌شمار می‌آید که حداقل در کاربری‌های روزمره، می‌توان به «قابلیت حمل» آن اتکا داشت. دریایی از نورپردازی رنگارنگ RGB، لوگوی براق ROG و تضاد رنگی بدنه؛ تایوانی‌ها با زبان طراحی Strix G15 به بهترین شکل ممکن به هدف خود در جلب توجه گیمرها می‌رسند؛ تقریبا تمام خوره‌های بازی در زومیت و زومجی، همین نظر را در مورد Strix G15 داشتند. ایسوس لپ‌تاپ Strix G15 را در سه گزینه‌ی رنگی Stealthy Original Black و Eclipse Gray و Electro Punk به‌فروش می‌رساند که مورد نخست و دوم با تضادهای رنگی مشکی و قرمز برای کاربران جوان‌تر و مورد دوم با تضاد رنگی مشکی/خاکستری برای گیمرهای جاافتاده‌تر انتخاب مناسبی به‌شمار می‌آیند. علاوه‌بر نورپردازی مجزای هرکدام از کلیدهای کیبورد، نواری از چراغ‌های LED در سه لبه‌ی Strix G15 نیز وجود دارد. شما می‌توانید جلوه‌ی نورپردازی هرکدام از نواحی RGB را با تنظیمات Aura Sync در نرم‌افزار Armoury Crate ایسوس، به‌دلخواه خود شخصی‌سازی کنید. ما وجود نوار LED در لبه‌های لپ‌تاپ را چندان جالب نمی‌دانیم؛ اما جامعه‌ی مخاطبان این لپ‌تاپ که گیمرها هستند، با ما هم‌نظر نباشند. متأسفانه نورپردازی نوار LED اطراف لپ‌تاپ و کلیدهای کیبورد مستقل از هم نیستند و برای خاموش‌کردن آن باید نور پس‌زمینه‌ی کیبورد را خاموش کنید. طراحان ایسوس قاب پشتی نمایشگر و لولاهای Strix G15 را از جنس فلز و باقی بدنه را از جنس پلاستیک انتخاب کرده‌اند؛ البته نباید مأیوس باشید؛ چرا‌که دستگاه کیفیت ساخت بسیار بالایی دارد و به هیچ‌وجه حس‌وحال کالایی ارزان‌قیمت یا بی‌کیفیت را القا نمی‌کند. ایسوس می‌گوید استفاده از پلاستیک در محل استراحت دست از انتقال حرارت به دستان کاربر جلوگیری می‌کند. Strix G15 با وزن ۲٫۳۰ کیلوگرمی‌اش به‌اندازه‌ی اولترابوک‌های سبک‌وزن یک کیلوگرمی قابل‌حمل نیست؛ اما باتوجه به قدرت پردازشی فوق‌العاده و نمایشگر ۱۵٫۶ اینچی‌اش، می‌توانیم از سنگینی وزنش چشم‌پوشی کنیم. 
@@ -494,6 +522,12 @@ export const allProducts = [
     category: "laptops",
     title: "لپتاپ Macbook air 2020",
     price: 32599000,
+    cpuCompany: 1,
+    cpuModel: 2,
+    ram: 8,
+    ramModel: 1,
+    storage: 256,
+    storageModel: 1,
     imageURL: macbookAir2020,
     Specifications: {
       cpu: "پردازنده / 8 هسته ای Apple M1",
@@ -509,6 +543,12 @@ export const allProducts = [
     category: "laptops",
     title: "لپتاپ Asus TUF dash F15",
     price: 42899000,
+    cpuCompany: 0,
+    cpuModel: 1,
+    ram: 16,
+    ramModel: 0,
+    storage: 1000,
+    storageModel: 1,
     imageURL: asusTufDashF15,
     Specifications: {
       cpu: "پردازنده / اینتل core i7",
@@ -524,6 +564,12 @@ export const allProducts = [
     category: "laptops",
     title: "لپتاپ Asus TUF Gaming F15",
     price: 23899000,
+    cpuCompany: 0,
+    cpuModel: 4,
+    ram: 8,
+    ramModel: 0,
+    storage: 1000,
+    storageModel: 0,
     imageURL: asusGaming,
     Specifications: {
       cpu: "پردازنده / اینتل core i5",
@@ -539,6 +585,12 @@ export const allProducts = [
     category: "laptops",
     title: "لپتاپ Zenbook duo",
     price: 49199000,
+    cpuCompany: 0,
+    cpuModel: 1,
+    ram: 16,
+    ramModel: 2,
+    storage: 1000,
+    storageModel: 1,
     imageURL: zenBook,
     Specifications: {
       cpu: "پردازنده / اینتل core i7",
@@ -554,6 +606,12 @@ export const allProducts = [
     category: "laptops",
     title: "لپتاپ Lenovo Thinkbook",
     price: 14800000,
+    cpuCompany: 0,
+    cpuModel: 0,
+    ram: 8,
+    ramModel: 0,
+    storage: 256,
+    storageModel: 1,
     imageURL: thinkBook,
     Specifications: {
       cpu: "پردازنده / اینتل core i5",
@@ -577,106 +635,400 @@ export const filters = {
     {
       title: "دوربین",
       options: [
-        { title: "12 مگاپیکسل", key: "12 megaPixel" },
-        { title: "48 مگاپیکسل", key: "48 megaPixel" },
-        { title: "64 مگاپیکسل", key: "64 megaPixel" },
-        { title: "108 مگاپیکسل", key: "108 megaPixel" },
+        { title: "12 مگاپیکسل", key: "camera_12" },
+        { title: "48 مگاپیکسل", key: "camera_48" },
+        { title: "50 مگاپیکسل", key: "camera_50" },
+        { title: "64 مگاپیکسل", key: "camera_64" },
+        { title: "108 مگاپیکسل", key: "camera_108" },
       ],
-      key: "phonesCamera",
+      key: "camera",
     },
     {
       title: "حافظه داخلی",
       options: [
-        { title: "32 گیگابایت", key: "32 GB" },
-        { title: "128 گیگابایت", key: "128 GB" },
-        { title: "256 گیگابایت", key: "256 GB" },
+        { title: "128 گیگابایت", key: "storage_128" },
+        { title: "256 گیگابایت", key: "storage_256" },
+        { title: "512 گیگابایت", key: "storage_512" },
       ],
-      key: "phonesStorage",
+      key: "storage",
     },
     {
       title: "حافظه رم",
       options: [
-        { title: "3 گیگابایت", key: "3 GB" },
-        { title: "4 گیگابایت", key: "4 GB" },
-        { title: "6 گیگابایت", key: "6 GB" },
-        { title: "8 گیگابایت", key: "8 GB" },
-        { title: "12 گیگابایت", key: "12 GB" },
+        { title: "3 گیگابایت", key: "ram_3" },
+        { title: "4 گیگابایت", key: "ram_4" },
+        { title: "6 گیگابایت", key: "ram_6" },
+        { title: "8 گیگابایت", key: "ram_8" },
+        { title: "12 گیگابایت", key: "ram_12" },
       ],
-      key: "phonesRam",
+      key: "ram",
     },
     {
-      title: "نسخه اندروید",
+      title: "سیستم عامل",
       options: [
-        { title: "اندروید 10", key: "android 10" },
-        { title: "اندروید 11", key: "android 11" },
-        { title: "اندروید 12", key: "android 12" },
+        { title: "IOS", key: "system_0" },
+        { title: "اندروید", key: "system_1" },
       ],
-      key: "phonesAndroid",
+      key: "system",
     },
     {
       title: "باتری",
       options: [
-        { title: "3300 میلی آمپر ساعت", key: "3200 milliamp" },
-        { title: "4250 میلی آمپر ساعت", key: "4250 milliamp" },
-        { title: "5000 میلی آمپر ساعت", key: "5000 milliamp" },
-        { title: "6000 میلی آمپر ساعت", key: "6000 milliamp" },
+        { title: "3000 میلی آمپر ساعت", key: "battery_3000" },
+        { title: "4000 میلی آمپر ساعت", key: "battery_4000" },
+        { title: "5000 میلی آمپر ساعت", key: "battery_5000" },
+        { title: "6000 میلی آمپر ساعت", key: "battery_6000" },
       ],
-      key: "phonesBattery",
+      key: "battery",
+    },
+  ],
+  tablets: [
+    {
+      title: "تعداد سیمکارت",
+      options: [
+        { title: "1 عدد", key: "simcard_1" },
+        { title: "2 عدد", key: "simcard_2" },
+      ],
+      key: "simcard",
+    },
+    {
+      title: "دوربین",
+      options: [
+        { title: "12 مگاپیکسل", key: "camera_12" },
+        { title: "48 مگاپیکسل", key: "camera_48" },
+        { title: "50 مگاپیکسل", key: "camera_50" },
+        { title: "64 مگاپیکسل", key: "camera_64" },
+        { title: "108 مگاپیکسل", key: "camera_108" },
+      ],
+      key: "camera",
+    },
+    {
+      title: "حافظه داخلی",
+      options: [
+        { title: "128 گیگابایت", key: "storage_128" },
+        { title: "256 گیگابایت", key: "storage_256" },
+        { title: "512 گیگابایت", key: "storage_512" },
+      ],
+      key: "storage",
+    },
+    {
+      title: "حافظه رم",
+      options: [
+        { title: "3 گیگابایت", key: "ram_3" },
+        { title: "4 گیگابایت", key: "ram_4" },
+        { title: "6 گیگابایت", key: "ram_6" },
+        { title: "8 گیگابایت", key: "ram_8" },
+        { title: "12 گیگابایت", key: "ram_12" },
+      ],
+      key: "ram",
+    },
+    {
+      title: "سیستم عامل",
+      options: [
+        { title: "IOS", key: "system_0" },
+        { title: "اندروید", key: "system_1" },
+      ],
+      key: "system",
+    },
+    {
+      title: "باتری",
+      options: [
+        { title: "3000 میلی آمپر ساعت", key: "battery_3000" },
+        { title: "4000 میلی آمپر ساعت", key: "battery_4000" },
+        { title: "5000 میلی آمپر ساعت", key: "battery_5000" },
+        { title: "6000 میلی آمپر ساعت", key: "battery_6000" },
+      ],
+      key: "battery",
     },
   ],
   laptops: [
     {
       title: "سازنده پردازنده",
       options: [
-        { title: "Intel", key: "1simcard" },
-        { title: "Apple", key: "2simcard" },
-        { title: "AMD", key: "2simcard" },
+        { title: "Intel", key: "cpuCompany_0" },
+        { title: "Apple", key: "cpuCompany_1" },
+        { title: "AMD", key: "cpuCompany_2" },
       ],
-      key: "laptopsCpuCompany",
+      key: "cpuCompany",
     },
     {
       title: "سری پردازنده",
       options: [
-        { title: "Celeron", key: "2simcard" },
-        { title: "Core i7", key: "1simcard" },
-        { title: "M1", key: "1simcard" },
-        { title: "Ryzen 5", key: "1simcard" },
+        { title: "Core i3", key: "cpuModel_0" },
+        { title: "Core i7", key: "cpuModel_1" },
+        { title: "Core i5", key: "cpuModel_4" },
+        { title: "M1", key: "cpuModel_2" },
+        { title: "Ryzen 5", key: "cpuModel_3" },
       ],
-      key: "laptopsCpuModel",
+      key: "cpuModel",
     },
     {
       title: "حافظه رم",
       options: [
-        { title: "4 گیگابایت", key: "2simcard" },
-        { title: "8 گیگابایت", key: "1simcard" },
-        { title: "16 گیگابایت", key: "1simcard" },
+        { title: "4 گیگابایت", key: "ram_4" },
+        { title: "8 گیگابایت", key: "ram_8" },
+        { title: "16 گیگابایت", key: "ram_16" },
+        { title: "32 گیگابایت", key: "ram_32" },
       ],
-      key: "laptopsRam",
+      key: "ram",
     },
     {
       title: "نوع حافظه رم",
       options: [
-        { title: "DDR4", key: "2simcard" },
-        { title: "Unified", key: "1simcard" },
+        { title: "DDR4", key: "ramModel_0" },
+        { title: "Unified", key: "ramModel_1" },
+        { title: "LPDDR4X", key: "ramModel_2" },
       ],
-      key: "laptopsRamModel",
+      key: "ramModel",
     },
     {
       title: "حافظه داخلی",
       options: [
-        { title: "1 ترابایت", key: "2simcard" },
-        { title: "256 ترابایت", key: "1simcard" },
-        { title: "512 ترابایت", key: "1simcard" },
+        { title: "256 گیگابایت", key: "storage_256" },
+        { title: "512 گیگابایت", key: "storage_512" },
+        { title: "1 ترابایت", key: "storage_1000" },
       ],
-      key: "laptopsStorage",
+      key: "storage",
     },
     {
       title: "نوع حافظه داخلی",
       options: [
-        { title: "هارد دیسک", key: "2simcard" },
-        { title: "SSD", key: "2simcard" },
+        { title: "هارد دیسک", key: "storageModel_0" },
+        { title: "SSD", key: "storageModel_1" },
       ],
-      key: "laptopsStorageModel",
+      key: "storageModel",
+    },
+  ],
+  consoles: [
+    {
+      title: "سازنده پردازنده",
+      options: [
+        { title: "Intel", key: "cpuCompany_0" },
+        { title: "Apple", key: "cpuCompany_1" },
+        { title: "AMD", key: "cpuCompany_2" },
+      ],
+      key: "cpuCompany",
+    },
+    {
+      title: "سری پردازنده",
+      options: [
+        { title: "Core i3", key: "cpuModel_0" },
+        { title: "Core i7", key: "cpuModel_1" },
+        { title: "Core i5", key: "cpuModel_4" },
+        { title: "M1", key: "cpuModel_2" },
+        { title: "Ryzen 5", key: "cpuModel_3" },
+      ],
+      key: "cpuModel",
+    },
+    {
+      title: "حافظه رم",
+      options: [
+        { title: "4 گیگابایت", key: "ram_4" },
+        { title: "8 گیگابایت", key: "ram_8" },
+        { title: "16 گیگابایت", key: "ram_16" },
+        { title: "32 گیگابایت", key: "ram_32" },
+      ],
+      key: "ram",
+    },
+    {
+      title: "نوع حافظه رم",
+      options: [
+        { title: "DDR4", key: "ramModel_0" },
+        { title: "Unified", key: "ramModel_1" },
+        { title: "LPDDR4X", key: "ramModel_2" },
+      ],
+      key: "ramModel",
+    },
+    {
+      title: "حافظه داخلی",
+      options: [
+        { title: "256 گیگابایت", key: "storage_256" },
+        { title: "512 گیگابایت", key: "storage_512" },
+        { title: "1 ترابایت", key: "storage_1000" },
+      ],
+      key: "storage",
+    },
+    {
+      title: "نوع حافظه داخلی",
+      options: [
+        { title: "هارد دیسک", key: "storageModel_0" },
+        { title: "SSD", key: "storageModel_1" },
+      ],
+      key: "storageModel",
+    },
+  ],
+  headphones: [
+    {
+      title: "سازنده پردازنده",
+      options: [
+        { title: "Intel", key: "cpuCompany_0" },
+        { title: "Apple", key: "cpuCompany_1" },
+        { title: "AMD", key: "cpuCompany_2" },
+      ],
+      key: "cpuCompany",
+    },
+    {
+      title: "سری پردازنده",
+      options: [
+        { title: "Core i3", key: "cpuModel_0" },
+        { title: "Core i7", key: "cpuModel_1" },
+        { title: "Core i5", key: "cpuModel_4" },
+        { title: "M1", key: "cpuModel_2" },
+        { title: "Ryzen 5", key: "cpuModel_3" },
+      ],
+      key: "cpuModel",
+    },
+    {
+      title: "حافظه رم",
+      options: [
+        { title: "4 گیگابایت", key: "ram_4" },
+        { title: "8 گیگابایت", key: "ram_8" },
+        { title: "16 گیگابایت", key: "ram_16" },
+        { title: "32 گیگابایت", key: "ram_32" },
+      ],
+      key: "ram",
+    },
+    {
+      title: "نوع حافظه رم",
+      options: [
+        { title: "DDR4", key: "ramModel_0" },
+        { title: "Unified", key: "ramModel_1" },
+        { title: "LPDDR4X", key: "ramModel_2" },
+      ],
+      key: "ramModel",
+    },
+    {
+      title: "حافظه داخلی",
+      options: [
+        { title: "256 گیگابایت", key: "storage_256" },
+        { title: "512 گیگابایت", key: "storage_512" },
+        { title: "1 ترابایت", key: "storage_1000" },
+      ],
+      key: "storage",
+    },
+    {
+      title: "نوع حافظه داخلی",
+      options: [
+        { title: "هارد دیسک", key: "storageModel_0" },
+        { title: "SSD", key: "storageModel_1" },
+      ],
+      key: "storageModel",
+    },
+  ],
+  digitalWatches: [
+    {
+      title: "سازنده پردازنده",
+      options: [
+        { title: "Intel", key: "cpuCompany_0" },
+        { title: "Apple", key: "cpuCompany_1" },
+        { title: "AMD", key: "cpuCompany_2" },
+      ],
+      key: "cpuCompany",
+    },
+    {
+      title: "سری پردازنده",
+      options: [
+        { title: "Core i3", key: "cpuModel_0" },
+        { title: "Core i7", key: "cpuModel_1" },
+        { title: "Core i5", key: "cpuModel_4" },
+        { title: "M1", key: "cpuModel_2" },
+        { title: "Ryzen 5", key: "cpuModel_3" },
+      ],
+      key: "cpuModel",
+    },
+    {
+      title: "حافظه رم",
+      options: [
+        { title: "4 گیگابایت", key: "ram_4" },
+        { title: "8 گیگابایت", key: "ram_8" },
+        { title: "16 گیگابایت", key: "ram_16" },
+        { title: "32 گیگابایت", key: "ram_32" },
+      ],
+      key: "ram",
+    },
+    {
+      title: "نوع حافظه رم",
+      options: [
+        { title: "DDR4", key: "ramModel_0" },
+        { title: "Unified", key: "ramModel_1" },
+        { title: "LPDDR4X", key: "ramModel_2" },
+      ],
+      key: "ramModel",
+    },
+    {
+      title: "حافظه داخلی",
+      options: [
+        { title: "256 گیگابایت", key: "storage_256" },
+        { title: "512 گیگابایت", key: "storage_512" },
+        { title: "1 ترابایت", key: "storage_1000" },
+      ],
+      key: "storage",
+    },
+    {
+      title: "نوع حافظه داخلی",
+      options: [
+        { title: "هارد دیسک", key: "storageModel_0" },
+        { title: "SSD", key: "storageModel_1" },
+      ],
+      key: "storageModel",
+    },
+  ],
+  speaker: [
+    {
+      title: "سازنده پردازنده",
+      options: [
+        { title: "Intel", key: "cpuCompany_0" },
+        { title: "Apple", key: "cpuCompany_1" },
+        { title: "AMD", key: "cpuCompany_2" },
+      ],
+      key: "cpuCompany",
+    },
+    {
+      title: "سری پردازنده",
+      options: [
+        { title: "Core i3", key: "cpuModel_0" },
+        { title: "Core i7", key: "cpuModel_1" },
+        { title: "Core i5", key: "cpuModel_4" },
+        { title: "M1", key: "cpuModel_2" },
+        { title: "Ryzen 5", key: "cpuModel_3" },
+      ],
+      key: "cpuModel",
+    },
+    {
+      title: "حافظه رم",
+      options: [
+        { title: "4 گیگابایت", key: "ram_4" },
+        { title: "8 گیگابایت", key: "ram_8" },
+        { title: "16 گیگابایت", key: "ram_16" },
+        { title: "32 گیگابایت", key: "ram_32" },
+      ],
+      key: "ram",
+    },
+    {
+      title: "نوع حافظه رم",
+      options: [
+        { title: "DDR4", key: "ramModel_0" },
+        { title: "Unified", key: "ramModel_1" },
+        { title: "LPDDR4X", key: "ramModel_2" },
+      ],
+      key: "ramModel",
+    },
+    {
+      title: "حافظه داخلی",
+      options: [
+        { title: "256 گیگابایت", key: "storage_256" },
+        { title: "512 گیگابایت", key: "storage_512" },
+        { title: "1 ترابایت", key: "storage_1000" },
+      ],
+      key: "storage",
+    },
+    {
+      title: "نوع حافظه داخلی",
+      options: [
+        { title: "هارد دیسک", key: "storageModel_0" },
+        { title: "SSD", key: "storageModel_1" },
+      ],
+      key: "storageModel",
     },
   ],
 };

@@ -4,7 +4,6 @@ import consoleBanner from "../../Accets/images/bannerConsole.webp";
 import airpodsBanner from "../../Accets/images/bannerAirpods.webp";
 import airpodsBanner2 from "../../Accets/images/bannerAirpods2.webp";
 import digitalWatchBanner from "../../Accets/images/bannerDigitalWatch.webp";
-import ramHardBanner from "../../Accets/images/bannerRamHard.webp";
 import speakerBanner from "../../Accets/images/bannerSpeaker.webp";
 import tabletBanner from "../../Accets/images/bannerTablet.webp";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -25,10 +24,6 @@ const allSlides = [
     src: airpodsBanner2,
     link: "/categories/headphones",
   },
-  // {
-  //   src: ramHardBanner,
-  //   link: "/categories/ramHards",
-  // },
   {
     src: digitalWatchBanner,
     link: "/categories/digitalWatches",

@@ -11,7 +11,7 @@ import { BiGame } from "react-icons/bi";
 import { Link, NavLink } from "react-router-dom";
 import { useCart } from "../../../context/CartProvider";
 import { GoDeviceMobile } from "react-icons/go";
-import { BsSmartwatch } from "react-icons/bs";
+import { BsSmartwatch, BsSpeakerFill } from "react-icons/bs";
 import SearchProducts from "../SearchProducts/SearchProducts";
 const Navigation = () => {
   const { state } = useCart();
@@ -26,6 +26,11 @@ const Navigation = () => {
     { title: "موبایل", path: "/categories/phones", icon: <GoDeviceMobile /> },
     { title: "تبلت", path: "/categories/tablets", icon: <FaTabletAlt /> },
     { title: "لپتاپ", path: "/categories/laptops", icon: <FaLaptopCode /> },
+    {
+      title: "اسپیکر و بلندگو",
+      path: "/categories/speaker",
+      icon: <BsSpeakerFill />,
+    },
     {
       title: "ساعت هوشمند",
       path: "/categories/digitalWatches",

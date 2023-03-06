@@ -23,7 +23,7 @@ const allSlides = [
   },
   {
     src: airpodsBanner2,
-    link: "/categories/airpods",
+    link: "/categories/headphones",
   },
   // {
   //   src: ramHardBanner,
@@ -43,7 +43,7 @@ const allSlides = [
   },
   {
     src: airpodsBanner,
-    link: "/categories/airpods",
+    link: "/categories/headphones",
   },
 ];
 

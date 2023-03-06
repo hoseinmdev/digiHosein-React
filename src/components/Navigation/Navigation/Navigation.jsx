@@ -28,7 +28,7 @@ const Navigation = () => {
     { title: "لپتاپ", path: "/categories/laptops", icon: <FaLaptopCode /> },
     {
       title: "اسپیکر و بلندگو",
-      path: "/categories/speaker",
+      path: "/categories/speakers",
       icon: <BsSpeakerFill />,
     },
     {

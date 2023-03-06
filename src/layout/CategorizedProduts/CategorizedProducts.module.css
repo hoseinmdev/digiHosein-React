@@ -125,7 +125,6 @@
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  color: #7c3aed;
   font-size: 1rem;
 }
 .porductsSortByOptions {
@@ -135,6 +134,8 @@
   gap: 0.5rem;
 }
 .porductsSortByOptions span {
+  font-weight: 700;
+  color: #7c3aed;
   cursor: pointer;
   padding: 0.2rem 1rem;
   border-right: 1px solid #64748b;

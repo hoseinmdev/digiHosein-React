@@ -9,7 +9,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 import SiteLayout from "layout/SiteLayout/SiteLayout";
 import Skeleton from "components/Skeleton/Skeleton";
 import createEmptyArray from "utils/createEmptyArray";
-import { toast } from "react-toastify";
+
 const CategorizedProducts = () => {
   const generateFiltersState = () => {
     const filters = {};
@@ -154,7 +154,7 @@ const CategorizedProducts = () => {
     return (
       <div className={styles.notFoundProductContainer}>
         <img src={notFound} alt="محصولی یافت نشد" />
-        <h1>از این جستجو نتیجه ای نگرتیم ...</h1>
+        <h1>از این جستجو نتیجه ای نگرفتیم :(</h1>
       </div>
     );
   };

@@ -15,35 +15,35 @@ import Skeleton from "../Skeleton/Skeleton";
 const allSlides = [
   {
     src: consoleBanner,
-    link: "consoles",
+    link: "/categories/consoles",
   },
   {
     src: mobileBanner,
-    link: "categories/phones",
+    link: "/categories/phones",
   },
   {
     src: airpodsBanner2,
-    link: "airpods",
+    link: "/categories/airpods",
   },
-  {
-    src: ramHardBanner,
-    link: "ramHards",
-  },
+  // {
+  //   src: ramHardBanner,
+  //   link: "/categories/ramHards",
+  // },
   {
     src: digitalWatchBanner,
-    link: "digitalWatches",
+    link: "/categories/digitalWatches",
   },
   {
     src: tabletBanner,
-    link: "teblets",
+    link: "/categories/teblets",
   },
   {
     src: speakerBanner,
-    link: "speakers",
+    link: "/categories/speakers",
   },
   {
     src: airpodsBanner,
-    link: "airpods",
+    link: "/categories/airpods",
   },
 ];
 

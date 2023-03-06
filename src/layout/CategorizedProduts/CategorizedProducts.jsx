@@ -206,12 +206,22 @@ const CategorizedProducts = () => {
             <span>بیشترین قیمت</span>
             <span>جدیدترین</span>
           </div>
+          <div>
+            {products ? (
+              <span>تعداد محصولات : {products.length}</span>
+            ) : (
+              <span className={styles.productsCounter}>
+                درحال جستجو :
+                <Skeleton width={"2rem"} height={"1rem"} radius={"30px"} />
+              </span>
+            )}
+          </div>
         </div>
       );
     } else {
       return (
-        <div className={styles.porductsSortByOptions} style={{gap:"1.5rem"}}>
-          {createEmptyArray(5).map((p, index) => {
+        <div className={styles.porductsSortByOptions} style={{ gap: "1.5rem" }}>
+          {createEmptyArray(6).map((p, index) => {
             return (
               <Skeleton
                 key={index}

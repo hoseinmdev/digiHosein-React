@@ -335,7 +335,7 @@ export const allProducts = [
   {
     id: 6,
     quantity: 1,
-    category: "speaker",
+    category: "speakers",
     title: "پارتی باکس",
     price: 5200000,
     imageURL: partyBox,
@@ -973,7 +973,7 @@ export const filters = {
       key: "storageModel",
     },
   ],
-  speaker: [
+  speakers: [
     {
       title: "سازنده پردازنده",
       options: [

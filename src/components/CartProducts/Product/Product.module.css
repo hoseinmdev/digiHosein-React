@@ -10,8 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50rem;
-  height: 10rem;
+  width: 100%;
   box-shadow: 1px 1px 12px 1px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   background-color: var(--white);

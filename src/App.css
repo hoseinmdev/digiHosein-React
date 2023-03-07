@@ -29,11 +29,10 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* background-color: #f8fafc; */
 }
 ::-webkit-scrollbar {
   width: 7px;
-  background-color: #e2e8f0;
+  background-color: #cbd5e1;
 }
 ::-webkit-scrollbar-thumb {
   background: #334155;

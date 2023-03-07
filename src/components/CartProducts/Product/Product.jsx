@@ -15,7 +15,7 @@ const Product = ({ product }) => {
     history(
       { pathname: `/product/${id}` },
       {
-        state: product,
+        state: id,
       }
     );
   };

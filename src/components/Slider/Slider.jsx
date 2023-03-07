@@ -95,9 +95,6 @@ const Slider = () => {
     fadeShowSlide("BACK_SLIDE");
   };
   const renderSlider = () => {
-    if (!slides) {
-      return <Skeleton width={"95%"} height={"17rem"} radius={"15px"} />;
-    }
     if (slides) {
       return (
         <div className={styles.sliderBlock}>
@@ -117,6 +114,8 @@ const Slider = () => {
           </button>
         </div>
       );
+    } else {
+      return <Skeleton width={"95%"} height={"17rem"} radius={"15px"} />;
     }
   };
   return renderSlider();

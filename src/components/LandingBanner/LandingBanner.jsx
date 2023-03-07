@@ -8,7 +8,7 @@ const LandingBanner = () => {
       <Link to="/categories/consoles">
         <img src={consoleBanner} alt={consoleBanner}></img>
       </Link>
-      <Link to="/categories/speaker">
+      <Link to="/categories/speakers">
         <img src={speakerBanner} alt={speakerBanner}></img>
       </Link>
     </div>

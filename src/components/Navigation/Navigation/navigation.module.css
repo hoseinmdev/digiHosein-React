@@ -74,13 +74,19 @@
   justify-content: space-between;
   align-items: center;
 }
-.topOfNavigation div {
+.navigationLogoAndSearchBox {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
-.topOfNavigation div img {
+.navigationCartBtnAndSubmitBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.navigationLogoAndSearchBox img {
   width: 9rem;
   height: 4.5rem;
   animation: img 1s infinite alternate ease-in-out;

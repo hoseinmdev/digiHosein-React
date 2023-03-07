@@ -46,11 +46,11 @@ const Navigation = () => {
   return (
     <div className={styles.siteNvigation}>
       <div className={styles.topOfNavigation}>
-        <div>
+        <div className={styles.navigationLogoAndSearchBox}>
           <img src={digiHosein} alt="Digi Hosien" />
           <SearchProducts />
         </div>
-        <div>
+        <div className={styles.navigationCartBtnAndSubmitBtn}>
           <button className={styles.submitButton}>ورود | ثبت نام</button>
           <CartButton />
         </div>

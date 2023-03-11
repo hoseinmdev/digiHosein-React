@@ -154,7 +154,7 @@ const CategorizedProducts = () => {
     return (
       <div className={styles.notFoundProductContainer}>
         <img src={notFound} alt="محصولی یافت نشد" />
-        <h1>از این جستجو نتیجه ای نگرفتیم :(</h1>
+        <h1>محصولی یافت نشد :(</h1>
       </div>
     );
   };

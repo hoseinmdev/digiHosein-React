@@ -86,7 +86,7 @@
   align-items: center;
   gap: 1rem;
 }
-.navigationLogoAndSearchBox img {
+.siteLogo {
   width: 9rem;
   height: 4.5rem;
   animation: img 1s infinite alternate ease-in-out;

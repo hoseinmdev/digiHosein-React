@@ -15,13 +15,14 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   gap: 0.8rem;
 }
 .productTitle {
   cursor: pointer;
-  width: 15rem;
-  /* font-weight: 500; */
+  width: 100%;
+  height: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +36,7 @@
   height: 60%;
   cursor: pointer;
 }
-.imageStyle:hover{
+.imageStyle:hover {
   rotate: 2deg;
   scale: 1.04;
 }
@@ -70,7 +71,7 @@
   font-size: 0.8rem;
   min-width: 7rem;
   max-width: 7.8rem;
-  background-color: var(--secondaryColor);
+  background-color: #6d28d9;
   color: #ffffff;
 }
 .deleteIcon {

@@ -17,3 +17,70 @@
   justify-content: flex-start;
   align-items: center;
 }
+.activeSearchBox {
+  width: 25rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 8px;
+  gap: 1rem;
+  padding: 0.7rem 1rem 0.7rem 0.2rem;
+  background-color: #ffffff;
+  z-index: 1000;
+  position: relative;
+}
+.activeSearchBox input {
+  width: 100%;
+  font-size: 1.05rem;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.productsContainer {
+  position: absolute;
+  width: 32rem;
+  border-radius: 15px;
+  top: 100px;
+  right: 110px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1000;
+  padding: 1rem;
+  max-height: 30rem;
+  overflow: hidden;
+}
+.productsContainer span {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  margin-right: 2rem;
+  color: #475569;
+}
+.products {
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+}
+.backdrop {
+  width: 100vw;
+  height: 100vw;
+  top: 0;
+  left: 0;
+  background-color: #475569;
+  opacity: 0.5;
+  z-index: 100;
+  position: fixed;
+}

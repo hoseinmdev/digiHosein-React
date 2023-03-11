@@ -32,6 +32,7 @@
 
 .productsBlock {
   width: 1260px;
+  /* min-width: 1260px; */
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -1,16 +1,15 @@
 .imageStyle {
-  width: 18rem;
+  width: 21rem;
 }
 .imageAndInfoBlock {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 .infoBlock {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 30rem;
+  width: 27rem;
 }
 .infoList {
   display: flex;

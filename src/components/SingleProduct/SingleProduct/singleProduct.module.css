@@ -30,10 +30,10 @@ hr {
 .productBlock section {
   width: 100%;
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   justify-content: space-between;
 }
-.productBlock section hr{
+.productBlock section hr {
   width: 1px;
 }
 
@@ -51,8 +51,17 @@ hr {
   justify-content: center;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
   background-color: #f1f5f9;
   padding: 0.5rem;
   border-radius: 8px;
+  animation: labelStyle 1s infinite alternate ease-in-out;
+}
+@keyframes labelStyle {
+  from {
+    background-color: #e2e8f0;
+  }
+  to {
+    background-color: #f1f5f9;
+  }
 }

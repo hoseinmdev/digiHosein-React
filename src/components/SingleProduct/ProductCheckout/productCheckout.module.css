@@ -10,16 +10,19 @@
 }
 
 .fastSubmitText{
-  width: 20rem;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
+}
+.fastSubmitImage{
+  width: 17rem;
 }
 .fastSubmitText span{
-  width: 4rem;
+  width: 26%;
   background-color:#8b5cf6;
-  height: 2px;
+  height: 2.5px;
 }
 .productCheckout section {
   display: flex;

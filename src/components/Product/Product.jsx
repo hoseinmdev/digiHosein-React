@@ -83,11 +83,13 @@ const Product = ({ product }) => {
         alt={title}
         onClick={renderProductPage}
       />
-      <h4 className={styles.productTitle} onClick={renderProductPage}>
-        {title}
-      </h4>
-      {renderAddToCartButton()}
-      <p>{price.toLocaleString("en")} تومان</p>
+      <div className={styles.productInfoContainer}> 
+        <h4 className={styles.productTitle} onClick={renderProductPage}>
+          {title}
+        </h4>
+        {renderAddToCartButton()}
+        <p>{price.toLocaleString("en")} تومان</p>
+      </div>
     </div>
   );
 };

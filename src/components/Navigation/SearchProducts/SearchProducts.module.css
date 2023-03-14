@@ -17,6 +17,9 @@
   justify-content: flex-start;
   align-items: center;
 }
+.searchIcon:hover {
+  cursor: pointer;
+}
 .activeSearchBox {
   width: 25rem;
   display: flex;

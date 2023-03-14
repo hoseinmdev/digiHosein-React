@@ -18,9 +18,9 @@ const SearchProducts = () => {
     setProductsFound("");
   };
   const searchInputHandler = (e) => {
-    setSearchInput(e.target.value);
+    setSearchInput(e.target.value.toLowerCase());
     const findedProducts = productState.allProducts.filter((p) =>
-      p.title.includes(e.target.value)
+      p.title.toLowerCase().includes(e.target.value)
     );
     setProductsFound(findedProducts);
   };
@@ -37,7 +37,7 @@ const SearchProducts = () => {
         }
         onClick={() => (!searchBoxSelected ? searchBoxSelectedHandler() : "")}
       >
-        <FaSearch />
+        <FaSearch className={styles.searchIcon}/>
         <input
           placeholder="محصول یا برند مورد نظرتان را جستجو کنید ... "
           value={searchInput}

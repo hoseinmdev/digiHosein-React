@@ -1,4 +1,4 @@
-.productsContainer   {
+.productsContainer {
   background-color: #0f172a;
   width: 100%;
   display: flex;
@@ -9,7 +9,7 @@
   /* overflow: hidden; */
 }
 .shapes {
-    /* opacity: 0.5; */
+  /* opacity: 0.5; */
   width: 100%;
   height: 100%;
   display: flex;
@@ -31,7 +31,7 @@
 }
 
 .productsBlock {
-  width: 1260px;
+  width: 1290px;
   /* min-width: 1260px; */
   display: flex;
   flex-direction: column;
@@ -60,6 +60,7 @@
   background-color: #a78bfa;
 }
 .products {
+  /* width: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;

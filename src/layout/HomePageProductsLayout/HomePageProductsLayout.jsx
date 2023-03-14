@@ -70,7 +70,7 @@ const HomePageProductsLayout = ({
         </div>
         <div
           className={styles.products}
-          style={{ marginRight: `${step * -210}px` }}
+          style={{ marginRight: `${step * -215}px` }}
         >
           {children}
         </div>

@@ -47,7 +47,7 @@ const Navigation = () => {
     <div className={styles.siteNvigation}>
       <div className={styles.topOfNavigation}>
         <div className={styles.navigationLogoAndSearchBox}>
-          <img src={digiHosein} alt="Digi Hosien" className={styles.siteLogo}/>
+          <img src={digiHosein} alt="Digi Hosien" className={styles.siteLogo} />
           <SearchProducts />
         </div>
         <div className={styles.navigationCartBtnAndSubmitBtn}>

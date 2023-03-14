@@ -4,23 +4,15 @@ import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import styles from "./CartButton.module.css";
 import { BiLeftArrowAlt } from "react-icons/bi";
-import {TbArrowsExchange2} from "react-icons/tb"
+import { TbArrowsExchange2 } from "react-icons/tb";
 import CartButtonProduct from "../CartButtonProduct/CartButtonProduct";
 import { BsArrowLeftRight } from "react-icons/bs";
 const CartButton = () => {
   const { state } = useCart();
-  const [showCart, setShowCart] = useState(0);
 
-  const hoveredHandler = () => {
-    if (state.cart.length !== 0) setShowCart(!showCart);
-  };
   const renderShowProduct = () => {
-    return showCart ? (
-      <div
-        className={styles.externalCartContentContainer}
-        onMouseEnter={() => setShowCart(1)}
-        onMouseLeave={() => setShowCart(0)}
-      >
+    if (state.cart.length !== 0) {
+      return (
         <div className={styles.innerCartContentContainer}>
           <div className={styles.topOfContainer}>
             <div className={styles.yourCartDetails}>
@@ -54,22 +46,17 @@ const CartButton = () => {
           </div>
           <button className={styles.checkoutButton}>
             ورود و ثبت سفارش
-            <BsArrowLeftRight/>
+            <BsArrowLeftRight />
             <p>{state.total.toLocaleString("en")} تومان</p>
           </button>
         </div>
-      </div>
-    ) : (
-      ""
-    );
+      );
+    } else {
+      return "";
+    }
   };
   return (
-    <div
-      className={styles.fatherContainer}
-      onMouseEnter={hoveredHandler}
-      onMouseLeave={hoveredHandler}
-    >
-      {renderShowProduct()}
+    <div className={styles.fatherContainer}>
       <Link to="/cart">
         <button className={styles.cartButton}>
           <FaShoppingCart />
@@ -78,6 +65,7 @@ const CartButton = () => {
           </span>
         </button>
       </Link>
+          {renderShowProduct()}
     </div>
   );
 };

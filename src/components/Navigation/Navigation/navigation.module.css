@@ -87,16 +87,18 @@
   gap: 1rem;
 }
 .siteLogo {
-  width: 9rem;
+  width: 8.5rem;
   height: 4.5rem;
   animation: img 1s infinite alternate ease-in-out;
 }
 @keyframes img {
   from {
     opacity: 0.5;
+    scale: 1;
   }
   to {
     opacity: 1;
+    scale: 1.05;
   }
 }
 .submitButton {

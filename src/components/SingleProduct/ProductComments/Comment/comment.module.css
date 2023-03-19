@@ -56,10 +56,10 @@
   background-color: #e2e8f0;
 }
 .liked {
-  background-color: #bbf7d0;
+  background-color: #86efac;
 }
 .disliked {
-  background-color: #ffe4e6;
+  background-color: #fda4af;
 }
 .commentInformation {
   display: flex;

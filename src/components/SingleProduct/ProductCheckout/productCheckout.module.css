@@ -9,19 +9,19 @@
   font-size: 1rem;
 }
 
-.fastSubmitText{
+.fastSubmitText {
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   font-size: 1rem;
 }
-.fastSubmitImage{
+.fastSubmitImage {
   width: 17rem;
 }
-.fastSubmitText span{
+.fastSubmitText span {
   width: 26%;
-  background-color:#8b5cf6;
+  background-color: #8b5cf6;
   height: 2.5px;
 }
 .productCheckout section {
@@ -53,7 +53,7 @@
   color: #ffffff;
 }
 .addToCart:hover {
-  background-color:#7c3aed;
+  background-color: #7c3aed;
 }
 .inCart {
   background-color: #7c3aed;

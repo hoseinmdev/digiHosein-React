@@ -65,7 +65,7 @@ const CartButton = () => {
           </span>
         </button>
       </Link>
-          {renderShowProduct()}
+      {renderShowProduct()}
     </div>
   );
 };

@@ -83,7 +83,7 @@ const Product = ({ product }) => {
         alt={title}
         onClick={renderProductPage}
       />
-      <div className={styles.productInfoContainer}> 
+      <div className={styles.productInfoContainer}>
         <h4 className={styles.productTitle} onClick={renderProductPage}>
           {title}
         </h4>

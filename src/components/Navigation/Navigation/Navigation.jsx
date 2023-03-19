@@ -5,13 +5,16 @@ import {
   FaHeadphonesAlt,
   FaLaptopCode,
   FaTabletAlt,
+  FaUserCircle,
 } from "react-icons/fa";
 import { BiGame } from "react-icons/bi";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { GoDeviceMobile } from "react-icons/go";
 import { BsSmartwatch, BsSpeakerFill } from "react-icons/bs";
 import SearchProducts from "../SearchProducts/SearchProducts";
 import CartButton from "../CartButton/CartButton";
+import { useEffect, useState } from "react";
+import UserAccountButton from "../UserAccountButton/UserAccountButton";
 
 const items = [
   { title: "خانه", path: "/", icon: <FaHome /> },
@@ -37,6 +40,11 @@ const items = [
 ];
 
 const Navigation = () => {
+  const [isLogin, setIsLogin] = useState();
+  const userInformation = JSON.parse(localStorage.getItem("userInformation"));
+  useEffect(() => {
+    if (userInformation && userInformation.islogin) setIsLogin(1);
+  }, [userInformation]);
   const navLinkStyle = (isActive) => {
     return isActive
       ? `${styles.isActive} ${styles.optionContainer}`
@@ -50,10 +58,19 @@ const Navigation = () => {
           <img src={digiHosein} alt="Digi Hosien" className={styles.siteLogo} />
           <SearchProducts />
         </div>
-        <div className={styles.navigationCartBtnAndSubmitBtn}>
-          <button className={styles.submitButton}>ورود | ثبت نام</button>
-          <CartButton />
-        </div>
+        {isLogin ? (
+          <div className={styles.navigationCartBtnAndSubmitBtn}>
+            <UserAccountButton />
+            <CartButton />
+          </div>
+        ) : (
+          <Link to="/sginUp">
+            <div className={styles.navigationCartBtnAndSubmitBtn}>
+              <button className={styles.submitButton}>ورود | ثبت نام</button>
+              <CartButton />
+            </div>
+          </Link>
+        )}
       </div>
       <div className={styles.downOfNavigation}>
         {items.map((item) => {

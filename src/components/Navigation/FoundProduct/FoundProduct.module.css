@@ -11,9 +11,6 @@
   padding: 0.5rem;
   border-radius: 15px;
 }
-.productContainer:hover{
-    background-color: #c4b5fd;
-}
 .productContainer img {
   width: 20%;
   height: 100%;
@@ -23,6 +20,4 @@
   font-size: 1.1rem;
   font-weight: 100;
 }
-.productContainer:hover h3{
-    color: #ffffff;
-}
+

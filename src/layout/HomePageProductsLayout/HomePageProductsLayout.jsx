@@ -1,4 +1,5 @@
 import ShapeOnBackground from "components/common/ShapeOnBackground/ShapeOnBackgorund";
+import { useRef } from "react";
 import { useEffect, useState } from "react";
 import { IoArrowRedoSharp, IoArrowUndoSharp } from "react-icons/io5";
 import styles from "./HomePageProductsLayout.module.css";
@@ -14,8 +15,19 @@ const HomePageProductsLayout = ({
 }) => {
   const [rightBtnDisplay, setRightBtnDisplay] = useState("none");
   const [leftBtnDisplay, setLeftBtnDisplay] = useState("flex");
-  const [productsLength] = useState(children.length - 6);
+  const [productsLength, setProductsLength] = useState();
   const [step, setStep] = useState(0);
+  const productsBlockRef = useRef();
+  if (productsLength > 4) {
+    console.log("showed" ,children.length - productsLength);
+    console.log("in patient", productsLength);
+  }
+  useEffect(() => {
+    // console.log(productsBlockRef.current.offsetWidth / 215);
+    setProductsLength(Math.round(children.length - productsBlockRef.current.offsetWidth / 215)
+    );
+  }, [step]);
+  // console.log(productsLength)
   useEffect(() => {
     if (productsLength === 0) {
       setRightBtnDisplay("none");
@@ -40,7 +52,6 @@ const HomePageProductsLayout = ({
     }
     if (action === "BACK_PRODUCT") {
       setStep(step + 1);
-      console.log(productsLength);
     }
   };
   return (
@@ -63,7 +74,7 @@ const HomePageProductsLayout = ({
       >
         <IoArrowRedoSharp />
       </button>
-      <div className={styles.productsBlock}>
+      <div className={styles.productsBlock} ref={productsBlockRef}>
         <div className={styles.productsTitle}>
           <p style={{ color: titleColor }}>{title}</p>
           <hr style={{ backgroundColor: titleLineColor }} />

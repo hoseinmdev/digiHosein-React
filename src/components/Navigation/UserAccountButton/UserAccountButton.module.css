@@ -1,5 +1,5 @@
 .submitButton {
-    cursor: pointer;
+  cursor: pointer;
   border: 1px solid #94a3b8;
   padding: 0.5rem;
   font-size: 0.9rem;
@@ -38,7 +38,7 @@
   z-index: 3000;
 }
 .userAccountOptionsContainer div {
-    cursor: pointer;
+  cursor: pointer;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -47,11 +47,11 @@
   transition: 0.1s;
   padding: 0.5rem;
 }
-.userAccountOptionsContainer div span{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.4rem;
+.userAccountOptionsContainer div span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
 }
 .userAccountOptionsContainer div:hover {
   border-radius: 5px;
@@ -72,4 +72,56 @@
 .submitButton:hover .userAccountOptionsContainer {
   scale: 1;
   opacity: 1;
+}
+
+.backdrop {
+  width: 100vw;
+  height: 100vw;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 100;
+  position: fixed;
+}
+.areYouSureContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+  top: 0;
+  right: 0;
+  z-index: 101;
+  margin-top: 6.5rem;
+  margin-right: 33rem;
+  /* width: 25rem; */
+  border-radius: 15px;
+  background-color: #f3f4f6;
+  font-size: 1.1rem;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.buttons button {
+  border-radius: 15px;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+.buttons button:hover{
+  padding: 0.5rem 1.5rem;
+}
+.closeContainerButton {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #1e293b;
+}
+.exitOfAccountButton {
+  background-color: #ef4444;
+  color: #ffffff;
 }

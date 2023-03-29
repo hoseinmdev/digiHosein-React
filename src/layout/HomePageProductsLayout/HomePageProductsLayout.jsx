@@ -19,12 +19,13 @@ const HomePageProductsLayout = ({
   const [step, setStep] = useState(0);
   const productsBlockRef = useRef();
   if (productsLength > 4) {
-    console.log("showed" ,children.length - productsLength);
+    console.log("showed", children.length - productsLength);
     console.log("in patient", productsLength);
   }
   useEffect(() => {
     // console.log(productsBlockRef.current.offsetWidth / 215);
-    setProductsLength(Math.round(children.length - productsBlockRef.current.offsetWidth / 215)
+    setProductsLength(
+      Math.round(children.length - productsBlockRef.current.offsetWidth / 215)
     );
   }, [step]);
   // console.log(productsLength)
@@ -74,11 +75,11 @@ const HomePageProductsLayout = ({
       >
         <IoArrowRedoSharp />
       </button>
+      <div className={styles.productsTitle}>
+        <p style={{ color: titleColor }}>{title}</p>
+        <hr style={{ backgroundColor: titleLineColor }} />
+      </div>
       <div className={styles.productsBlock} ref={productsBlockRef}>
-        <div className={styles.productsTitle}>
-          <p style={{ color: titleColor }}>{title}</p>
-          <hr style={{ backgroundColor: titleLineColor }} />
-        </div>
         <div
           className={styles.products}
           style={{ marginRight: `${step * -215}px` }}

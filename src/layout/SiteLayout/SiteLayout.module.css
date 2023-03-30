@@ -10,6 +10,6 @@
 }
 @media only screen and (max-width: 1024px) {
   .siteLayout {
-    /* max-width: ; */
+    gap: 0.5rem;
 }
 }

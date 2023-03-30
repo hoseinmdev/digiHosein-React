@@ -15,7 +15,6 @@
   height: 100%;
   transition: 0.3s all ease-in-out;
   animation: bannerStyle 3s infinite alternate ease-in-out;
-
 }
 @keyframes bannerStyle {
   from {
@@ -70,4 +69,18 @@
 .backSlide:hover {
   width: 5rem;
   background-color: rgba(250, 255, 255, 0.5);
+}
+
+@media only screen and (max-width: 1024px) {
+  .sliderBlock {
+    display: block;
+    width: 100%;
+    height: 15rem;
+  }
+  .bannerStyle {
+    object-fit: fill;
+  }
+  .nextSlide , .backSlide{
+    display: none;
+  }
 }

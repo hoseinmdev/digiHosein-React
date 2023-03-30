@@ -110,14 +110,7 @@
 
 @media only screen and (max-width: 1024px) {
   .productBlock {
-    width: 6.5rem;
-    height: 13rem;
-    font-size: 0.5rem;
-  }
-  .productButton {
-    width: 5.5rem;
-    height: 1.8rem;
-    font-size: 0.4rem;
-    border-radius: 7px;
+    width: 12.5rem;
+    height: 22rem;
   }
 }

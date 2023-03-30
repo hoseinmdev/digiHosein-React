@@ -18,10 +18,13 @@
 
 @media only screen and (max-width: 1024px) {
   .landingBannerContainer{
-    gap: 0.4rem;
-    padding: 0.2rem;
+    padding: 1rem 0rem 1rem 0rem;
   }
-  .landingBannerContainer img {
-    height: 4.5rem;
+  .speakerBannerStyles{
+    display: none;
+  }
+  .landingBannerContainer img{
+    border-radius: 0;
+    height: 11rem;
   }
 }

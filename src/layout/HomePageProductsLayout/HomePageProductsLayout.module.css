@@ -107,8 +107,12 @@
   }
   .productsBlock {
     overflow: auto;
+    width: 100%;
   }
   .productsBlock::-webkit-scrollbar {
     display: none;
+  }
+  .productsTitle p {
+    font-size: 1rem;
   }
 }

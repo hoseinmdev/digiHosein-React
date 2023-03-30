@@ -16,6 +16,7 @@
   align-items: flex-start;
   gap: 1rem;
   box-shadow: 1px 1px 12px 1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .downOfNavigation {
@@ -75,6 +76,7 @@
   align-items: center;
 }
 .navigationLogoAndSearchBox {
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,11 +104,17 @@
   }
 }
 .submitButton {
-    cursor: pointer;
+  cursor: pointer;
   border: 1px solid #7c3aed;
   padding: 0.5rem 2rem;
   font-size: 0.9rem;
   background-color: #ffffff;
   color: #1e293b;
   border-radius: 8px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .siteNvigation{
+    height: 5rem;
+  }
 }

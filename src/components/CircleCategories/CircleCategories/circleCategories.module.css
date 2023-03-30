@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding: 0rem 1rem 0rem 1rem;
 }
 .categoriesBlock div {
   cursor: pointer;
@@ -30,4 +31,22 @@
   background: linear-gradient(white, white) padding-box,
     linear-gradient(to bottom, #7c3aed, #e11d48) border-box;
   border: 4px solid transparent;
+}
+
+@media only screen and (max-width: 1024px) {
+  .categoriesBlock {
+    overflow: auto;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+  .categoriesBlock::-webkit-scrollbar {
+    display: none;
+  }
+  .categoriesBlock div img {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+  .categoriesBlock div {
+    font-size: 0.8rem;
+  }
 }

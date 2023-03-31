@@ -26,6 +26,9 @@
   justify-content: space-around;
   align-items: center;
 }
+.productPrice{
+  font-size: 1rem;
+}
 .productTitle {
   cursor: pointer;
   width: 100%;
@@ -109,8 +112,10 @@
 }
 
 @media only screen and (max-width: 1024px) {
-  .productBlock {
-    width: 12.5rem;
-    height: 22rem;
+  .productButton {
+    width: 10rem;
+  }
+  .inCartBlock button:hover{
+    background-color: #1e293b;
   }
 }

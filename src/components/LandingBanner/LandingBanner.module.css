@@ -17,14 +17,25 @@
 }
 
 @media only screen and (max-width: 1024px) {
-  .landingBannerContainer{
+  .landingBannerContainer {
     padding: 1rem 0rem 1rem 0rem;
   }
-  .speakerBannerStyles{
+  .speakerBannerStyles {
     display: none;
   }
-  .landingBannerContainer img{
+  .landingBannerContainer img {
     border-radius: 0;
-    height: 11rem;
+    height: 10rem;
+    object-fit: cover;
+    object-position: -115px 0px;
+    animation: bannerStyleMobile 5s infinite alternate ease-in-out;
+  }
+  @keyframes bannerStyleMobile {
+    from {
+      object-position: 0px 0px;
+    }
+    to {
+      object-position: -115px 0px;
+    }
   }
 }

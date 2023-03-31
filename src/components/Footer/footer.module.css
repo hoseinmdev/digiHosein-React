@@ -90,3 +90,17 @@
   padding-top: 1.8rem;
   font-weight: 700;
 }
+
+
+@media only screen and (max-width: 1024px) {
+  .contactUsAndSymbols{
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .contactUs{
+    width: 20rem;
+  }
+  .footerQuickAccess {
+    display: none;
+  }
+}

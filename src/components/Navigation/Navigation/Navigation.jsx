@@ -15,6 +15,7 @@ import SearchProducts from "../SearchProducts/SearchProducts";
 import CartButton from "../CartButton/CartButton";
 import { useEffect, useState } from "react";
 import UserAccountButton from "../UserAccountButton/UserAccountButton";
+import { AiOutlineMenu } from "react-icons/ai";
 
 const items = [
   { title: "خانه", path: "/", icon: <FaHome /> },
@@ -52,44 +53,71 @@ const Navigation = () => {
   };
 
   return (
-    <div className={styles.siteNvigation}>
-      <div className={styles.topOfNavigation}>
-        <div className={styles.navigationLogoAndSearchBox}>
-          <img src={digiHosein} alt="Digi Hosien" className={styles.siteLogo} />
-          <SearchProducts />
-        </div>
-        {isLogin ? (
-          <div className={styles.navigationCartBtnAndSubmitBtn}>
-            <UserAccountButton />
-            <CartButton />
+    <>
+      <div className={styles.siteNvigation}>
+        <div className={styles.topOfNavigation}>
+          <div className={styles.navigationLogoAndSearchBox}>
+            <img
+              src={digiHosein}
+              alt="Digi Hosien"
+              className={styles.siteLogo}
+            />
+            <SearchProducts />
           </div>
-        ) : (
-          <Link to="/sginUp">
+          {isLogin ? (
             <div className={styles.navigationCartBtnAndSubmitBtn}>
-              <button className={styles.submitButton}>ورود | ثبت نام</button>
+              <UserAccountButton />
               <CartButton />
             </div>
-          </Link>
-        )}
+          ) : (
+            <div className={styles.navigationCartBtnAndSubmitBtn}>
+              <Link to="/sginUp">
+                <button className={styles.submitButton}>ورود | ثبت نام</button>
+              </Link>
+              <CartButton />
+            </div>
+          )}
+        </div>
+        <div className={styles.downOfNavigation}>
+          {items.map((item) => {
+            return (
+              <NavLink
+                key={item.title}
+                className={({ isActive }) => navLinkStyle(isActive)}
+                to={item.path}
+              >
+                <div>
+                  {item.icon}
+                  {item.title}
+                </div>
+                <span></span>
+              </NavLink>
+            );
+          })}
+        </div>
       </div>
-      <div className={styles.downOfNavigation}>
-        {items.map((item) => {
-          return (
-            <NavLink
-              key={item.title}
-              className={({ isActive }) => navLinkStyle(isActive)}
-              to={item.path}
-            >
-              <div>
-                {item.icon}
-                {item.title}
+      <div className={styles.siteNvigationMobile}>
+        <div className={styles.topOfNavigationMobile}>
+          <AiOutlineMenu className={styles.menuButton} />
+          <img src={digiHosein} alt="Digi Hosien" className={styles.siteLogo} />
+          {isLogin ? (
+            <div className={styles.navigationCartBtnAndSubmitBtn}>
+              <UserAccountButton />
+            </div>
+          ) : (
+            <Link to="/sginUp">
+              <div className={styles.navigationCartBtnAndSubmitBtn}>
+                <button className={styles.submitButton}>ورود | ثبت نام</button>
               </div>
-              <span></span>
-            </NavLink>
-          );
-        })}
+            </Link>
+          )}
+        </div>
+        <div className={styles.downOfNavigation}>
+          <SearchProducts />
+          <CartButton />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

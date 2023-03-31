@@ -88,7 +88,7 @@ const Product = ({ product }) => {
           {title}
         </h4>
         {renderAddToCartButton()}
-        <p>{price.toLocaleString("en")} تومان</p>
+        <p className={styles.productPrice}>{price.toLocaleString("en")} تومان</p>
       </div>
     </div>
   );

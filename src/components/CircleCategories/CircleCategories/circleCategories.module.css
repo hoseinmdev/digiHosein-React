@@ -38,6 +38,7 @@
     overflow: auto;
     justify-content: flex-start;
     gap: 1rem;
+    padding: 1rem;
   }
   .categoriesBlock::-webkit-scrollbar {
     display: none;

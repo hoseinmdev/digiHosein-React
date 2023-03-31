@@ -79,7 +79,7 @@
 }
 .backdrop {
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   top: 0;
   left: 0;
   background-color: #475569;
@@ -88,9 +88,25 @@
   position: fixed;
 }
 
-
 @media only screen and (max-width: 1024px) {
-  /* .categoriesBlock {
+  .categoriesBlock {
     overflow: auto;
-  } */
+  }
+  .productsContainer {
+    position: absolute;
+    width: 22rem;
+    border-radius: 15px;
+    top: 140px;
+    right: 25px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1000;
+    padding: 1rem;
+    max-height: 22rem;
+    overflow: hidden;
+  }
 }

@@ -37,9 +37,9 @@ const SearchProducts = () => {
         }
         onClick={() => (!searchBoxSelected ? searchBoxSelectedHandler() : "")}
       >
-        <FaSearch className={styles.searchIcon}/>
+        <FaSearch className={styles.searchIcon} />
         <input
-          placeholder="محصول یا برند مورد نظرتان را جستجو کنید ... "
+          placeholder="محصول مورد نظرتان را جستجو کنید"
           value={searchInput}
           onChange={(e) => searchInputHandler(e)}
         />

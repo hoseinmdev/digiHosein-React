@@ -4,8 +4,13 @@
   --white: #ffffff;
 }
 
+@font-face {
+  font-family: VazirFont;
+  src: url(Accets/fonts/Vazir-FD.ttf);
+}
+
 * {
-  font-family: "Vazir";
+  font-family: "VazirFont";
   margin: 0px;
   padding: 0px;
   list-style: none;

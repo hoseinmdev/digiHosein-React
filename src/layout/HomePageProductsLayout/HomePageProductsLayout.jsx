@@ -19,16 +19,12 @@ const HomePageProductsLayout = ({
   const [step, setStep] = useState(0);
   const productsBlockRef = useRef();
   if (productsLength > 4) {
-    console.log("showed", children.length - productsLength);
-    console.log("in patient", productsLength);
   }
   useEffect(() => {
-    // console.log(productsBlockRef.current.offsetWidth / 215);
     setProductsLength(
       Math.round(children.length - productsBlockRef.current.offsetWidth / 215)
     );
   }, [step]);
-  // console.log(productsLength)
   useEffect(() => {
     if (productsLength === 0) {
       setRightBtnDisplay("none");

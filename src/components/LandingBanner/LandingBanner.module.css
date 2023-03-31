@@ -27,15 +27,15 @@
     border-radius: 0;
     height: 10rem;
     object-fit: cover;
-    object-position: -115px 0px;
-    animation: bannerStyleMobile 5s infinite alternate ease-in-out;
+    object-position: -125px 0px;
+    animation: bannerStyleMobile 6s infinite alternate ease-in-out;
   }
   @keyframes bannerStyleMobile {
     from {
       object-position: 0px 0px;
     }
     to {
-      object-position: -115px 0px;
+      object-position: -125px 0px;
     }
   }
 }

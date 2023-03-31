@@ -7,7 +7,7 @@
   border-radius: 15px;
   overflow: hidden;
   position: relative;
-  background-color: #0f172a;
+  background-color: #ccc;
   box-shadow: 4px 4px 12px 4px rgba(0, 0, 0, 0.2);
 }
 .bannerStyle {
@@ -76,7 +76,7 @@
     width: 100%;
     border-radius: 0;
     display: block;
-    height: 10rem;
+    height: 15rem;
     margin-top: 1rem;
     background-color: white;
     box-shadow: none;
@@ -85,15 +85,14 @@
     animation: none;
     scale: 1;
     object-fit: cover;
-    object-position: -115px 0px;
-    animation: bannerStyleMobile 5s infinite alternate ease-in-out;
+    animation: bannerStyleMobile 7s infinite alternate ease-in-out;
   }
   @keyframes bannerStyleMobile {
     from {
-      object-position: -70px 0px;
+      object-position: -430px 0px;
     }
     to {
-      object-position: -115px 0px;
+      object-position: -70px 0px;
     }
   }
   .nextSlide,

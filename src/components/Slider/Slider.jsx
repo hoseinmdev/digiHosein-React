@@ -59,7 +59,7 @@ const Slider = () => {
   }, []);
   useEffect(() => {
     const autoSlideChanger = () => {
-      setTimer(setTimeout(nextSlide, 6000));
+      setTimer(setTimeout(nextSlide, 8000));
     };
     autoSlideChanger();
   }, [index]);

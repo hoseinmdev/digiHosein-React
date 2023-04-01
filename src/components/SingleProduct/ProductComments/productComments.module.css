@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 2rem;
 }
 .userCommentsTitle {
   width: 100%;
@@ -12,7 +12,7 @@
   align-items: center;
   /* gap: 2rem; */
 }
-.userCommentsTitle p{
+.userCommentsTitle p {
   width: 27%;
   font-size: 2rem;
   color: #7c3aed;
@@ -20,4 +20,12 @@
 .usersCommentsBlock div hr {
   height: 3px;
   background-color: black;
+}
+
+@media only screen and (max-width: 1024px) {
+  .userCommentsTitle p {
+    color: #7c3aed;
+    width: 80%;
+    font-size: 1.6rem;
+  }
 }

@@ -91,17 +91,30 @@ const ProductIntroduction = ({ product }) => {
     }
   };
   return (
-    <div className={styles.imageAndInfoBlock}>
-      <div className={styles.infoBlock}>
-        <h3>ویژگی های اصلی</h3>
-        {renderProductProperties()}
+    <>
+      <div className={styles.imageAndInfoBlock}>
+        <div className={styles.infoBlock}>
+          <h3>ویژگی های اصلی</h3>
+          {renderProductProperties()}
+        </div>
+        <img
+          className={styles.imageStyle}
+          src={product.imageURL}
+          alt={product.title}
+        ></img>
       </div>
-      <img
-        className={styles.imageStyle}
-        src={product.imageURL}
-        alt={product.title}
-      ></img>
-    </div>
+      <div className={styles.imageAndInfoBlockMobile}>
+        <img
+          className={styles.imageStyle}
+          src={product.imageURL}
+          alt={product.title}
+        ></img>
+        <div className={styles.infoBlock}>
+          <h3>ویژگی های اصلی</h3>
+          {renderProductProperties()}
+        </div>
+      </div>
+    </>
   );
 };
 

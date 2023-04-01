@@ -185,3 +185,37 @@
   rotate: 360deg;
   scale: 1.1;
 }
+
+@media only screen and (max-width: 1024px) {
+  .checkProductTitle p {
+    color: #7c3aed;
+    width: 55%;
+    font-size: 1.6rem;
+  }
+  .positivePointsBlock {
+    padding: 0.7rem;
+  }
+  .negativePointsBlock {
+    padding: 0.7rem;
+  }
+  .scoresBlock {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    margin-right: 0rem;
+  }
+  .scoresBlock hr {
+    width: 90%;
+    height: 1px;
+  }
+  .scores {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}

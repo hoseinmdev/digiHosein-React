@@ -3,6 +3,11 @@
   display: flex;
   justify-content: space-between;
 }
+.imageAndInfoBlockMobile {
+  display: flex;
+  justify-content: space-between;
+  display: none;
+}
 .infoBlock {
   width: 100%;
   display: flex;
@@ -40,4 +45,22 @@
   background-color: #94a3b8;
   color: #ffffff;
   border-radius: 8px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .imageAndInfoBlock {
+    display: none;
+  }
+  .imageAndInfoBlockMobile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .imageStyle {
+    width: 100%;
+    max-width: 20rem;
+  }
 }

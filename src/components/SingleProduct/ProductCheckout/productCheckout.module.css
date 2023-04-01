@@ -59,3 +59,34 @@
   background-color: #7c3aed;
   color: #ffffff;
 }
+
+@media only screen and (max-width: 1024px) {
+  .productCheckout {
+    font-size: 1.1rem;
+  }
+  .fastSubmitImage {
+    display: none;
+  }
+  .fastSubmitText {
+    border-top: 2px solid #ccc;
+    font-size: 1.1rem;
+    padding-top: 2rem;
+  }
+  .fastSubmitText span:first-child {
+    width: 5%;
+  }
+  .fastSubmitText span:last-child {
+    width: 15%;
+  }
+  .productButton {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    border-radius: 10px;
+    transition: all 0.3s;
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+}

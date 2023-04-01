@@ -112,7 +112,10 @@ const Comment = ({ id, comment, setReplyComment }) => {
           <span>{userName}</span>
         </section>
         <section className={styles.likeDislikeProductBlock}>
-          <button onClick={() => setReplyComment(1)}>
+          <button
+            onClick={() => setReplyComment(1)}
+            className={styles.replyToUserBtn}
+          >
             پاسخ دهید
             <BsReply />
           </button>

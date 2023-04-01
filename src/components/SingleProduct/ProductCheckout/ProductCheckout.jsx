@@ -47,7 +47,11 @@ const ProductCheckout = ({ product }) => {
     <>
       <div className={styles.productCheckout}>
         <section>
-          <img src={fastSubmit} alt={fastSubmit} className={styles.fastSubmitImage}/>
+          <img
+            src={fastSubmit}
+            alt={fastSubmit}
+            className={styles.fastSubmitImage}
+          />
           <div className={styles.fastSubmitText}>
             <span></span>
             <p>ارسال سریع به تمام نقاط کشور</p>

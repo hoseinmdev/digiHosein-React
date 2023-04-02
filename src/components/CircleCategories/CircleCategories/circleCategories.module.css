@@ -46,6 +46,9 @@
   .categoriesBlock div img {
     width: 6.5rem;
     height: 6.5rem;
+    background: linear-gradient(white, white) padding-box,
+      linear-gradient(to bottom, #e11d48, #7c3aed, #ea580c) border-box;
+    border: 3px solid transparent;
   }
   .categoriesBlock div {
     font-size: 0.8rem;

@@ -65,7 +65,7 @@ const Footer = () => {
           </span>
           <span>
             <FiPhoneCall />
-            تلفن : 989378151319 +
+            تلفن : 989222365685 +
           </span>
           <span>
             اینستاگرام <BsInstagram />

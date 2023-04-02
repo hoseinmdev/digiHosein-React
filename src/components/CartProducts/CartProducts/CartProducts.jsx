@@ -11,7 +11,7 @@ const CartProducts = () => {
     if (state.cart.length !== 0) {
       return (
         <div className={styles.cartBlock}>
-          <div>
+          <div className={styles.userCartInformation}>
             <FaShoppingCart style={{ transform: "scaleX(-1)" }} />
             <h2>سبد خرید شما</h2>
             <p>جمع کل : {state.total.toLocaleString("en")} تومان</p>

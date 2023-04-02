@@ -9,7 +9,9 @@ import { useParams, useSearchParams } from "react-router-dom";
 import SiteLayout from "layout/SiteLayout/SiteLayout";
 import Skeleton from "components/Skeleton/Skeleton";
 import createEmptyArray from "utils/createEmptyArray";
-
+import { useMediaPredicate } from "react-media-hook";
+import Product2 from "components/Product2/Product2";
+import BackToUp from "components/common/BackToUpBtn/BackToUpBtn";
 const CategorizedProducts = () => {
   const generateFiltersState = () => {
     const filters = {};
@@ -33,6 +35,7 @@ const CategorizedProducts = () => {
   const [showFilters, setShowFilters] = useState(generateFiltersState);
   const [products, setProducts] = useState();
   const [searchParams, setSearchParams] = useSearchParams();
+  const lowerThan1024 = useMediaPredicate("(max-width: 1024px)");
 
   useEffect(() => {
     const allProducts = productState.allProducts.filter(
@@ -166,6 +169,8 @@ const CategorizedProducts = () => {
             id: p.id,
             category: p.category,
             title: p.title,
+            camera: p.camera,
+            battery: p.battery,
             price: p.price,
             imageURL: p.imageURL,
             Specifications: p.Specifications,
@@ -174,8 +179,17 @@ const CategorizedProducts = () => {
             technicalCheck: p.technicalCheck,
             positivePoints: p.positivePoints,
             negativePoints: p.negativePoints,
+            screen:p.screen,
           };
-          return <Product key={index} product={product} />;
+          return (
+            <div>
+              {lowerThan1024 ? (
+                <Product2 key={index} product={product} />
+              ) : (
+                <Product key={index} product={product} />
+              )}
+            </div>
+          );
         });
       } else {
         return renderNotFoundProduct();
@@ -250,6 +264,7 @@ const CategorizedProducts = () => {
           <div className={styles.products}>{renderProducts()}</div>
         </div>
       </div>
+      <BackToUp/>
     </SiteLayout>
   );
 };

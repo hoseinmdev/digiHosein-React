@@ -59,7 +59,7 @@ const Product = ({ product }) => {
           <div className={styles.productNumberController}>
             <div>
               <button onClick={increaseHandler}>+</button>
-              <p>{quantity}</p>
+              <p className={styles.numberOfProduct}>{quantity}</p>
               <button onClick={decreaseHandler}>{renderIcon()}</button>
             </div>
           </div>

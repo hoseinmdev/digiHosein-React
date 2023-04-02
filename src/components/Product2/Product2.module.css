@@ -1,0 +1,60 @@
+.productContainer {
+  width: 19rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+.DownOfContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.priceAndInfoContainer {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1rem;
+}
+.imageOfProduct {
+  cursor: pointer;
+  width: 8.5rem;
+  height: 8rem;
+}
+.titleOfProduct {
+  cursor: pointer;
+  color: #475569;
+}
+.productInfo {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  background-color: #f5f3ff;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  color: #334155;
+}
+.productInfo div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.3rem;
+  border-left: 1px solid #a78bfa;
+  padding-left: 1rem;
+}
+.productInfo div:last-child{
+    border: none;
+    padding-left: 0rem;
+}
+.productInfo p {
+  font-size: 0.9rem;
+}

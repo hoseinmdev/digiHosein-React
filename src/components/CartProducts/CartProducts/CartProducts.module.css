@@ -63,3 +63,29 @@
 .checkoutBlock button:hover {
   background-color: #6d28d9;
 }
+
+@media only screen and (max-width: 1024px) {
+  .checkoutBlock {
+    width: 100%;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 150;
+    border-radius: 0px;
+    padding: 1.5rem;
+    background-color: #ffffff;
+  }
+  .checkoutBlock h3 {
+    font-size: 1.1rem;
+  }
+  .checkoutBlock button {
+    width: 90%;
+    border-radius: 8px;
+  }
+  .userCartInformation {
+    margin-top: 1rem;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+  }
+}

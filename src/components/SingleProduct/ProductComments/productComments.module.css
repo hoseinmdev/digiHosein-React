@@ -25,7 +25,7 @@
 @media only screen and (max-width: 1024px) {
   .userCommentsTitle p {
     color: #7c3aed;
-    width: 80%;
+    width: 100%;
     font-size: 1.6rem;
   }
 }

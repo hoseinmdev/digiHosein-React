@@ -68,15 +68,14 @@
     display: none;
   }
   .fastSubmitText {
-    border-top: 2px solid #ccc;
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding-top: 2rem;
   }
   .fastSubmitText span:first-child {
     width: 5%;
   }
   .fastSubmitText span:last-child {
-    width: 15%;
+    width: 10%;
   }
   .productButton {
     width: 100%;
@@ -84,9 +83,13 @@
     justify-content: center;
     align-items: center;
     gap: 0.6rem;
-    border-radius: 10px;
+    border-radius: 0px;
     transition: all 0.3s;
     font-size: 1rem;
-    padding: 0.5rem;
+    padding: 0.7rem;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    z-index: 150;
   }
 }

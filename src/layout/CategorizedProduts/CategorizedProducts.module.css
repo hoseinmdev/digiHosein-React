@@ -183,7 +183,9 @@
   align-items: center;
   border: 1px solid #ddd;
 }
-
+.productSkeletonMobile {
+  display: none;
+}
 @media only screen and (max-width: 1024px) {
   .allContentContainer {
     width: 100%;
@@ -216,6 +218,39 @@
   .productsSortByContainer {
     width: 100%;
     font-size: 0.8rem;
+    display: none;
+  }
+  .porductsSortByOptions {
+    display: none;
+  }
+  .productSkeletonMobile {
+    width: 100%;
+    height: 10rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+  }
+  .downOfSkeletonMobile {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .infoAndPriceSkeletonMobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+  .imageSkeletonMobile{
+    margin-right: 1.5rem;
+  }
+  .productSkeleton {
     display: none;
   }
 }

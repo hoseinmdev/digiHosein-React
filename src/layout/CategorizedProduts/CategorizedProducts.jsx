@@ -179,7 +179,7 @@ const CategorizedProducts = () => {
             technicalCheck: p.technicalCheck,
             positivePoints: p.positivePoints,
             negativePoints: p.negativePoints,
-            screen:p.screen,
+            screen: p.screen,
           };
           return (
             <div>
@@ -197,12 +197,26 @@ const CategorizedProducts = () => {
     } else {
       return createEmptyArray(8).map((p, index) => {
         return (
-          <div key={index} className={styles.productSkeleton}>
-            <Skeleton width={"5.5rem"} height={"10rem"} radius={"8px"} />
-            <Skeleton width={"10rem"} height={"1.5rem"} radius={"30px"} />
-            <Skeleton width={"8rem"} height={"1.5rem"} radius={"30px"} />
-            <Skeleton width={"6rem"} height={"1.5rem"} radius={"30px"} />
-          </div>
+          <>
+            <div key={index} className={styles.productSkeleton}>
+              <Skeleton width={"5.5rem"} height={"10rem"} radius={"8px"} />
+              <Skeleton width={"10rem"} height={"1.5rem"} radius={"30px"} />
+              <Skeleton width={"8rem"} height={"1.5rem"} radius={"30px"} />
+              <Skeleton width={"6rem"} height={"1.5rem"} radius={"30px"} />
+            </div>
+            <div key={index} className={styles.productSkeletonMobile}>
+              <Skeleton width={"8rem"} height={"1rem"} radius={"30px"} />
+              <div className={styles.downOfSkeletonMobile}>
+                <div className={styles.imageSkeletonMobile}>
+                  <Skeleton width={"4rem"} height={"7rem"} radius={"8px"} />
+                </div>
+                <div className={styles.infoAndPriceSkeletonMobile}>
+                  <Skeleton width={"9rem"} height={"4rem"} radius={"5px"} />
+                  <Skeleton width={"6rem"} height={"1rem"} radius={"30px"} />
+                </div>
+              </div>
+            </div>
+          </>
         );
       });
     }
@@ -264,7 +278,7 @@ const CategorizedProducts = () => {
           <div className={styles.products}>{renderProducts()}</div>
         </div>
       </div>
-      <BackToUp/>
+      <BackToUp />
     </SiteLayout>
   );
 };

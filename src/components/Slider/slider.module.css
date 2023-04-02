@@ -76,7 +76,7 @@
     width: 100%;
     border-radius: 0;
     display: block;
-    height: 15rem;
+    height: 18rem;
     margin-top: 1rem;
     background-color: white;
     box-shadow: none;
@@ -89,10 +89,10 @@
   }
   @keyframes bannerStyleMobile {
     from {
-      object-position: -430px 0px;
+      object-position: -580px 0px;
     }
     to {
-      object-position: -70px 0px;
+      object-position: -120px 0px;
     }
   }
   .nextSlide,

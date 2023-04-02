@@ -85,7 +85,7 @@
     animation: none;
     scale: 1;
     object-fit: cover;
-    animation: bannerStyleMobile 7s infinite alternate ease-in-out;
+    animation: bannerStyleMobile 4.7s infinite alternate ease-in-out;
   }
   @keyframes bannerStyleMobile {
     from {

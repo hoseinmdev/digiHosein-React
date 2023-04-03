@@ -94,10 +94,10 @@
   }
   .productsContainer {
     position: absolute;
-    width: 22rem;
-    border-radius: 15px;
+    width: 21.5rem;
+    border-radius: 8px;
     top: 140px;
-    right: 25px;
+    right: 10px;
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -106,7 +106,7 @@
     gap: 1rem;
     z-index: 1000;
     padding: 1rem;
-    max-height: 22rem;
+    max-height: 16rem;
     overflow: hidden;
   }
 }

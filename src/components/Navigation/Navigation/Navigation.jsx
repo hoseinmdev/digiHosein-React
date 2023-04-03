@@ -16,6 +16,7 @@ import CartButton from "../CartButton/CartButton";
 import { useEffect, useState } from "react";
 import UserAccountButton from "../UserAccountButton/UserAccountButton";
 import { AiOutlineMenu } from "react-icons/ai";
+import MobileMenu from "../MobileMenu/MobileMenu";
 
 const items = [
   { title: "خانه", path: "/", icon: <FaHome /> },
@@ -42,6 +43,7 @@ const items = [
 
 const Navigation = () => {
   const [isLogin, setIsLogin] = useState();
+  const [showMobileMenu, setShowMobileMenu] = useState(0);
   const userInformation = JSON.parse(localStorage.getItem("userInformation"));
   useEffect(() => {
     if (userInformation && userInformation.islogin) setIsLogin(1);
@@ -51,7 +53,9 @@ const Navigation = () => {
       ? `${styles.isActive} ${styles.optionContainer}`
       : `${styles.isNotActive} ${styles.optionContainer}`;
   };
-
+  const renderMobileMenu = () => {
+    setShowMobileMenu(1);
+  };
   return (
     <>
       <div className={styles.siteNvigation}>
@@ -98,8 +102,16 @@ const Navigation = () => {
       </div>
       <div className={styles.siteNvigationMobile}>
         <div className={styles.topOfNavigationMobile}>
-          <AiOutlineMenu className={styles.menuButton} />
+          <AiOutlineMenu
+            className={styles.menuButton}
+            onClick={renderMobileMenu}
+          />
           <img src={digiHosein} alt="Digi Hosien" className={styles.siteLogo} />
+          {showMobileMenu ? (
+            <MobileMenu setShowMobileMenu={setShowMobileMenu} />
+          ) : (
+            ""
+          )}
           {isLogin ? (
             <div className={styles.navigationCartBtnAndSubmitBtn}>
               <UserAccountButton />

@@ -137,11 +137,12 @@
   .siteNvigation {
     display: none;
   }
-  .siteNvigationMobile{
+  .siteNvigationMobile {
     display: flex;
   }
   .menuButton {
     font-size: 2rem;
+    position: relative;
   }
   .siteLogo {
     animation: none;

@@ -62,3 +62,45 @@
 .toastLine {
   background-color: #e11d48;
 }
+
+@media only screen and (max-width: 1024px) {
+  .formPage {
+    width: 100%;
+    /* margin: 1rem; */
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* overflow: hidden; */
+  }
+  .formControl {
+    transition: 1s;
+    width: 90%;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    display: flex;
+    box-shadow: 1px 1px 15px -8px rgba(0, 0, 0, 0.75);
+    gap: 0.8rem;
+  }
+  .formControl button {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: #7c3aed;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+    outline: none;
+  }
+  .formPage img {
+    width: 9rem;
+    animation: img 2s infinite alternate ease-in-out;
+  }
+}

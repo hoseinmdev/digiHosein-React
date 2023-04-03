@@ -113,7 +113,7 @@
   font-size: 0.9rem;
   padding: 0.5rem 1rem;
 }
-.buttons button:hover{
+.buttons button:hover {
   padding: 0.5rem 1.5rem;
 }
 .closeContainerButton {
@@ -124,4 +124,35 @@
 .exitOfAccountButton {
   background-color: #ef4444;
   color: #ffffff;
+}
+
+@media only screen and (max-width: 1024px) {
+  .backdrop {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 100;
+    position: fixed;
+  }
+  .areYouSureContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+    top: 0;
+    right: 20px;
+    z-index: 101;
+    margin-top: 6.5rem;
+    margin-right: 0rem;
+    /* width: 25rem; */
+    border-radius: 15px;
+    background-color: #f3f4f6;
+    font-size: 1.1rem;
+  }
 }

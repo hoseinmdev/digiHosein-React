@@ -77,6 +77,7 @@ const MobileMenu = ({ setShowMobileMenu }) => {
                 onClick={() => {
                   setShow(-450);
                   setTimeout(() => setShowMobileMenu(0), 200);
+                  document.body.classList.remove(styles.bodyStyles);
                 }}
               >
                 <div className={styles.option}>

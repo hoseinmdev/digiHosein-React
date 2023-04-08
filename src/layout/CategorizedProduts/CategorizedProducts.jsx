@@ -189,7 +189,7 @@ const CategorizedProducts = () => {
             screen: p.screen,
           };
           return (
-            <div>
+            <div key={index}>
               {lowerThan1024 ? (
                 <Product2 key={index} product={product} />
               ) : (
@@ -205,7 +205,7 @@ const CategorizedProducts = () => {
       return createEmptyArray(8).map((p, index) => {
         return (
           <>
-            <div key={index} className={styles.productSkeleton}>
+            <div key={p} className={styles.productSkeleton}>
               <Skeleton width={"5.5rem"} height={"10rem"} radius={"8px"} />
               <Skeleton width={"10rem"} height={"1.5rem"} radius={"30px"} />
               <Skeleton width={"8rem"} height={"1.5rem"} radius={"30px"} />

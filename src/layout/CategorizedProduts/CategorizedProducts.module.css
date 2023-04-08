@@ -186,6 +186,9 @@
 .productSkeletonMobile {
   display: none;
 }
+.filterOptionsMobile {
+  display: none;
+}
 @media only screen and (max-width: 1024px) {
   .allContentContainer {
     width: 100%;
@@ -195,6 +198,24 @@
     align-items: flex-start;
     padding: 1rem;
     gap: 1rem;
+  }
+  .filterOptionsMobile {
+    color: #334155;
+    padding: 0.5rem;
+    width: 100%;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .filterButtonMobile{
+    color: #8b5cf6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    border: 2px solid #ccc;
+    border-radius: 100%;
   }
   .productsContainer {
     border: 1px solid #e2e8f0;
@@ -247,7 +268,7 @@
     align-items: flex-end;
     gap: 1rem;
   }
-  .imageSkeletonMobile{
+  .imageSkeletonMobile {
     margin-right: 1.5rem;
   }
   .productSkeleton {

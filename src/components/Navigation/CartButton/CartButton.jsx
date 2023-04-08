@@ -1,7 +1,7 @@
 import { useCart } from "context/CartProvider";
 import { useEffect, useRef, useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./CartButton.module.css";
 import { BiLeftArrowAlt } from "react-icons/bi";
 import { TbArrowsExchange2 } from "react-icons/tb";
@@ -9,7 +9,10 @@ import CartButtonProduct from "../CartButtonProduct/CartButtonProduct";
 import { BsArrowLeftRight } from "react-icons/bs";
 const CartButton = () => {
   const { state } = useCart();
-
+  const navigate = useNavigate();
+  const goToCartPage = () => {
+    navigate("/cart");
+  };
   const renderShowProduct = () => {
     if (state.cart.length !== 0) {
       return (
@@ -44,7 +47,7 @@ const CartButton = () => {
               return <CartButtonProduct key={p.id} product={product} />;
             })}
           </div>
-          <button className={styles.checkoutButton}>
+          <button className={styles.checkoutButton} onClick={goToCartPage}>
             ورود و ثبت سفارش
             <BsArrowLeftRight />
             <p>{state.total.toLocaleString("en")} تومان</p>

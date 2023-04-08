@@ -74,6 +74,10 @@ const MobileMenu = ({ setShowMobileMenu }) => {
                 to={item.path}
                 className={styles.optionLink}
                 key={item.path}
+                onClick={() => {
+                  setShow(-450);
+                  setTimeout(() => setShowMobileMenu(0), 200);
+                }}
               >
                 <div className={styles.option}>
                   <p className={styles.optionIcon}>{item.icon}</p>

@@ -39,6 +39,9 @@ const CartProvider = ({ children }) => {
     const deleteProduct = state.cart.filter((p) => p.id !== action.id);
     return { ...state, cart: deleteProduct, total: state.total - action.price };
   };
+  const deleteAllProducts = (state, action) => {
+    return { ...state, cart: [], total: 0 };
+  };
 
   const reducer = (state, action) => {
     switch (action.type) {
@@ -50,6 +53,8 @@ const CartProvider = ({ children }) => {
         return decreaseProduct(state, action);
       case "DELETE":
         return deleteProduct(state, action);
+      case "DELETE_ALL":
+        return deleteAllProducts(state, action);
       default:
         return state;
     }

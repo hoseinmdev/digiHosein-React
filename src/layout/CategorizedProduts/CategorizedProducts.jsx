@@ -12,6 +12,8 @@ import createEmptyArray from "utils/createEmptyArray";
 import { useMediaPredicate } from "react-media-hook";
 import Product2 from "components/Product2/Product2";
 import BackToUp from "components/common/BackToUpBtn/BackToUpBtn";
+import { AiOutlineFilter } from "react-icons/ai";
+import FilterOptionsMobile from "./FilterOptionsMobile/FilterOptionsMobile";
 const CategorizedProducts = () => {
   const generateFiltersState = () => {
     const filters = {};
@@ -35,6 +37,8 @@ const CategorizedProducts = () => {
   const [showFilters, setShowFilters] = useState(generateFiltersState);
   const [products, setProducts] = useState();
   const [searchParams, setSearchParams] = useSearchParams();
+  const [showMobileFilters, setShowMobileFilters] = useState(0);
+
   const lowerThan1024 = useMediaPredicate("(max-width: 1024px)");
 
   useEffect(() => {
@@ -153,6 +157,9 @@ const CategorizedProducts = () => {
       });
     }
   };
+  const renderMobileFilters = () => {
+    setShowMobileFilters(!showMobileFilters);
+  };
   const renderNotFoundProduct = () => {
     return (
       <div className={styles.notFoundProductContainer}>
@@ -266,12 +273,29 @@ const CategorizedProducts = () => {
   return (
     <SiteLayout>
       <div className={styles.allContentContainer}>
+        {showMobileFilters ? (
+          <FilterOptionsMobile
+            setShowMobileFilters={setShowMobileFilters}
+            renderFilters={renderFilters}
+            renderDeleteFiltersBtn={renderDeleteFiltersBtn}
+          />
+        ) : (
+          ""
+        )}
         <div className={styles.filterOptionsContainer}>
           <div className={styles.filterOptionsTitle}>
             <h3>فیلتر ها</h3>
             {renderDeleteFiltersBtn()}
           </div>
           {renderFilters()}
+        </div>
+        <div className={styles.filterOptionsMobile}>
+          <span
+            className={styles.filterButtonMobile}
+            onClick={renderMobileFilters}
+          >
+            <AiOutlineFilter />
+          </span>
         </div>
         <div className={styles.productsContainer}>
           {renderProductSortBy()}

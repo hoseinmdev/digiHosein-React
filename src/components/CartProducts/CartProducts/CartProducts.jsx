@@ -5,8 +5,21 @@ import { useCart } from "../../../context/CartProvider";
 import { useEffect } from "react";
 import backToUp from "utils/BackToUp";
 import EmptyCart from "../EmptyCart/EmptyCart";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 const CartProducts = () => {
-  const { state } = useCart();
+  const { state, dispatch } = useCart();
+  const userInformation = JSON.parse(localStorage.getItem("userInformation"));
+  const navigate = useNavigate();
+  const continueToBuyHandler = () => {
+    if (userInformation.islogin) {
+      toast.success("به سفارش شما رسیدگی خواهد شد :)");
+      dispatch({ type: "DELETE_ALL" });
+      navigate("/")
+    } else {
+      navigate("/sginUp");
+    }
+  };
   const renderProducts = () => {
     if (state.cart.length !== 0) {
       return (
@@ -37,7 +50,7 @@ const CartProducts = () => {
             </div>
             <div className={styles.checkoutBlock}>
               <h3>قیمت کالا ها : {state.total.toLocaleString("en")} تومان</h3>
-              <button>به خرید ادامه بده</button>
+              <button onClick={continueToBuyHandler}>به خرید ادامه بده</button>
             </div>
           </div>
         </div>

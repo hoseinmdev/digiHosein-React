@@ -65,7 +65,7 @@ const Slider = () => {
   }, [index]);
 
   const fadeShowSlide = (action) => {
-    setFade(0);
+    setFade(0.5);
     clearTimeout(timer);
     if (action === "NEXT_SLIDE") {
       setTimeout(() => {

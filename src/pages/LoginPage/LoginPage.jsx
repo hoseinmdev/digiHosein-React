@@ -8,6 +8,8 @@ import digiHosein from "../../Accets/images/logo.jpg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { BiCommentError } from "react-icons/bi";
+import SiteLayout from "layout/SiteLayout/SiteLayout";
+import backToUp from "utils/BackToUp";
 
 const LoginPage = () => {
   const [fadeShow, setFadeShow] = useState(0);
@@ -15,6 +17,7 @@ const LoginPage = () => {
   let navigate = useNavigate();
 
   useEffect(() => {
+    backToUp()
     setTimeout(() => setFadeShow(1), 300);
   }, []);
   const initialValues = {
@@ -56,38 +59,40 @@ const LoginPage = () => {
   });
 
   return (
-    <div className={styles.formPage} style={{ opacity: fadeShow }}>
-      <Link to="/">
-        <img src={digiHosein} alt="دیجی حسین" />
-      </Link>
-      <form onSubmit={formik.handleSubmit} className={styles.formControl}>
-        <FormInput
-          label="آدرس ایمیل"
-          placeholder="ایمیل خود را وارد کنید ..."
-          name="email"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.email}
-          error={formik.errors.email}
-          touched={formik.touched.email}
-          type="email"
-        />
-        <FormInput
-          label="رمز عبور"
-          placeholder="رمز عبور خود را وارد کنید ..."
-          name="password"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.password}
-          error={formik.errors.password}
-          touched={formik.touched.password}
-          type="password"
-        />
-        <button disabled={!formik.isValid} type="submit">
-          ورود
-        </button>
-      </form>
-    </div>
+    <SiteLayout>
+      <div className={styles.formPage} style={{ opacity: fadeShow }}>
+        <Link to="/">
+          <img src={digiHosein} alt="دیجی حسین" />
+        </Link>
+        <form onSubmit={formik.handleSubmit} className={styles.formControl}>
+          <FormInput
+            label="آدرس ایمیل"
+            placeholder="ایمیل خود را وارد کنید ..."
+            name="email"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.email}
+            error={formik.errors.email}
+            touched={formik.touched.email}
+            type="email"
+          />
+          <FormInput
+            label="رمز عبور"
+            placeholder="رمز عبور خود را وارد کنید ..."
+            name="password"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.password}
+            error={formik.errors.password}
+            touched={formik.touched.password}
+            type="password"
+          />
+          <button disabled={!formik.isValid} type="submit">
+            ورود
+          </button>
+        </form>
+      </div>
+    </SiteLayout>
   );
 };
 

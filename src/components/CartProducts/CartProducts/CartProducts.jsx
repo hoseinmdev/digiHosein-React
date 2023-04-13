@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 const CartProducts = () => {
   const { state, dispatch } = useCart();
   const userInformation = JSON.parse(localStorage.getItem("userInformation"));
+  const userProducts = JSON.parse(localStorage.getItem("userProducts"));
+  
   const navigate = useNavigate();
   const continueToBuyHandler = () => {
     if (userInformation.islogin) {

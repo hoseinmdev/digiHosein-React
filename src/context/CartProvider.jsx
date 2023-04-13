@@ -1,7 +1,13 @@
+import { useEffect } from "react";
 import { createContext, useContext, useReducer } from "react";
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
+  const userProducts = JSON.parse(localStorage.getItem("userProducts"));
+  const userProductsTotalPrice = JSON.parse(
+    localStorage.getItem("userProductsTotalPrice")
+  );
+
   const addToCart = (state, action) => {
     return {
       ...state,
@@ -60,12 +66,16 @@ const CartProvider = ({ children }) => {
     }
   };
   const initialState = {
-    cart: [],
-    total: 0,
+    cart: userProducts ? userProducts : [],
+    total: userProductsTotalPrice ? userProductsTotalPrice : 0,
   };
   const [state, dispatch] = useReducer(reducer, initialState);
   const value = { state: state, dispatch: dispatch };
-
+  localStorage.setItem("userProducts", JSON.stringify(value.state.cart));
+  localStorage.setItem(
+    "userProductsTotalPrice",
+    JSON.stringify(value.state.total)
+  );
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
 export default CartProvider;

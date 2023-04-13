@@ -5,10 +5,15 @@ import styles from "./product.module.css";
 import { AiFillTag, AiOutlineShoppingCart } from "react-icons/ai";
 import { RiChatDeleteFill } from "react-icons/ri";
 import { FaTrash } from "react-icons/fa";
+import { useEffect } from "react";
 
 const Product = ({ product }) => {
   const { id, title, price, imageURL } = product;
   const { state, dispatch } = useCart();
+  // if (state.cart.length !== 0) {
+  //   localStorage.setItem("userProducts", JSON.stringify(state.cart));
+  // }
+  // const userProducts = JSON.parse(localStorage.getItem("userProducts"));
   const isInCart = state.cart.find((p) => p.id === id);
   const history = useNavigate();
   const clickHandler = () => {
@@ -88,7 +93,9 @@ const Product = ({ product }) => {
           {title}
         </h4>
         {renderAddToCartButton()}
-        <p className={styles.productPrice}>{price.toLocaleString("en")} تومان</p>
+        <p className={styles.productPrice}>
+          {price.toLocaleString("en")} تومان
+        </p>
       </div>
     </div>
   );

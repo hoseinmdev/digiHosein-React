@@ -19,6 +19,12 @@ import asusTufDashF15 from "./Accets/images/asus-tuf-dash-F15.png";
 import asusGaming from "./Accets/images/asus-tuf-gaming-f15.png";
 import zenBook from "./Accets/images/zenbook.jpg";
 import thinkBook from "./Accets/images/lenovo-thinkbook.jpg";
+import { BsCpu } from "react-icons/bs";
+import { FaDigitalTachograph } from "react-icons/fa";
+import { FiCamera } from "react-icons/fi";
+import { GiBatteryPackAlt, GiWeight } from "react-icons/gi";
+import { MdScreenshot, MdStorage } from "react-icons/md";
+import { CgSmartphoneRam } from "react-icons/cg";
 export const allProducts = [
   //PHONES
   //PHONES
@@ -56,13 +62,13 @@ export const allProducts = [
 با این وجود، اگر قصد خرید گوشی با پشتیبانی از نرخ تازه‌سازی ۱۲۰ هرتزی دارید، آیفون ۱۳ انتخاب خوبی نیست. این گوشی تنها پرچمدار سال ۲۰۲۱ میلادی‌ست که از نمایشگر ۶۰ هرتزی بهره می‌برد و همین موضوع به یکی از نقاط منفی آن تبدیل شده است. البته قدرت سخت‌افزاری و پنل نمایشگر فوق‌العاده می‌تواند این موضوع را جبران کند. اما هستند کسانی که واقعاً به دنبال نمایشگرهای ۱۲۰ هرتزی هستند و نمی‌توانند به سادگی آن را نادیده بگیرند.
 آیفون ۱۳ از بسیاری جهات تغییر چندانی با نسل قبل ندارد. با این حال، بیشتر تغییرات و ارتقاء‌ها در داخل گوشی شکل گرفته‌اند. تراشه A15 Bionic یکی از بهترین و سریع‌ترین تراشه‌های دنیاست. دوربین ۱۲ مگاپیکسلی در هر شرایطی عملکرد شگفت‌انگیزی دارد و باتری با دوام بالا از جمله مهم‌ترین تغییرات آیفون ۱۳ محسوب می‌شوند. با این حال، اگر از آیفون ۱۲ استفاده می‌کنید، نیازی به ارتقاء آن ندارید. اگرچه آیفون ۱۳ ویژگی‌هایی دارد که واقعاً عالی‌ست، اما پیشرفت‌های آن دلیل خوبی برای ارتقاء از آیفون ۱۲ محسوب نمی‌شوند و همچنین در این گوشی از یک سنسور ۱۲ مگاپیکسل با تثبیت‌کننده تغییر سنسور استفاده شده که تقریباً در هر سناریویی عکس‌های شگفت‌انگیزی می‌گیرد. آیفون ۱۳ همچنان نسبت به رقبای اندرویدی خود در زمینه فیلمبرداری برتری مشخصی دارد. حالت سینماتیک نیز بسیار کاربردی و حرفه‌ای است , در ضمن، کیفیت ساخت آیفون ۱۳ فوق‌العاده است!`,
     Specifications: {
-      cpu: { model: "پردازنده / Apple A15 Bionic", score: 9 },
-      screen: { size: "سایز صفحه نمایش / 	6.1 اینچ", score: 8.8 },
-      speaker: { model: "اسپیکر / استریو ( دوگانه )", score: 8.7 },
-      ram: { capacity: "رم / 4 گیگابایت رم" },
-      camera: { quality: "دوربین اصلی / 12 مگاپیکسل", score: 9.1 },
-      storage: { capacity: "حافظه داخلی / 256 گیگابایت", score: 8.9 },
-      battery: { capacity: "باتری / 3240 میلی آمپر ساعت", score: 9 },
+      cpu: { title: "پردازنده / Apple A15 Bionic", score: 9, icon:<BsCpu/>},
+      screen: { title: "سایز صفحه نمایش / 	6.1 اینچ", score: 8.8,icon:<MdScreenshot/> },
+      speaker: { title: "اسپیکر / استریو ( دوگانه )", score: 8.7 ,icon:<BsCpu/>},
+      ram: { title: "رم / 4 گیگابایت رم" , score: 0,icon:<CgSmartphoneRam/>},
+      camera: { title: "دوربین اصلی / 12 مگاپیکسل", score: 9.1 ,icon:<FiCamera/>},
+      storage: { title: "حافظه داخلی / 256 گیگابایت", score: 8.9 ,icon:<FaDigitalTachograph/>},
+      battery: { title: "باتری / 3240 میلی آمپر ساعت", score: 9,icon:<GiBatteryPackAlt/> },
     },
     comments: [
       {
@@ -142,15 +148,16 @@ export const allProducts = [
     ],
     Specifications: {
       cpu: {
-        model: "پردازنده / Exynos 2100 & Qualcomm SM8350 Snapdragon 888 5G",
+        title: "پردازنده / Exynos 2100 & Qualcomm SM8350 Snapdragon 888 5G",
         score: 8.4,
+        icon:<BsCpu/>
       },
-      screen: { size: "سایز صفحه نمایش / 	6.2 اینچ", score: 8.5 },
-      speaker: { model: "اسپیکر / استریو ( دوگانه )", score: 8.7 },
-      ram: { capacity: "رم / 8 گیگابایت رم" },
-      camera: { quality: "دوربین اصلی / 12 مگاپیکسل", score: 8.8 },
-      storage: { capacity: "حافظه داخلی / 256 گیگابایت", score: 8 },
-      battery: { capacity: "باتری / 4000 میلی آمپر ساعت", score: 8.2 },
+      screen: { title: "سایز صفحه نمایش / 	6.2 اینچ", score: 8.5 ,icon:<MdScreenshot/>},
+      speaker: { title: "اسپیکر / استریو ( دوگانه )", score: 8.7 ,icon:<BsCpu/>},
+      ram: { title: "رم / 8 گیگابایت رم" ,score:0,icon:<CgSmartphoneRam/>},
+      camera: { title: "دوربین اصلی / 12 مگاپیکسل", score: 8.8 ,icon:<FiCamera/>},
+      storage: { title: "حافظه داخلی / 256 گیگابایت", score: 8 ,icon:<FaDigitalTachograph/>},
+      battery: { title: "باتری / 4000 میلی آمپر ساعت", score: 8.2 ,icon:<GiBatteryPackAlt/>},
     },
     comments: [
       {
@@ -217,15 +224,16 @@ export const allProducts = [
     ],
     Specifications: {
       cpu: {
-        model: "پردازنده / Apple A15 Bionic",
+        title: "پردازنده / Apple A15 Bionic",
         score: 9,
+        icon:<BsCpu/>
       },
-      screen: { size: "سایز صفحه نمایش / 	6.1 اینچ", score: 10 },
-      speaker: { model: "اسپیکر / استریو ( دوگانه )", score: 9 },
-      ram: { capacity: "رم / 6 گیگابایت رم" },
-      camera: { quality: "دوربین اصلی / 12 مگاپیکسل", score: 9 },
-      storage: { capacity: "حافظه داخلی / 512 گیگابایت", score: 10 },
-      battery: { capacity: "باتری / 3279 میلی آمپر ساعت", score: 9.5 },
+      screen: { title: "سایز صفحه نمایش / 	6.1 اینچ", score: 10 ,icon:<MdScreenshot/>},
+      speaker: { title: "اسپیکر / استریو ( دوگانه )", score: 9 ,icon:<BsCpu/>},
+      ram: { title: "رم / 6 گیگابایت رم",score:0 ,icon:<CgSmartphoneRam/>},
+      camera: { title: "دوربین اصلی / 12 مگاپیکسل", score: 9 ,icon:<FiCamera/>},
+      storage: { title: "حافظه داخلی / 512 گیگابایت", score: 10,icon:<FaDigitalTachograph/> },
+      battery: { title: "باتری / 3279 میلی آمپر ساعت", score: 9.5 ,icon:<GiBatteryPackAlt/>},
     },
     comments: [
       {
@@ -310,15 +318,16 @@ export const allProducts = [
     ],
     Specifications: {
       cpu: {
-        model: "پردازنده / Mediatek Helio G96 / Mali-G57 MC2",
+        title: "پردازنده / Mediatek Helio G96 / Mali-G57 MC2",
         score: 9,
+        icon:<BsCpu/>
       },
-      screen: { size: "سایز صفحه نمایش / 	6.63 اینچ", score: 8 },
-      speaker: { model: "اسپیکر / استریو ( دوگانه )", score: 8 },
-      ram: { capacity: "رم / 8 گیگابایت رم" },
-      camera: { quality: "دوربین اصلی / 50 مگاپیکسل", score: 9 },
-      storage: { capacity: "حافظه داخلی / 128 گیگابایت", score: 7.5 },
-      battery: { capacity: "باتری / 5000 میلی آمپر ساعت", score: 9 },
+      screen: { title: "سایز صفحه نمایش / 	6.63 اینچ", score: 8 ,icon:<MdScreenshot/>},
+      speaker: { title: "اسپیکر / استریو ( دوگانه )", score: 8 ,icon:<BsCpu/>},
+      ram: { title: "رم / 8 گیگابایت رم" , score: 0,icon:<CgSmartphoneRam/>},
+      camera: { title: "دوربین اصلی / 50 مگاپیکسل", score: 9 ,icon:<FiCamera/>},
+      storage: { title: "حافظه داخلی / 128 گیگابایت", score: 7.5,icon:<FaDigitalTachograph/> },
+      battery: { title: "باتری / 5000 میلی آمپر ساعت", score: 9 ,icon:<GiBatteryPackAlt/>},
     },
     comments: [
       {
@@ -383,15 +392,16 @@ export const allProducts = [
     ],
     Specifications: {
       cpu: {
-        model: "پردازنده / Mediatek Helio G96 / Mali-G57 MC2",
+        title: "پردازنده / Mediatek Helio G96 / Mali-G57 MC2",
         score: 8.5,
+        icon:<BsCpu/>
       },
-      screen: { size: "سایز صفحه نمایش / 	6.63 اینچ", score: 9.5 },
-      speaker: { model: "اسپیکر / مونو", score: 8 },
-      ram: { capacity: "رم / 6 گیگابایت رم" },
-      camera: { quality: "دوربین اصلی / 48 مگاپیکسل", score: 8 },
-      storage: { capacity: "حافظه داخلی / 128 گیگابایت", score: 8 },
-      battery: { capacity: "باتری / 4000 میلی آمپر ساعت", score: 9.5 },
+      screen: { title: "سایز صفحه نمایش / 	6.63 اینچ", score: 9.5,icon:<MdScreenshot/> },
+      speaker: { title: "اسپیکر / مونو", score: 8 ,icon:<BsCpu/>},
+      ram: { title: "رم / 6 گیگابایت رم", score:0,icon:<CgSmartphoneRam/> },
+      camera: { title: "دوربین اصلی / 48 مگاپیکسل", score: 8 ,icon:<FiCamera/>},
+      storage: { title: "حافظه داخلی / 128 گیگابایت", score: 8 ,icon:<FaDigitalTachograph/>},
+      battery: { title: "باتری / 4000 میلی آمپر ساعت", score: 9.5,icon:<GiBatteryPackAlt/> },
     },
     comments: [
       {
@@ -454,15 +464,16 @@ export const allProducts = [
     در زمان خرید شیائومی 12 تی پرو باید به این موضوع توجه داشته باشید که این گوشی به باتری ۵۰۰۰ میلی‌آمپر ساعتی مجهز شده است. این میزان باتری برای استفاده‌های روزانه کاملا مناسب خواهد بود و به خوبی شما را همراه می‌کند. از ویژگی‌های جذابی که باعث شده شیائومی 12t pro بسیار مورد توجه قرار بگیرد، برخورداری از شارژر ۱۲۰ وات است. شارژری که شیائومی نام آن را هایپرشارژ گذاشته است. سرعت شارژ کردن باتری گوشی شیائومی 12t pro بسیار عالی است و در مدت زمان کمی می‌توانید باتری را شارژ کنید. در مدت زمان ۳۰ دقیقه می‌توانید باتری این گوشی را کاملا شارژ کنید. بد نیست به این موضوع هم اشاره کنیم که این گوشی شارژ سریع‌تری هم دارد که Boost Charge نام دارد. با فعال کردن این ویژگی می‌توانید چند دقیقه‌ای گوشی را سریع‌تر شارژ کنید. با فعال کردن این گزینه می‌توانید کل ظرفیت باتری را در مدت زمان ۲۳ دقیقه شارژ کنید.   یکی دیگر از ویژگی‌هایی که باعث شده قیمت شیائومی 12t pro بسیار عالی به نظر می‌رسد، امکاناتی است که برای اسپیکر این گوشی در نظر گرفته شده است. شیائومی ۱۲ تی پرو از اسپیکرهای استریو استفاده می‌کند. یک اسپیکر روی لبه بالا و یک اسپیکر هم روی لبه پایین قرار گرفته است. این اسپیکرها توسط هارمن کاردن تقویت شده‌اند و استاندارد دالبی اتموس بهره می‌برند. شیائومی ۱۲ تی پرو یکی از بهترین اسپیکرها در بین گوشی‌های هوشمند را دارد. در زمان خرید شیائومی 12 تی پرو به این موضوع توجه داشته باشید که این گوشی قاتل پرچم‌دار فوق العاده ارزشمندی است. قیمت شیائومی 12t pro هم باعث شده که این محصول ارزش خرید بالایی پیدا کند. با محصولی سروکار دارید که سخت‌افزار فوق‌العاده‌ای دارد و برای تجربه بازی‌های جدید عالی است. دوربین‌‌های آن هم عملکرد خوبی از خود ارائه می‌کنند. صفحه نمایش با کیفیت هم از دیگر ویژگی‌های این گوشی هوشمند به شمار می‌رود. شک نکنید که شیائومی ۱۲ تی پرو محصولی فوق‌العاده است. اگر قصد دارید 4 تا 5 میلیون کمتر هزینه کنید، می‌توانید نسخه ارزان‌تر این قاتل پرچمدار یعنی شیائومی 12T را خریداری کنید.`,
     Specifications: {
       cpu: {
-        model: "پردازنده / Qualcomm SM8475 Snapdragon 8+ Gen 1 5G",
+        title: "پردازنده / Qualcomm SM8475 Snapdragon 8+ Gen 1 5G",
         score: 9,
+        icon:<BsCpu/>
       },
-      screen: { size: "سایز صفحه نمایش / 	6.67 اینچ", score: 8.8 },
-      speaker: { model: "اسپیکر / استریو ( دوگانه )", score: 8.7 },
-      ram: { capacity: "رم / 12 گیگابایت رم" },
-      camera: { quality: "دوربین اصلی / 200 مگاپیکسل", score: 9.1 },
-      storage: { capacity: "حافظه داخلی / 256 گیگابایت", score: 8.9 },
-      battery: { capacity: "باتری / 5000 میلی آمپر ساعت", score: 9 },
+      screen: { title: "سایز صفحه نمایش / 	6.67 اینچ", score: 8.8 ,icon:<MdScreenshot/>},
+      speaker: { title: "اسپیکر / استریو ( دوگانه )", score: 8.7 ,icon:<BsCpu/>},
+      ram: { title: "رم / 12 گیگابایت رم", score: 0,icon:<CgSmartphoneRam/> },
+      camera: { title: "دوربین اصلی / 200 مگاپیکسل", score: 9.1,icon:<FiCamera/> },
+      storage: { title: "حافظه داخلی / 256 گیگابایت", score: 8.9,icon:<FaDigitalTachograph/> },
+      battery: { title: "باتری / 5000 میلی آمپر ساعت", score: 9 ,icon:<GiBatteryPackAlt/>},
     },
     comments: [
       {
@@ -516,13 +527,14 @@ export const allProducts = [
       cpu: {
         model: "پردازنده / Qualcomm SM8450 Snapdragon 8 Gen1",
         score: 9,
+        icon:<BsCpu/>
       },
-      screen: { size: "سایز صفحه نمایش / 	6.73 اینچ", score: 8.8 },
-      speaker: { model: "اسپیکر / استریو ( دوگانه )", score: 8.7 },
-      ram: { capacity: "رم / 12 گیگابایت رم" },
-      camera: { quality: "دوربین اصلی / 50 مگاپیکسل", score: 9.1 },
-      storage: { capacity: "حافظه داخلی / 256 گیگابایت", score: 8.9 },
-      battery: { capacity: "باتری / 5000 میلی آمپر ساعت", score: 9 },
+      screen: { title: "سایز صفحه نمایش / 	6.73 اینچ", score: 8.8 ,icon:<MdScreenshot/>},
+      speaker: { title: "اسپیکر / استریو ( دوگانه )", score: 8.7 ,icon:<BsCpu/>},
+      ram: { title: "رم / 12 گیگابایت رم" , score: 0,icon:<CgSmartphoneRam/>},
+      camera: { title: "دوربین اصلی / 50 مگاپیکسل", score: 9.1 ,icon:<FiCamera/>},
+      storage: { title: "حافظه داخلی / 256 گیگابایت", score: 8.9 ,icon:<FaDigitalTachograph/>},
+      battery: { title: "باتری / 5000 میلی آمپر ساعت", score: 9 ,icon:<GiBatteryPackAlt/>},
     },
     comments: [
       {
@@ -596,15 +608,16 @@ export const allProducts = [
     اگر می‌خواهید یک فیلم سینمایی حرفه‌ای با گوشی اندرویدی بسازید، بهترین گزینه برای انتخاب گلکسی اس 22 اولترا است؛ دوربین این گوشی در فیلم‌برداری فوق‌العاده عمل می‌کند. حالت فیلم‌برداری UHD در 60 فریم بهترین نتیجه را می‌دهد که در آن هم کیفیت تصویر عالی است و هم تصویر بسیار نرم و روان ثبت می‌شود. به لطف استبلایزر یا همان لرزش‌گیر اپتیکال، حتی در هنگام دویدن هم تصویر تکان نمی‌خورد و نیازی به اوزمو نخواهید داشت. یکی از ویژگی‌های فوق‌العاده این دوربین در فیلم‌برداری فوکوس دستی فوق‌العاده سریع و هوشمند آن است که به‌راحتی با کمترین پرش تصویر سوژه را شناسایی می‌کند و این کار را می‌توانید به‌صورت دستی خیلی آسان انجام دهید. `,
     Specifications: {
       cpu: {
-        model: "پردازنده / Qualcomm SM8450 Snapdragon 8 Gen 1",
+        title: "پردازنده / Qualcomm SM8450 Snapdragon 8 Gen 1",
         score: 9,
+        icon:<BsCpu/>
       },
-      screen: { size: "سایز صفحه نمایش / 	6.8 اینچ", score: 8.8 },
-      speaker: { model: "اسپیکر / استریو ( دوگانه )", score: 8.7 },
-      ram: { capacity: "رم / 12 گیگابایت رم" },
-      camera: { quality: "دوربین اصلی / 108 مگاپیکسل", score: 9.1 },
-      storage: { capacity: "حافظه داخلی / 1 ترابایت", score: 8.9 },
-      battery: { capacity: "باتری / 5000 میلی آمپر ساعت", score: 9 },
+      screen: { title: "سایز صفحه نمایش / 	6.8 اینچ", score: 8.8 ,icon:<MdScreenshot/>},
+      speaker: { title: "اسپیکر / استریو ( دوگانه )", score: 8.7 ,icon:<BsCpu/>},
+      ram: { title: "رم / 12 گیگابایت رم",score: 0,icon:<CgSmartphoneRam/> },
+      camera: { title: "دوربین اصلی / 108 مگاپیکسل", score: 9.1 ,icon:<FiCamera/>},
+      storage: { title: "حافظه داخلی / 1 ترابایت", score: 8.9 ,icon:<FaDigitalTachograph/>},
+      battery: { title: "باتری / 5000 میلی آمپر ساعت", score: 9 ,icon:<GiBatteryPackAlt/>},
     },
     comments: [
       {
@@ -679,15 +692,16 @@ export const allProducts = [
 سامسونگ برای تحکیم جایگاهش در بازار نوظهور تاشدنی‌ها، باید در نسل بعدی از حرکت دست‌به‌عصا و محتاطانه دست بردارد.`,
     Specifications: {
       cpu: {
-        model: "پردازنده / Qualcomm SM8475 Snapdragon 8+",
+        title: "پردازنده / Qualcomm SM8475 Snapdragon 8+",
         score: 9,
+        icon:<BsCpu/>
       },
-      screen: { size: "سایز صفحه نمایش / 	7.6 اینچ", score: 8.8 },
-      speaker: { model: "اسپیکر / استریو ( دوگانه )", score: 8.7 },
-      ram: { capacity: "رم / 12 گیگابایت رم" },
-      camera: { quality: "دوربین اصلی / 50 مگاپیکسل", score: 9.1 },
-      storage: { capacity: "حافظه داخلی / 1 ترابایت", score: 8.9 },
-      battery: { capacity: "باتری / 4000 میلی آمپر ساعت", score: 9 },
+      screen: { title: "سایز صفحه نمایش / 	7.6 اینچ", score: 8.8,icon:<MdScreenshot/> },
+      speaker: { title: "اسپیکر / استریو ( دوگانه )", score: 8.7 ,icon:<BsCpu/>},
+      ram: { title: "رم / 12 گیگابایت رم" ,score: 0,icon:<CgSmartphoneRam/>},
+      camera: { title: "دوربین اصلی / 50 مگاپیکسل", score: 9.1 ,icon:<FiCamera/>},
+      storage: { title: "حافظه داخلی / 1 ترابایت", score: 8.9 ,icon:<FaDigitalTachograph/>},
+      battery: { title: "باتری / 4000 میلی آمپر ساعت", score: 9 ,icon:<GiBatteryPackAlt/>},
     },
     comments: [
       {
@@ -879,12 +893,34 @@ export const allProducts = [
 با باز کردن درِ لپ‌تاپ، با حاشیه‌های بسیار باریک کناری و بالایی صفحه‌‌نمایش ماتِ Strix G15، نوشته‌های ریز ROG‌ در گوشه‌‌ای از پایه، ترک‌پد بسیار بزرگ و نورپردازی RGB کیبورد مواجه خواهید شد. تایوانی‌ها ابعاد نسل جدید Strix G15 را ۷ درصد کاهش داده‌اند و با باریک‌تر کردن حاشیه‌ها، نسبت صفحه‌نمایش به بدنه را به عدد بسیار خوب ۸۵ درصد رسانده‌اند. ای کاش ایسوس به‌جای استفاده از نمایشگر عریضِ ۱۶:۹، پنل بلندتری با نسبت تصویر ۳:۲ یا ۱۶:۱۰ به‌کار می‌برد تا ضخامت حاشیه‌ی قطور پایین نیز کاهش یابد. ایسوس لپ‌تاپ Strix G15 G513QM را با یکی از دو پنل ۱۵٫۶ اینچی QHD و Full-HD به‌فروش می‌رساند؛ هر دو پنل از نوع IPS با زمان پاسخگویی ۳ میلی‌ثانیه‌ای هستند؛ اما نمونه‌ی QHD فضای وسیع DCI-P3 را به‌صورت کامل پوشش داده و نرخ نوسازی ۱۶۵ هرتزی را ارائه می‌دهد، درحالی‌که نمونه‌ی Full-HD از نرخ نوسازی ۳۰۰ هرتزی را دراختیارتان می‌گذارد و پوشش کاملی از فضای رنگی sRGB دارد. متأسفانه گرافیک یکپارچه‌ی موجود در تراشه‌ی Ryzen 9 5900HX به‌جای معماری جدید RDNA2 از ۸ هسته‌ی پردازشی با معماری قدیمی Vega و فرکانس بیشینه‌ی ۲۱۰۰ مگاهرتز استفاده می‌کند. طبیعتا ایسوس به این ماژول اکتفا نکرده و لپ‌تاپ گیمینگ خود را به گرافیک مجزای NVIDIA RTX 3060 مجهز کرده است.
 انویدیا گرافیک RTX 3060 نسخه‌ی موبایل را در ۱۱ مدل مختلف با فرکانس‌های متفاوت و توان مصرفی ۶۰ تا ۱۱۵ وات دراختیار تولیدکنندگان قرار می‌دهد؛ ایسوس قدرتمندترین نمونه‌ی موجود را با توان مصرفی ۱۱۵ وات در لپ‌تاپ Strix G15 به‌کار می‌گیرد و می‌گوید به‌کمک فناوری Dynamic Boost، هنگام اتصال لپ‌تاپ به پریز برق، توان بالغ‌بر ۱۳۰ وات را نیز به این گرافیک اختصاص می‌دهد.
 پردازنده‌ی گرافیکی ۱۱۵ واتی RTX 3060 با فرکانس پایه‌ی ۱۳۸۷ مگاهرتز از ۳۸۴۰ هسته‌ی Cuda بهره می‌برد، حافظه‌ی ۶ گیگابایتی GDDR6-اش با باس ۱۹۲ بیتی و فرکانس ۱۷۵۰ مگاهرتزی به پهنای باند ۳۳۶ گیگابایت‌برثانیه دست می‌یابد و توان محاسباتی آن با دقت FP32 به ۱۰٫۷ ترافلاپس می‌رسد که روی کاغذ از سطح عملکرد گرافیک پرقدرت RTX 2070 Super بسیار فراتر است. از بین انبوه لپ‌تاپ‌های گیمینگ بازار، Strix G513QM یکی از معدود مدل‌هایی به‌شمار می‌آید که مجموعه‌ای از قطعات توانمند را با نقص‌های اندک کنار هم آورده است. پردازنده‌ی پرقدرت Ryzen 9 5900HX چه در حالت Plugged، چه Unplugged عملکرد کم‌نظیری را با پایداری بسیار خوب ارائه می‌دهد، نسخه‌ی ۱۱۵ واتی RTX 3060 در ترکیب با نمایشگر ۳۰۰ هرتزی دستگاه، امکان اجرای مطلوب عموم بازی‌ها را فراهم می‌کند و اسپیکرها با تفکیک بسیار خوب صدا و بیس‌های عمیق، تجربه‌ی موسیقایی لذت‌بخشی را ارائه می‌دهند.`,
-    Specifications: {
-      cpu: "پردازنده / اینتل core i7",
-      ram: "حافظه رم / 32 گیگابایت رم",
-      gpu: "گرافیک / انویدیا GTX 1650Ti",
-      storage: "حافظه داخلی / 1 ترابایت",
-      Weight: "وزن / 2.39 کیلوگرم",
+    positivePoints: [
+      "طراحی زیبا و شیک با بدنه‌ای مقاوم و کاملا ضد آب",
+      "صفحه نمایش OLED درخشان با پشتیبانی از HDR10 و Dolby Vision",
+      "افزایش ظرفیت باتری و طول عمر آن نسبت به آیفون ۱۲",
+      "اسپیکرهای استریوی باکیفیت با بلندی صدای زیاد",
+      "پشتیبانی از تکنولوژی 5G",
+      "مجهز شدن به برخی از ویژگی‌های آیفون ۱۲ پرو مکس در دوربین اصلی",
+      "عملکرد فوق العاده رده بالا و عالی هر سه دوربین در شب و روز",
+    ],
+    negativePoints: [
+      "عدم وجود تحول چندان چشمگیر و بزرگ نسبت به آیفون ۱۲",
+      "عدم پشتیبانی از نرخ تازه سازی ۱۲۰ هرتز در صفحه نمایش",
+      "سرعت شارژ کم‌تر نسبت به مدل‌های Pro",
+      "ادامه وجود ناچ نمایشگر علیرغم کاهش اندازه آن",
+    ],    
+// Specifications: {
+//       cpu: "پردازنده / اینتل core i7",
+//       ram: "حافظه رم / 32 گیگابایت رم",
+//       gpu: "گرافیک / انویدیا GTX 1650Ti",
+//       storage: "حافظه داخلی / 1 ترابایت",
+//       Weight: "وزن / 2.39 کیلوگرم",
+//     },
+        Specifications: {
+      cpu: { model: "پردازنده / اینتل core i7", score: 9 },
+      gpu: { model: "گرافیک / انویدیا GTX 1650Ti", score: 8.7 },
+      ram: { capacity: "رم / 4 گیگابایت رم" },
+      storage: { capacity: "حافظه داخلی / 1 ترابایت", score: 9.1 },
+      Weight: { capacity:"وزن / 2.39 کیلوگرم", score: 8.9 },
     },
     comments: [
       {

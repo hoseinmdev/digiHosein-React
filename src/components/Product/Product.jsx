@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useCart } from "../../context/CartProvider";
 import styles from "./product.module.css";
@@ -8,12 +8,8 @@ import { FaTrash } from "react-icons/fa";
 import { useEffect } from "react";
 
 const Product = ({ product }) => {
-  const { id, title, price, imageURL } = product;
+  const { id, title, price, imageURL, category} = product;
   const { state, dispatch } = useCart();
-  // if (state.cart.length !== 0) {
-  //   localStorage.setItem("userProducts", JSON.stringify(state.cart));
-  // }
-  // const userProducts = JSON.parse(localStorage.getItem("userProducts"));
   const isInCart = state.cart.find((p) => p.id === id);
   const history = useNavigate();
   const clickHandler = () => {

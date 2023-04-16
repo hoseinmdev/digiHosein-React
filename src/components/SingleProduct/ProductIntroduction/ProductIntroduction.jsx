@@ -6,11 +6,24 @@ import { MdScreenshot, MdStorage } from "react-icons/md";
 import { CgSmartphoneRam } from "react-icons/cg";
 import styles from "./productIntroduction.module.css";
 const ProductIntroduction = ({ product }) => {
+    const productProperties = []
+  Object.values(product.Specifications).forEach(function(value, index) {
+    productProperties.push({title: value.title, icon: value.icon})
+  });
+  console.log(productProperties)
   const renderProductProperties = () => {
     if (product.category === "phones") {
       return (
         <div className={styles.infoList}>
-          <div>
+
+          {productProperties.map(p => {
+            return <div key={p.title}>
+                          {p.icon}
+            <p>{p.title}</p>
+            </div>
+          })}
+
+          {/* <div>
             <BsCpu className={styles.iconBlock} />
             <p>{product.Specifications.cpu.model}</p>
           </div>
@@ -33,32 +46,32 @@ const ProductIntroduction = ({ product }) => {
           <div>
             <CgSmartphoneRam className={styles.iconBlock} />
             <p>{product.Specifications.ram.capacity}</p>
-          </div>
+          </div> */}
         </div>
       );
     }
-    if (product.type === "laptops") {
+    if (product.category === "laptops") {
       return (
         <div className={styles.infoList}>
           <div>
             <BsCpu className={styles.iconBlock} />
-            <p>{product.Specifications.cpu}</p>
+            <p>{product.Specifications.cpu.model}</p>
           </div>
           <div>
             <FaDigitalTachograph className={styles.iconBlock} />
-            <p>{product.Specifications.gpu}</p>
+            <p>{product.Specifications.gpu.model}</p>
           </div>
           <div>
             <MdStorage className={styles.iconBlock} />
-            <p>{product.Specifications.storage}</p>
+            <p>{product.Specifications.storage.capacity}</p>
           </div>
           <div>
             <GiWeight className={styles.iconBlock} />
-            <p>{product.Specifications.Weight}</p>
+            <p>{product.Specifications.Weight.capacity}</p>
           </div>
           <div>
             <CgSmartphoneRam className={styles.iconBlock} />
-            <p>{product.Specifications.ram}</p>
+            <p>{product.Specifications.ram.capacity}</p>
           </div>
         </div>
       );

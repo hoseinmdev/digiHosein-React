@@ -18,7 +18,6 @@ const SingleProduct = () => {
   const [replyComment, setReplyComment] = useState(0);
   const { productState } = useProducts();
   const product = productState.allProducts.find((p) => p.id === history.state);
-
   useEffect(() => {
     setTimeout(() => setSingleproduct(1), 1500);
   }, []);
@@ -53,9 +52,9 @@ const SingleProduct = () => {
               </div>
             </div>
             <section>
-              <ProductIntroduction product={product} />
+              <ProductIntroduction product={product}/>
               <hr />
-              <ProductCheckout product={product} />
+              <ProductCheckout product={product}/>
             </section>
           </div>
           <div ref={technicalCheckPart} style={{ width: "100%" }}>

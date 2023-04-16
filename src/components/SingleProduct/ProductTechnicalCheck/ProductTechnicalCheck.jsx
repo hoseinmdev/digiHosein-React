@@ -6,14 +6,60 @@ import {
   AiOutlinePlusCircle,
 } from "react-icons/ai";
 const ProductTechnicalCheck = ({ product }) => {
-  const allSpecifications = [
-    product.Specifications.cpu.score,
-    product.Specifications.screen.score,
-    product.Specifications.storage.score,
-    product.Specifications.battery.score,
-    product.Specifications.speaker.score,
-    product.Specifications.camera.score,
-  ];
+  const allSpecifications = []
+  const loopOnObject = Object.values(product.Specifications).forEach(function(value, index) {
+  allSpecifications.push(value.score)
+});
+  const renderProductScores = () => {
+    if (product.category === "phones"){
+     return  <div className={styles.scores}>
+          <div className={styles.score}>
+            <span>{product.Specifications.screen.score}</span>
+            صفحه نمایش
+          </div>
+          <div className={styles.score}>
+            <span>{product.Specifications.cpu.score}</span>
+            سخت افزار
+          </div>
+          <div className={styles.score}>
+            <span>{product.Specifications.speaker.score}</span>
+            صدا
+          </div>
+          <div className={styles.score}>
+            <span>{product.Specifications.camera.score}</span>
+            دوربین
+          </div>
+          <div className={styles.score}>
+            <span>{product.Specifications.storage.score}</span>
+            حافظه
+          </div>
+          <div className={styles.score}>
+            <span>{product.Specifications.battery.score}</span>
+            باتری
+          </div>
+        </div>
+    }
+    if (product.category === "laptops"){
+     return  <div className={styles.scores}>
+          <div className={styles.score}>
+            <span>{product.Specifications.cpu.score}</span>
+            پردازنده
+          </div>
+          <div className={styles.score}>
+            <span>{product.Specifications.gpu.score}</span>
+            گرافیک
+          </div>
+          <div className={styles.score}>
+            <span>{product.Specifications.storage.score}</span>
+            حافظه
+          </div>
+          <div className={styles.score}>
+            <span>{product.Specifications.Weight.score}</span>
+            وزن
+          </div>
+        </div>
+    }
+  }
   let totalScores = 0;
   allSpecifications.map((e) => (totalScores += e));
   
@@ -63,32 +109,7 @@ const ProductTechnicalCheck = ({ product }) => {
           امتیاز کلی
         </div>
         <hr />
-        <div className={styles.scores}>
-          <div className={styles.score}>
-            <span>{product.Specifications.screen.score}</span>
-            صفحه نمایش
-          </div>
-          <div className={styles.score}>
-            <span>{product.Specifications.cpu.score}</span>
-            سخت افزار
-          </div>
-          <div className={styles.score}>
-            <span>{product.Specifications.speaker.score}</span>
-            صدا
-          </div>
-          <div className={styles.score}>
-            <span>{product.Specifications.camera.score}</span>
-            دوربین
-          </div>
-          <div className={styles.score}>
-            <span>{product.Specifications.storage.score}</span>
-            حافظه
-          </div>
-          <div className={styles.score}>
-            <span>{product.Specifications.battery.score}</span>
-            باتری
-          </div>
-        </div>
+        {renderProductScores()}
       </div>
     </div>
   );

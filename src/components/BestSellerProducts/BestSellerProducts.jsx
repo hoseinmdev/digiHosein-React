@@ -26,6 +26,7 @@ const BestSellerProducts = () => {
           technicalCheck: p.technicalCheck,
           positivePoints: p.positivePoints,
           negativePoints: p.negativePoints,
+          category: p.category
         };
         return <Product key={p.id} product={product} />;
       })}

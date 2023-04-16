@@ -18,8 +18,7 @@ const HomePageProductsLayout = ({
   const [productsLength, setProductsLength] = useState();
   const [step, setStep] = useState(0);
   const productsBlockRef = useRef();
-  if (productsLength > 4) {
-  }
+
   useEffect(() => {
     setProductsLength(
       Math.round(children.length - productsBlockRef.current.offsetWidth / 215)

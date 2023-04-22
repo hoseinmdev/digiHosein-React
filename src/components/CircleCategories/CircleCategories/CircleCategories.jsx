@@ -19,7 +19,7 @@ const CircleCategories = () => {
   const categories = [
     { title: "گوشی موبایل", imageUrl: mobile, path: "/categories/phones" },
     { title: "لپتاپ", imageUrl: laptop, path: "/categories/laptops" },
-    { title: "تبلت", imageUrl: tablet, path: "/categories/tablet" },
+    { title: "تبلت", imageUrl: tablet, path: "/categories/tablets" },
     {
       title: "ساعت هوشمند",
       imageUrl: digitalWatch,

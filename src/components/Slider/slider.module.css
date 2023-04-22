@@ -86,14 +86,14 @@
     animation: none;
     scale: 1;
     object-fit: cover;
-    animation: bannerStyleMobile 4.7s infinite alternate ease-in-out;
+    animation: bannerStyleMobile 2s infinite alternate ease-in-out;
   }
   @keyframes bannerStyleMobile {
     from {
-      object-position: -580px 0px;
+      scale: 1;
     }
     to {
-      object-position: -120px 0px;
+      scale: 1.05;
     }
   }
   .nextSlide,

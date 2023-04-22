@@ -1,11 +1,17 @@
 import styles from "./slider.module.css";
 import mobileBanner from "../../Accets/images/bannerMobile.webp";
+import mobileBannerinMobile from "../../Accets/images/phonesBannerInMobile.jpg";
 import consoleBanner from "../../Accets/images/bannerConsole.webp";
+import consoleBannerInMobile from "../../Accets/images/consolesBannerInMobile.jpg";
 import airpodsBanner from "../../Accets/images/bannerAirpods.webp";
+import airpodsBannerInMobile from "../../Accets/images/headphonesBannerInMobile.jpg";
 import airpodsBanner2 from "../../Accets/images/bannerAirpods2.webp";
 import digitalWatchBanner from "../../Accets/images/bannerDigitalWatch.webp";
+import digitalWatchBannerInMobile from "../../Accets/images/digitalWatchesBannerInMobile.jpg";
 import speakerBanner from "../../Accets/images/bannerSpeaker.webp";
+import speakerBannerInMobile from "../../Accets/images/speakersBannerInMobile.jpg";
 import tabletBanner from "../../Accets/images/bannerTablet.webp";
+import laptopsBannerInMobile from "../../Accets/images/laptopsBannerInMobile.jpg";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -30,7 +36,7 @@ const allSlides = [
   },
   {
     src: tabletBanner,
-    link: "/categories/teblets",
+    link: "/categories/tablets",
   },
   {
     src: speakerBanner,
@@ -41,7 +47,32 @@ const allSlides = [
     link: "/categories/headphones",
   },
 ];
-
+const allSlidesInMobile = [
+  {
+    src: consoleBannerInMobile,
+    link: "/categories/consoles",
+  },
+  {
+    src: mobileBannerinMobile,
+    link: "/categories/phones",
+  },
+  {
+    src: airpodsBannerInMobile,
+    link: "/categories/headphones",
+  },
+  {
+    src: digitalWatchBannerInMobile,
+    link: "/categories/digitalWatches",
+  },
+  {
+    src: speakerBannerInMobile,
+    link: "/categories/speakers",
+  },
+    {
+    src: laptopsBannerInMobile,
+    link: "/categories/laptops",
+  },
+];
 const Slider = () => {
   const [slides, setSlides] = useState();
   const [index, setIndex] = useState(0);
@@ -51,7 +82,8 @@ const Slider = () => {
   useEffect(() => {
     const setAllSlides = () => {
       setTimeout(() => {
-        setSlides(allSlides);
+        if (window.innerWidth < 1024) setSlides(allSlidesInMobile);
+        else setSlides(allSlides)
       }, 1500);
     };
     setAllSlides();

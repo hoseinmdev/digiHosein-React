@@ -6,63 +6,31 @@ import {
   AiOutlinePlusCircle,
 } from "react-icons/ai";
 const ProductTechnicalCheck = ({ product }) => {
-  const allSpecifications = []
-  const loopOnObject = Object.values(product.Specifications).forEach(function(value, index) {
-  allSpecifications.push(value.score)
-});
+  const allSpecifications = [];
+  const allSpecificationsNames = [];
+  const loopOnObject = Object.values(product.Specifications).forEach(function (
+    value,
+    index
+  ) {
+    allSpecifications.push(value.score);
+    allSpecificationsNames.push({
+      nameOfSpecification: value.title.split(" ")[0],
+      scoreOfSpecification: value.score,
+    });
+  });
   const renderProductScores = () => {
-    if (product.category === "phones"){
-     return  <div className={styles.scores}>
-          <div className={styles.score}>
-            <span>{product.Specifications.screen.score}</span>
-            صفحه نمایش
-          </div>
-          <div className={styles.score}>
-            <span>{product.Specifications.cpu.score}</span>
-            سخت افزار
-          </div>
-          <div className={styles.score}>
-            <span>{product.Specifications.speaker.score}</span>
-            صدا
-          </div>
-          <div className={styles.score}>
-            <span>{product.Specifications.camera.score}</span>
-            دوربین
-          </div>
-          <div className={styles.score}>
-            <span>{product.Specifications.storage.score}</span>
-            حافظه
-          </div>
-          <div className={styles.score}>
-            <span>{product.Specifications.battery.score}</span>
-            باتری
-          </div>
+    return allSpecificationsNames.map((p) => {
+      return (
+        <div className={styles.score}>
+          <span>{p.scoreOfSpecification}</span>
+          {p.nameOfSpecification}
         </div>
-    }
-    if (product.category === "laptops"){
-     return  <div className={styles.scores}>
-          <div className={styles.score}>
-            <span>{product.Specifications.cpu.score}</span>
-            پردازنده
-          </div>
-          <div className={styles.score}>
-            <span>{product.Specifications.gpu.score}</span>
-            گرافیک
-          </div>
-          <div className={styles.score}>
-            <span>{product.Specifications.storage.score}</span>
-            حافظه
-          </div>
-          <div className={styles.score}>
-            <span>{product.Specifications.Weight.score}</span>
-            وزن
-          </div>
-        </div>
-    }
-  }
+      );
+    });
+  };
   let totalScores = 0;
   allSpecifications.map((e) => (totalScores += e));
-  
+
   return (
     <div className={styles.checkProductBlock}>
       <div className={styles.checkProductTitle}>
@@ -109,7 +77,7 @@ const ProductTechnicalCheck = ({ product }) => {
           امتیاز کلی
         </div>
         <hr />
-        {renderProductScores()}
+        <div className={styles.scores}>{renderProductScores()}</div>
       </div>
     </div>
   );

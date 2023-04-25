@@ -38,7 +38,6 @@ const CategorizedProducts = () => {
   const [products, setProducts] = useState();
   const [searchParams, setSearchParams] = useSearchParams();
   const [showMobileFilters, setShowMobileFilters] = useState(0);
-
   const lowerThan1024 = useMediaPredicate("(max-width: 1024px)");
 
   useEffect(() => {
@@ -54,9 +53,12 @@ const CategorizedProducts = () => {
   }, [currentCategory]);
 
   useEffect(() => {
+    // products on current category
     const allProducts = productState.allProducts.filter(
       (p) => p.category === currentCategory
     );
+    const finalProducts = [];
+    // filter products by query
     const filteredProducts = Object.keys(serializeFormQuery())
       .map((key) => {
         const finalKey = key.split("_");
@@ -66,9 +68,12 @@ const CategorizedProducts = () => {
         return filteredProducts;
       })
       .flat(1);
+    new Set(filteredProducts).forEach((item) => {
+      finalProducts.push(item);
+    });
     if (searchParams.toString().length !== 0) {
       setProducts(0);
-      setTimeout(() => setProducts(filteredProducts), 500);
+      setTimeout(() => setProducts(finalProducts), 500);
     } else {
       setProducts(0);
       setTimeout(() => setProducts(allProducts), 600);

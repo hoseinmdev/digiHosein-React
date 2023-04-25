@@ -68,7 +68,7 @@ const allSlidesInMobile = [
     src: speakerBannerInMobile,
     link: "/categories/speakers",
   },
-    {
+  {
     src: laptopsBannerInMobile,
     link: "/categories/laptops",
   },
@@ -78,12 +78,13 @@ const Slider = () => {
   const [index, setIndex] = useState(0);
   const [fade, setFade] = useState(0);
   const [timer, setTimer] = useState();
+  const [touchPosition, setTouchPosition] = useState(0);
 
   useEffect(() => {
     const setAllSlides = () => {
       setTimeout(() => {
         if (window.innerWidth < 1024) setSlides(allSlidesInMobile);
-        else setSlides(allSlides)
+        else setSlides(allSlides);
       }, 1500);
     };
     setAllSlides();
@@ -97,11 +98,11 @@ const Slider = () => {
   }, [index]);
 
   const fadeShowSlide = (action) => {
-    setFade(0.5);
+    setFade(0.2);
     clearTimeout(timer);
     if (action === "NEXT_SLIDE") {
       setTimeout(() => {
-        if (index !== allSlides.length - 1) {
+        if (index !== slides.length - 1) {
           setIndex(index + 1);
         } else {
           setIndex(0);
@@ -114,11 +115,22 @@ const Slider = () => {
         if (index !== 0) {
           setIndex(index - 1);
         } else {
-          setIndex(6);
+          setIndex(slides.length - 1);
         }
         setFade(1);
       }, 250);
     }
+  };
+  const onTouchStartHandler = (e) => {
+    setTouchPosition(e.touches[0].clientX);
+  };
+  const onTouchMoveHandler = (e) => {
+    if (touchPosition === null) return;
+    const currentTouch = e.touches[0].clientX;
+    const diff = touchPosition - currentTouch;
+    if (diff > 5) backSlide();
+    if (diff < -5) nextSlide();
+    setTouchPosition(null);
   };
   const nextSlide = () => {
     fadeShowSlide("NEXT_SLIDE");
@@ -129,7 +141,11 @@ const Slider = () => {
   const renderSlider = () => {
     if (slides) {
       return (
-        <div className={styles.sliderBlock}>
+        <div
+          className={styles.sliderBlock}
+          onTouchStart={(e) => onTouchStartHandler(e)}
+          onTouchMove={(e) => onTouchMoveHandler(e)}
+        >
           <button className={styles.nextSlide} onClick={nextSlide}>
             <IoIosArrowForward />
           </button>

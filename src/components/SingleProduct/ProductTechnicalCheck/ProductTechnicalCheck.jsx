@@ -14,7 +14,7 @@ const ProductTechnicalCheck = ({ product }) => {
   ) {
     allSpecifications.push(value.score);
     allSpecificationsNames.push({
-      nameOfSpecification: value.title.split(" ")[0],
+      nameOfSpecification: value.title.split("/")[0],
       scoreOfSpecification: value.score,
     });
   });

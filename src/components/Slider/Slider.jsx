@@ -74,7 +74,7 @@ const allSlidesInMobile = [
   },
 ];
 const Slider = () => {
-  const [slides, setSlides] = useState();
+  const [slides, setSlides] = useState(0);
   const [index, setIndex] = useState(0);
   const [fade, setFade] = useState(0);
   const [timer, setTimer] = useState();
@@ -98,8 +98,9 @@ const Slider = () => {
   }, [index]);
 
   const fadeShowSlide = (action) => {
-    setFade(0.2);
+    setFade(0);
     clearTimeout(timer);
+
     if (action === "NEXT_SLIDE") {
       setTimeout(() => {
         if (index !== slides.length - 1) {

@@ -53,24 +53,72 @@ const CategorizedProducts = () => {
   }, [currentCategory]);
 
   useEffect(() => {
+    const finalProducts = [];
     // products on current category
     const allProducts = productState.allProducts.filter(
       (p) => p.category === currentCategory
     );
-    const finalProducts = [];
-    // filter products by query
-    const filteredProducts = Object.keys(serializeFormQuery())
-      .map((key) => {
-        const finalKey = key.split("_");
-        const filteredProducts = allProducts.filter(
-          (p) => p[finalKey[0]] === parseInt(finalKey[1])
-        );
-        return filteredProducts;
-      })
-      .flat(1);
+
+    const filtersObject = {};
+    Object.keys(serializeFormQuery()).forEach((key) => {
+      const [filterKey, filterValue] = key.split("_");
+      const settledFilterValue = filtersObject[filterKey];
+      if (settledFilterValue) {
+        filtersObject[filterKey] = [...settledFilterValue, filterValue];
+      } else {
+        filtersObject[filterKey] = [filterValue];
+      }
+    });
+
+    // let products = [
+    //   { name: "computer", categories: ["tech"] },
+    //   { name: "soap", categories: ["hygiene", "tech"] },
+    //   { name: "bbq", categories: ["outdoors"] },
+    // ];
+
+    // let categoriesToFilterBy = ["tech", "outdoors"];
+    // let filterSet = new Set(categoriesToFilterBy);
+    // let filteredProductssw = products.filter((product) =>
+    //   product.categories.some((category) => filterSet.has(category))
+    // );
+    // console.log(filteredProductssw)
+    // const multiPropsFilter = (products, filters) => {
+    //   const filterKeys = Object.keys(filters);
+    //   return products.filter((product) => {
+    //     return filterKeys.forEach((key) => {
+    //       // console.log(filterKeys)
+    //       console.log(product[key])
+    //       if (!filters[key].length) return true;
+    //       // Loops again if product[key] is an array (for material attribute).
+    //       if (Array.isArray(product[key])) {
+    //         return product[key].some((keyEle) => filters[key].includes(keyEle));
+    //       }
+    //       return filters[key].includes(product[key]);
+    //     });
+    //   });
+    // };
+    // console.log(multiPropsFilter(allProducts, filtersObject));
+    let filteredProducts = allProducts.filter((product) => {
+      return Object.entries(filtersObject).every(([prop, find]) => {
+        const convertStrToNumber = find.map((num) => parseInt(num));
+        return convertStrToNumber.includes(product[prop]);
+      });
+    });
+    // console.log(res);
+    // const filteredProducts = Object.keys(serializeFormQuery())
+    //   .map((key) => {
+    //     const finalKey = key.split("_");
+    //     const filteredProducts = allProducts.filter(
+    //       (p) => p[finalKey[0]] === parseInt(finalKey[1])
+    //     );
+    //     return filteredProducts;
+    //   })
+    //   .flat(1);
+
     new Set(filteredProducts).forEach((item) => {
       finalProducts.push(item);
     });
+
     if (searchParams.toString().length !== 0) {
       setProducts(0);
       setTimeout(() => setProducts(finalProducts), 500);

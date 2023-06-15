@@ -17,6 +17,31 @@
   transition: 0.3s all ease-in-out;
   animation: bannerStyle 3s infinite alternate ease-in-out;
 }
+.indexOfContainer {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  /* background-color: #ffffff; */
+  padding: 0.5rem;
+  border-radius: 15px;
+  z-index: 50000;
+  right: 40%;
+  top: 280px;
+  /* justify-self: center; */
+  /* align-self: center; */
+}
+.index {
+  width: 1.8rem;
+  height: 0.3rem;
+  border-radius: 8px;
+  box-shadow: 1px 1px 12px 1px rgba(0, 0, 0, 0.25);
+  background-color: white;
+}
+.enableIndex {
+  background-color: #7c3aed;
+}
 @keyframes bannerStyle {
   from {
     scale: 1;

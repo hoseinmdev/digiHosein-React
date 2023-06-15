@@ -161,6 +161,19 @@ const Slider = () => {
           <button className={styles.backSlide} onClick={backSlide}>
             <IoIosArrowBack />
           </button>
+          <div className={styles.indexOfContainer}>
+            {allSlides.map((e) => {
+              console.log(allSlides.indexOf(e) , index)
+              return (
+                <div
+                  key={e.link}
+                  className={` ${styles.index} ${
+                    allSlides.indexOf(e) === index && styles.enableIndex
+                  }`}
+                ></div>
+              );
+            })}
+          </div>
         </div>
       );
     } else {

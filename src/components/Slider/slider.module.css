@@ -8,13 +8,13 @@
   overflow: hidden;
   position: relative;
   background: none;
-  background-color: #ccc;
+  background-color: transparent;
   box-shadow: 4px 4px 12px 4px rgba(0, 0, 0, 0.2);
 }
 .bannerStyle {
   width: 100%;
   height: 100%;
-  transition: 0.3s all ease-in-out;
+  transition: 0.2s all ease-in-out;
   animation: bannerStyle 3s infinite alternate ease-in-out;
 }
 .indexOfContainer {
@@ -22,25 +22,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.8rem;
   /* background-color: #ffffff; */
   padding: 0.5rem;
   border-radius: 15px;
   z-index: 50000;
-  right: 40%;
-  top: 280px;
+  right: 45%;
+  top: 290px;
+  transform: scale(-1, 1);
   /* justify-self: center; */
   /* align-self: center; */
 }
 .index {
-  width: 1.8rem;
-  height: 0.3rem;
-  border-radius: 8px;
+  cursor: pointer;
+  width: 0.5rem;
+  height: 0.5rem;
+  opacity: 0.5;
+  border-radius: 50%;
   box-shadow: 1px 1px 12px 1px rgba(0, 0, 0, 0.25);
   background-color: white;
 }
 .enableIndex {
-  background-color: #7c3aed;
+  background-color: white;
+  width: 1.5rem;
+  height: 0.5rem;
+  border-radius: 8px;
+  opacity: 1;
 }
 @keyframes bannerStyle {
   from {
@@ -124,5 +131,11 @@
   .nextSlide,
   .backSlide {
     display: none;
+  }
+  .indexOfContainer {
+    z-index: 50000;
+    right: 30%;
+    top: 255px;
+    transform: scale(1, -1);
   }
 }

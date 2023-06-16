@@ -13,19 +13,17 @@ import speakerBannerInMobile from "../../Accets/images/speakersBannerInMobile.jp
 import tabletBanner from "../../Accets/images/bannerTablet.webp";
 import laptopsBannerInMobile from "../../Accets/images/laptopsBannerInMobile.jpg";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Skeleton from "../Skeleton/Skeleton";
 const allSlides = [
   {
+    id: 1,
     src: consoleBanner,
     link: "/categories/consoles",
   },
-  {
-    src: mobileBanner,
-    link: "/categories/phones",
-  },
+  { id: 2, src: mobileBanner, link: "/categories/phones" },
   {
     src: airpodsBanner2,
     link: "/categories/headphones",
@@ -77,7 +75,7 @@ const Slider = () => {
   const [slides, setSlides] = useState(0);
   const [index, setIndex] = useState(0);
   const [fade, setFade] = useState(0);
-  const [timer, setTimer] = useState();
+  const timerTimeout = useRef();
   const [touchPosition, setTouchPosition] = useState(0);
 
   useEffect(() => {
@@ -90,37 +88,26 @@ const Slider = () => {
     setAllSlides();
     setFade(1);
   }, []);
+
   useEffect(() => {
     const autoSlideChanger = () => {
-      setTimer(setTimeout(nextSlide, 10000));
+      clearTimeout(timerTimeout.current);
+      const timeout = setTimeout(nextSlide, 10000);
+      timerTimeout.current = timeout;
     };
     autoSlideChanger();
+
+    return function cleanup() {
+      clearTimeout(timerTimeout.current);
+    };
   }, [index]);
 
-  const fadeShowSlide = (action) => {
-    setFade(0);
-    clearTimeout(timer);
-
-    if (action === "NEXT_SLIDE") {
-      setTimeout(() => {
-        if (index !== slides.length - 1) {
-          setIndex(index + 1);
-        } else {
-          setIndex(0);
-        }
-        setFade(1);
-      }, 250);
-    }
-    if (action === "BACK_SLIDE") {
-      setTimeout(() => {
-        if (index !== 0) {
-          setIndex(index - 1);
-        } else {
-          setIndex(slides.length - 1);
-        }
-        setFade(1);
-      }, 250);
-    }
+  const fadeShowSlide = (index) => {
+    setFade(0.1);
+    setTimeout(() => {
+      setIndex(index);
+      setFade(1);
+    }, 200);
   };
   const onTouchStartHandler = (e) => {
     setTouchPosition(e.touches[0].clientX);
@@ -134,10 +121,18 @@ const Slider = () => {
     setTouchPosition(null);
   };
   const nextSlide = () => {
-    fadeShowSlide("NEXT_SLIDE");
+    if (index !== slides.length - 1) {
+      fadeShowSlide(index + 1);
+    } else {
+      fadeShowSlide(0);
+    }
   };
   const backSlide = () => {
-    fadeShowSlide("BACK_SLIDE");
+    if (index !== 0) {
+      fadeShowSlide(index - 1);
+    } else {
+      fadeShowSlide(slides.length - 1);
+    }
   };
   const renderSlider = () => {
     if (slides) {
@@ -162,14 +157,15 @@ const Slider = () => {
             <IoIosArrowBack />
           </button>
           <div className={styles.indexOfContainer}>
-            {allSlides.map((e) => {
-              console.log(allSlides.indexOf(e) , index)
+            {slides.map((e, i) => {
+              console.log(slides.indexOf(e), index);
               return (
                 <div
                   key={e.link}
                   className={` ${styles.index} ${
-                    allSlides.indexOf(e) === index && styles.enableIndex
+                    slides.indexOf(e) === index && styles.enableIndex
                   }`}
+                  onClick={() => fadeShowSlide(i)}
                 ></div>
               );
             })}

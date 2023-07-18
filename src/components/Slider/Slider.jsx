@@ -25,48 +25,59 @@ const allSlides = [
   },
   { id: 2, src: mobileBanner, link: "/categories/phones" },
   {
+    id: 3,
     src: airpodsBanner2,
     link: "/categories/headphones",
   },
   {
+    id: 4,
     src: digitalWatchBanner,
     link: "/categories/digitalWatches",
   },
   {
+    id: 5,
     src: tabletBanner,
     link: "/categories/tablets",
   },
   {
+    id: 6,
     src: speakerBanner,
     link: "/categories/speakers",
   },
   {
+    id: 7,
     src: airpodsBanner,
     link: "/categories/headphones",
   },
 ];
 const allSlidesInMobile = [
   {
+    id: 1,
     src: consoleBannerInMobile,
     link: "/categories/consoles",
   },
   {
+    id: 2,
     src: mobileBannerinMobile,
     link: "/categories/phones",
   },
   {
+    id: 3,
     src: airpodsBannerInMobile,
     link: "/categories/headphones",
   },
   {
+    id: 4,
     src: digitalWatchBannerInMobile,
     link: "/categories/digitalWatches",
   },
   {
+    id: 5,
     src: speakerBannerInMobile,
     link: "/categories/speakers",
   },
   {
+    id: 6,
     src: laptopsBannerInMobile,
     link: "/categories/laptops",
   },

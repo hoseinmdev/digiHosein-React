@@ -169,7 +169,6 @@ const Slider = () => {
           </button>
           <div className={styles.indexOfContainer}>
             {slides.map((e, i) => {
-              console.log(slides.indexOf(e), index);
               return (
                 <div
                   key={e.link}

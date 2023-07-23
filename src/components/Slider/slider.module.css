@@ -26,7 +26,7 @@
   /* background-color: #ffffff; */
   padding: 0.5rem;
   border-radius: 15px;
-  z-index: 50000;
+  /* z-index: 1000; */
   right: 45%;
   top: 290px;
   transform: scale(-1, 1);
@@ -133,7 +133,7 @@
     display: none;
   }
   .indexOfContainer {
-    z-index: 50000;
+    /* z-index: 1000; */
     right: 30%;
     top: 255px;
     transform: scale(1, -1);

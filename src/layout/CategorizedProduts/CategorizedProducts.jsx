@@ -69,6 +69,8 @@ const CategorizedProducts = () => {
         filtersObject[filterKey] = [filterValue];
       }
     });
+    console.log(Object.keys(serializeFormQuery()));
+    // console.log(filtersObject);
     let filteredProducts = allProducts.filter((product) => {
       return Object.entries(filtersObject).every(([prop, find]) => {
         const convertStrToNumber = find.map((num) => parseInt(num));

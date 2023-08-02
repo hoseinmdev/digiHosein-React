@@ -1,10 +1,8 @@
-import FormInput from "../../components/common/FormInput/FormInput";
-import styles from "./LoginPage.module.css";
+import FormInput from "../components/common/FormInput/FormInput";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import digiHosein from "../../Accets/images/logo.jpg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { BiCommentError } from "react-icons/bi";
@@ -17,7 +15,7 @@ const LoginPage = () => {
   let navigate = useNavigate();
 
   useEffect(() => {
-    backToUp()
+    backToUp();
     setTimeout(() => setFadeShow(1), 300);
   }, []);
   const initialValues = {
@@ -44,11 +42,7 @@ const LoginPage = () => {
       navigate("/");
       toast.success("خوش آمدید !");
     } else {
-      toast.error("اطلاعات وارد شده صحیح نیست", {
-        icon: <BiCommentError />,
-        bodyClassName: styles.toastText,
-        progressClassName: styles.toastLine,
-      });
+      toast.error("اطلاعات وارد شده صحیح نیست", {icon: <BiCommentError />});
     }
   };
   const formik = useFormik({
@@ -60,11 +54,14 @@ const LoginPage = () => {
 
   return (
     <SiteLayout>
-      <div className={styles.formPage} style={{ opacity: fadeShow }}>
-        <Link to="/">
-          <img src={digiHosein} alt="دیجی حسین" />
-        </Link>
-        <form onSubmit={formik.handleSubmit} className={styles.formControl}>
+      <div
+        className="w-full flex justify-center items-center gap-4"
+        style={{ opacity: fadeShow }}
+      >
+        <form
+          className="w-11/12 shadow-xl px-6 py-4 flex flex-col justify-center items-center gap-4 w-full md:w-96 h-64"
+          onSubmit={formik.handleSubmit}
+        >
           <FormInput
             label="آدرس ایمیل"
             placeholder="ایمیل خود را وارد کنید ..."
@@ -87,7 +84,11 @@ const LoginPage = () => {
             touched={formik.touched.password}
             type="password"
           />
-          <button disabled={!formik.isValid} type="submit">
+          <button
+            disabled={!formik.isValid}
+            type="submit"
+            className="mt-2 p-2 text-base bg-violet-700 text-white rounded-lg outline-none w-1/2"
+          >
             ورود
           </button>
         </form>

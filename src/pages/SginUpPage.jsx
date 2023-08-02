@@ -1,16 +1,12 @@
-import FormInput from "../../components/common/FormInput/FormInput";
-import styles from "./SginUpPage.module.css";
+import FormInput from "../components/common/FormInput/FormInput";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import digiHosein from "../../Accets/images/logo.jpg";
 import { Link, redirect, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import SiteLayout from "layout/SiteLayout/SiteLayout";
 import backToUp from "utils/BackToUp";
-
-// import { useEffect, useState } from "react";
 
 const SginUpPage = () => {
   const userInformation = JSON.parse(localStorage.getItem("userInformation"));
@@ -18,7 +14,7 @@ const SginUpPage = () => {
   const location = useLocation();
   let navigate = useNavigate();
   useEffect(() => {
-    backToUp()
+    backToUp();
     setTimeout(() => setFadeShow(1), 300);
   }, []);
   useEffect(() => {
@@ -73,11 +69,14 @@ const SginUpPage = () => {
 
   return (
     <SiteLayout>
-      <div className={styles.formPage} style={{ opacity: fadeShow }}>
-        <Link to="/">
-          <img src={digiHosein} alt="دیجی حسین" />
-        </Link>
-        <form onSubmit={formik.handleSubmit} className={styles.formControl}>
+      <div
+        className="mt-4 w-full h-full flex justify-center items-center"
+        style={{ opacity: fadeShow }}
+      >
+        <form
+          onSubmit={formik.handleSubmit}
+          className="w-11/12 md:w-96 p-4 flex flex-col justify-center items-center rounded-lg shadow-xl gap-4"
+        >
           <FormInput
             label="نام"
             placeholder="نام خود را وارد کنید ..."
@@ -133,16 +132,19 @@ const SginUpPage = () => {
           />
           <button
             disabled={!formik.isValid}
-            style={{
-              opacity: !formik.isValid && 0.5,
-              cursor: !formik.isValid && "default",
-            }}
+            style={{ opacity: !formik.isValid && 0.5 }}
+            className="mt-2 w-40 px-4 py-2 text-base bg-violet-700 text-white rounded-lg outline-none"
             type="submit"
-            //   onClick={() => navigate("/")}
           >
             ثبت نام
           </button>
-          <Link to="/login"> از قبل حساب کاربری دارم</Link>
+          <Link
+            to="/login"
+            className="text-sm text-blue-700 w-full flex justify-start"
+          >
+            {" "}
+            از قبل حساب کاربری دارم
+          </Link>
         </form>
       </div>
     </SiteLayout>

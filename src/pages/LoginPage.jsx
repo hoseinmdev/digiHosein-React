@@ -1,4 +1,4 @@
-import FormInput from "../components/common/FormInput/FormInput";
+import FormInput from "../components/common/FormInput";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { BiCommentError } from "react-icons/bi";
-import SiteLayout from "layout/SiteLayout/SiteLayout";
+import SiteLayout from "layout/SiteLayout";
 import backToUp from "utils/BackToUp";
 
 const LoginPage = () => {
@@ -37,12 +37,12 @@ const LoginPage = () => {
     ) {
       localStorage.setItem(
         "userInformation",
-        JSON.stringify({ ...userInformation, islogin: true })
+        JSON.stringify({ ...userInformation, islogin: true }),
       );
       navigate("/");
       toast.success("خوش آمدید !");
     } else {
-      toast.error("اطلاعات وارد شده صحیح نیست", {icon: <BiCommentError />});
+      toast.error("اطلاعات وارد شده صحیح نیست", { icon: <BiCommentError /> });
     }
   };
   const formik = useFormik({
@@ -55,11 +55,11 @@ const LoginPage = () => {
   return (
     <SiteLayout>
       <div
-        className="w-full flex justify-center items-center gap-4"
+        className="flex w-full items-center justify-center gap-4"
         style={{ opacity: fadeShow }}
       >
         <form
-          className="w-11/12 shadow-xl px-6 py-4 flex flex-col justify-center items-center gap-4 w-full md:w-96 h-64"
+          className="flex h-64 w-11/12 w-full flex-col items-center justify-center gap-4 px-6 py-4 shadow-xl lg:w-96"
           onSubmit={formik.handleSubmit}
         >
           <FormInput
@@ -87,7 +87,7 @@ const LoginPage = () => {
           <button
             disabled={!formik.isValid}
             type="submit"
-            className="mt-2 p-2 text-base bg-violet-700 text-white rounded-lg outline-none w-1/2"
+            className="mt-2 w-1/2 rounded-lg bg-violet-700 p-2 text-base text-white outline-none"
           >
             ورود
           </button>

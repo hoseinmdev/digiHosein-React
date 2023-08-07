@@ -1,11 +1,10 @@
-import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import React from "react";
 import CartProvider from "./context/CartProvider";
 import ProductsProvider from "./context/ProductsProvider";
-import CategorizedProducts from "layout/CategorizedProduts/CategorizedProducts";
+import CategorizedProducts from "layout/CategorizedProducts";
 import "react-toastify/dist/ReactToastify.css";
-import CustomToast from "./components/CustomToast/CustomToast";
+import CustomToast from "./components/common/CustomToast";
 import LoginPage from "pages/LoginPage";
 import SginUpPage from "pages/SginUpPage";
 import SingleProductPage from "pages/SingleProductPage";

@@ -1,11 +1,11 @@
-import FormInput from "../components/common/FormInput/FormInput";
+import FormInput from "../components/common/FormInput";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link, redirect, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import SiteLayout from "layout/SiteLayout/SiteLayout";
+import SiteLayout from "layout/SiteLayout";
 import backToUp from "utils/BackToUp";
 
 const SginUpPage = () => {
@@ -57,7 +57,7 @@ const SginUpPage = () => {
     navigate("/");
     localStorage.setItem(
       "userInformation",
-      JSON.stringify({ ...values, islogin: true })
+      JSON.stringify({ ...values, islogin: true }),
     );
   };
   const formik = useFormik({
@@ -70,12 +70,12 @@ const SginUpPage = () => {
   return (
     <SiteLayout>
       <div
-        className="mt-4 w-full h-full flex justify-center items-center"
+        className="mt-4 flex h-full w-full items-center justify-center"
         style={{ opacity: fadeShow }}
       >
         <form
           onSubmit={formik.handleSubmit}
-          className="w-11/12 md:w-96 p-4 flex flex-col justify-center items-center rounded-lg shadow-xl gap-4"
+          className="flex w-11/12 flex-col items-center justify-center gap-4 rounded-lg p-4 shadow-xl lg:w-96"
         >
           <FormInput
             label="نام"
@@ -133,14 +133,14 @@ const SginUpPage = () => {
           <button
             disabled={!formik.isValid}
             style={{ opacity: !formik.isValid && 0.5 }}
-            className="mt-2 w-40 px-4 py-2 text-base bg-violet-700 text-white rounded-lg outline-none"
+            className="mt-2 w-40 rounded-lg bg-violet-700 px-4 py-2 text-base text-white outline-none"
             type="submit"
           >
             ثبت نام
           </button>
           <Link
             to="/login"
-            className="text-sm text-blue-700 w-full flex justify-start"
+            className="flex w-full justify-start text-sm text-blue-700"
           >
             {" "}
             از قبل حساب کاربری دارم

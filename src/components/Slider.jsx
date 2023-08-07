@@ -15,7 +15,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useRef, useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Skeleton from "./Skeleton/Skeleton";
+import Skeleton from "./Skeleton";
 const allSlides = [
   {
     id: 1,
@@ -148,12 +148,12 @@ const Slider = () => {
     if (slides) {
       return (
         <div
-          className="w-[96%] md:h-80 flex items-center justify-between rounded-xl relative overflow-hidden bg-none shadow-2xl"
+          className="relative flex w-[96%] items-center justify-between overflow-hidden rounded-xl bg-none shadow-2xl lg:h-80"
           onTouchStart={(e) => onTouchStartHandler(e)}
           onTouchMove={(e) => onTouchMoveHandler(e)}
         >
           <button
-            className="hidden md:flex cursor-pointer absolute right-0 h-full w-14 text-white justify-center items-center bg-slate-200/30 z-20 text-3xl rounded-l-full hover:w-20 hover:bg-slate-200/50"
+            className="absolute right-0 z-20 hidden h-full w-14 cursor-pointer items-center justify-center rounded-l-full bg-slate-200/30 text-3xl text-white hover:w-20 hover:bg-slate-200/50 lg:flex"
             onClick={nextSlide}
           >
             <IoIosArrowForward />
@@ -162,22 +162,22 @@ const Slider = () => {
             <img
               src={slides[index].src}
               alt={consoleBanner}
-              className="w-full h-full"
+              className="h-full w-full"
               style={{ opacity: fade }}
             />
           </Link>
           <button
-            className="hidden md:flex cursor-pointer absolute left-0 h-full w-14 text-white justify-center items-center bg-slate-200/30 z-20 text-3xl rounded-r-full hover:w-20 hover:bg-slate-200/50"
+            className="absolute left-0 z-20 hidden h-full w-14 cursor-pointer items-center justify-center rounded-r-full bg-slate-200/30 text-3xl text-white hover:w-20 hover:bg-slate-200/50 lg:flex"
             onClick={backSlide}
           >
             <IoIosArrowBack />
           </button>
-          <div className="w-full absolute flex justify-center items-center gap-3 p-2 right-auto left-auto  md:top-[290px] bottom-2 transform md:-scale-x-100">
+          <div className="absolute bottom-2 left-auto right-auto flex w-full transform items-center justify-center  gap-3 p-2 lg:top-[290px] lg:-scale-x-100">
             {slides.map((e, i) => {
               return (
                 <div
                   key={e.id}
-                  className={`cursor-pointer w-2 h-2 rounded-full shadow-xl bg-white ${
+                  className={`h-2 w-2 cursor-pointer rounded-full bg-white shadow-xl ${
                     slides.indexOf(e) === index
                       ? "w-6 rounded-lg opacity-100"
                       : "opacity-50"

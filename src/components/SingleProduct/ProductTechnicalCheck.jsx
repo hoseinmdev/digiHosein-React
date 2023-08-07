@@ -35,7 +35,7 @@ const ProductTechnicalCheck = ({ product }) => {
         <p className="w-2/4 text-lg font-bold text-violet-700 lg:w-1/4 lg:text-3xl">
           بررسی فنی
         </p>
-        <hr className="h-[1px] bg-black lg:h-[2px]" />
+        <hr className="w-full h-[1px] bg-black lg:h-[2px]" />
       </div>
       <p className="text-base text-gray-700 lg:text-xl">
         {product.technicalCheck}

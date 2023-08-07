@@ -1,16 +1,17 @@
-import "./App.css";
 import { Route, Routes } from "react-router-dom";
+import React from "react";
 import CartProvider from "./context/CartProvider";
-import CartPage from "./pages/CartPage/CartPage";
-import HomePage from "./pages/HomePage/HomePage";
-import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
 import ProductsProvider from "./context/ProductsProvider";
+import CategorizedProducts from "layout/CategorizedProducts";
 import "react-toastify/dist/ReactToastify.css";
-import CustomToast from "./components/CustomToast/CustomToast";
-import CategorizedProducts from "layout/CategorizedProduts/CategorizedProducts";
-import NotFoundPage from "pages/NotFoundPage/NotFoundPage";
-import SginUpPage from "pages/SginUpPage/SginUpPage";
-import LoginPage from "pages/LoginPage/LoginPage";
+import CustomToast from "./components/common/CustomToast";
+import LoginPage from "pages/LoginPage";
+import SginUpPage from "pages/SginUpPage";
+import SingleProductPage from "pages/SingleProductPage";
+import HomePage from "pages/HomePage";
+import CartPage from "pages/CartPage";
+import NotFoundPage from "pages/NotFoundPage";
+
 function App() {
   return (
     <div className="App">
@@ -21,14 +22,8 @@ function App() {
             <Route path="*" element={<NotFoundPage />} />
             <Route path="/" element={<HomePage />} />
             <Route path="cart" element={<CartPage />} />
-            <Route
-              path="sginUp"
-              element={ <SginUpPage />}
-            />
-            <Route
-              path="login"
-              element={<LoginPage />}
-            />
+            <Route path="sginUp" element={<SginUpPage />} />
+            <Route path="login" element={<LoginPage />} />
             <Route
               path="categories/:category"
               element={<CategorizedProducts />}

@@ -51,7 +51,7 @@ const Navigation = () => {
   };
   return (
     <>
-      <div className="sticky  left-0 top-0 z-[100] hidden w-full flex-col items-start justify-center gap-4 bg-white px-8 py-4 shadow-lg lg:flex">
+      <div className="sticky  left-0 top-0 z-[1000] hidden w-full flex-col items-start justify-center gap-4 bg-white px-8 py-4 shadow-lg lg:flex">
         <div className="flex w-full items-center justify-between">
           <div className="flex w-1/2 items-center justify-center gap-4">
             <img src={digiHosein} alt="Digi Hosien" className="h-20 w-36" />

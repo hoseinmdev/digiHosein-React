@@ -1,4 +1,4 @@
-import digiHosein from "../../Accets/images/logo.jpg";
+import digiHosein from "../../assets/images/logo.jpg";
 import {
   FaHome,
   FaHeadphonesAlt,

@@ -10,7 +10,7 @@ import { FaRibbon, FaStudiovinari } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useCart } from "../../context/CartProvider";
-import fastSubmit from "../../Accets/images/esraleSari.png";
+import fastSubmit from "../../assets/images/esraleSari.png";
 const ProductCheckout = ({ product }) => {
   const { state, dispatch } = useCart();
   const clickHandler = () => {

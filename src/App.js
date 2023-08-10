@@ -15,7 +15,7 @@ import { useEffect } from "react";
 import backToUp from "utils/BackToUp";
 
 function App() {
-  const location = useLocation()
+  const location = useLocation();
   useEffect(() => backToUp(), [location]);
   return (
     <div className="App">

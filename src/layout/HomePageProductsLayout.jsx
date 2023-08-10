@@ -1,25 +1,32 @@
+import Product from "components/Product";
+import { useProducts } from "context/ProductsProvider";
 import { useRef } from "react";
 import { useEffect, useState } from "react";
 import { IoArrowRedoSharp, IoArrowUndoSharp } from "react-icons/io5";
 const HomePageProductsLayout = ({
   children,
+  category,
   title,
   bgColor,
   titleColor = "text-gray-900",
   titleLineColor = "bg-gray-900",
 }) => {
+  const { productState } = useProducts();
   const [rightBtnDisplay, setRightBtnDisplay] = useState("hidden");
   const [leftBtnDisplay, setLeftBtnDisplay] = useState("flex");
   const [productsLength, setProductsLength] = useState();
   const [step, setStep] = useState(0);
   const productsBlockRef = useRef();
+  const productsToShow = productState.allProducts.filter(
+    (p) => p.category === category,
+  );
 
   useEffect(() => {
-    setProductsLength(
-      Math.round(children.length - productsBlockRef.current.offsetWidth / 215),
-    );
-  }, [step]);
-  useEffect(() => {
+    const offsetWidth = productsBlockRef.current.offsetWidth / 215;
+    productsToShow
+      ? setProductsLength(Math.round(productsToShow.length - offsetWidth))
+      : setProductsLength(Math.round(children.length - offsetWidth));
+
     if (productsLength === 0) {
       setRightBtnDisplay("hidden");
       setLeftBtnDisplay("hidden");
@@ -37,6 +44,7 @@ const HomePageProductsLayout = ({
       setLeftBtnDisplay("hidden");
     }
   }, [step]);
+
   const passingProducts = (action) => {
     if (action === "NEXT_PRODUCT") {
       setStep(step - 1);
@@ -47,7 +55,7 @@ const HomePageProductsLayout = ({
   };
   return (
     <div
-      className={`relative flex w-full flex-col ${bgColor} items-start justify-center gap-8 overflow-hidden px-8 py-6`}
+      className={`relative mt-2 flex w-full flex-col ${bgColor} items-start justify-center gap-8 overflow-hidden px-8 py-6`}
     >
       <button
         className={`z-5 absolute right-0 mr-14 hidden lg:${rightBtnDisplay} h-14 w-14 items-center justify-center rounded-full bg-white text-[1.8rem] text-gray-700 shadow-lg `}
@@ -63,10 +71,14 @@ const HomePageProductsLayout = ({
         className="z-2 hideScrollbar flex h-96 max-w-[1360px] flex-col items-start justify-center gap-8 overflow-auto lg:overflow-hidden"
         ref={productsBlockRef}
       >
+        {/* Products */}
         <div
           className={`flex items-center justify-center gap-4`}
           style={{ marginRight: step * -215 }}
         >
+          {productsToShow.map((product) => {
+            return <Product key={product.id} product={product} />;
+          })}
           {children}
         </div>
       </div>

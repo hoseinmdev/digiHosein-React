@@ -1,5 +1,5 @@
-import consoleBanner from "../Accets/images/bannerConsole.webp";
-import speakerBanner from "../Accets/images/bannerSpeaker.webp";
+import consoleBanner from "../assets/images/bannerConsole.webp";
+import speakerBanner from "../assets/images/bannerSpeaker.webp";
 import { Link } from "react-router-dom";
 const LandingBanner = () => {
   return (

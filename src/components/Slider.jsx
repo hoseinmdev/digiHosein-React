@@ -1,16 +1,16 @@
-import mobileBanner from "../Accets/images/bannerMobile.webp";
-import mobileBannerinMobile from "../Accets/images/phonesBannerInMobile.jpg";
-import consoleBanner from "../Accets/images/bannerConsole.webp";
-import consoleBannerInMobile from "../Accets/images/consolesBannerInMobile.jpg";
-import airpodsBanner from "../Accets/images/bannerAirpods.webp";
-import airpodsBannerInMobile from "../Accets/images/headphonesBannerInMobile.jpg";
-import airpodsBanner2 from "../Accets/images/bannerAirpods2.webp";
-import digitalWatchBanner from "../Accets/images/bannerDigitalWatch.webp";
-import digitalWatchBannerInMobile from "../Accets/images/digitalWatchesBannerInMobile.jpg";
-import speakerBanner from "../Accets/images/bannerSpeaker.webp";
-import speakerBannerInMobile from "../Accets/images/speakersBannerInMobile.jpg";
-import tabletBanner from "../Accets/images/bannerTablet.webp";
-import laptopsBannerInMobile from "../Accets/images/laptopsBannerInMobile.jpg";
+import mobileBanner from "../assets/images/bannerMobile.webp";
+import mobileBannerinMobile from "../assets/images/phonesBannerInMobile.jpg";
+import consoleBanner from "../assets/images/bannerConsole.webp";
+import consoleBannerInMobile from "../assets/images/consolesBannerInMobile.jpg";
+import airpodsBanner from "../assets/images/bannerAirpods.webp";
+import airpodsBannerInMobile from "../assets/images/headphonesBannerInMobile.jpg";
+import airpodsBanner2 from "../assets/images/bannerAirpods2.webp";
+import digitalWatchBanner from "../assets/images/bannerDigitalWatch.webp";
+import digitalWatchBannerInMobile from "../assets/images/digitalWatchesBannerInMobile.jpg";
+import speakerBanner from "../assets/images/bannerSpeaker.webp";
+import speakerBannerInMobile from "../assets/images/speakersBannerInMobile.jpg";
+import tabletBanner from "../assets/images/bannerTablet.webp";
+import laptopsBannerInMobile from "../assets/images/laptopsBannerInMobile.jpg";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useRef, useState } from "react";
 import { useEffect } from "react";
@@ -190,7 +190,7 @@ const Slider = () => {
         </div>
       );
     } else {
-      return <Skeleton width={"95%"} height={"17rem"} radius={"15px"} />;
+      return <Skeleton width={"100%"} height={"17rem"} radius={"15px"} />;
     }
   };
   return renderSlider();

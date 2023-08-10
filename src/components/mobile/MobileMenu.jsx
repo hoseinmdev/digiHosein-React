@@ -1,5 +1,5 @@
 import { AiOutlineClose } from "react-icons/ai";
-import siteLofo from "../../Accets/images/logo.jpg";
+import siteLofo from "../../assets/images/logo.jpg";
 import {
   FaHeadphonesAlt,
   FaHome,

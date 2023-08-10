@@ -1,4 +1,4 @@
-import notFound from "../Accets/images/notFoundProduct.png";
+import notFound from "../assets/images/notFoundProduct.png";
 import { ImArrowDown2, ImArrowUp2 } from "react-icons/im";
 import { useEffect, useState } from "react";
 import { RiFilterOffFill } from "react-icons/ri";
@@ -207,19 +207,13 @@ const CategorizedProducts = () => {
       return createEmptyArray(8).map((p, index) => {
         return (
           <div key={index}>
-            <div
-              
-              className="hidden h-72 w-48 flex-col items-center justify-evenly rounded-xl border border-gray-300 lg:flex"
-            >
+            <div className="hidden h-72 w-48 flex-col items-center justify-evenly rounded-xl border border-gray-300 lg:flex">
               <Skeleton width={"5.5rem"} height={"10rem"} radius={"8px"} />
               <Skeleton width={"10rem"} height={"1.5rem"} radius={"30px"} />
               <Skeleton width={"8rem"} height={"1.5rem"} radius={"30px"} />
               <Skeleton width={"6rem"} height={"1.5rem"} radius={"30px"} />
             </div>
-            <div
-              
-              className="flex h-40 w-full flex-col items-start justify-between rounded-lg border border-gray-300 p-2 lg:hidden"
-            >
+            <div className="flex h-40 w-full flex-col items-start justify-between rounded-lg border border-gray-300 p-2 lg:hidden">
               <Skeleton width={"8rem"} height={"1rem"} radius={"30px"} />
               <div className="flex w-full items-center justify-between">
                 <div className="mr-6">

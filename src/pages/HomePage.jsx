@@ -1,5 +1,5 @@
 import LandingBanner from "components/LandingBanner";
-import CircleCategories from "../components/CircleCategories/CircleCategories";
+import CircleCategories from "../components/CircleCategories";
 import BackToUpBtn from "../components/common/BackToUpBtn";
 import SiteLayout from "../layout/SiteLayout";
 import Slider from "components/Slider";
@@ -8,15 +8,6 @@ import HomePageProductsLayout from "layout/HomePageProductsLayout";
 import Product from "components/Product";
 const HomePage = () => {
   const { productState } = useProducts();
-  const tablets = productState.allProducts.filter(
-    (p) => p.category === "tablets",
-  );
-  const laptops = productState.allProducts.filter(
-    (p) => p.category === "laptops",
-  );
-  const phones = productState.allProducts.filter(
-    (p) => p.category === "phones",
-  );
   return (
     <>
       <SiteLayout>
@@ -36,26 +27,24 @@ const HomePage = () => {
         </HomePageProductsLayout>
 
         {/* PHONES */}
-        <HomePageProductsLayout title="موبایل ها" bgColor="bg-indigo-100">
-          {phones.map((product) => {
-            return <Product key={product.id} product={product} />;
-          })}
-        </HomePageProductsLayout>
+        <HomePageProductsLayout
+          title="موبایل ها"
+          bgColor="bg-indigo-100"
+          category="phones"
+        />
 
         <LandingBanner />
-        {/* LAPTOPS */}
-        <HomePageProductsLayout title="لپتاپ ها" bgColor="bg-violet-100">
-          {laptops.map((product) => {
-            return <Product key={product.id} product={product} />;
-          })}
-        </HomePageProductsLayout>
 
-        {/* TABLETS */}
-        <HomePageProductsLayout title="تبلت ها" bgColor="bg-rose-50">
-          {tablets.map((product) => {
-            return <Product key={product.id} product={product} />;
-          })}
-        </HomePageProductsLayout>
+        <HomePageProductsLayout
+          title="لپتاپ ها"
+          bgColor="bg-violet-100"
+          category="laptops"
+        />
+        <HomePageProductsLayout
+          title="تبلت ها"
+          bgColor="bg-rose-50"
+          category="tablets"
+        />
 
         <BackToUpBtn />
       </SiteLayout>

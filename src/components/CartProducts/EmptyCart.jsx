@@ -1,4 +1,4 @@
-import emptyCart from "../../Accets/images/empty-shopping-trolley.png";
+import emptyCart from "../../assets/images/empty-shopping-trolley.png";
 import { Link } from "react-router-dom";
 const EmptyCart = () => {
   return (

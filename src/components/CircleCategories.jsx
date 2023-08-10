@@ -1,21 +1,18 @@
-import mobile from "../../Accets/images/mobileCategories.webp";
-import laptop from "../../Accets/images/laptopCategories.webp";
-import tablet from "../../Accets/images/tabletCategories.webp";
-import digitalWatch from "../../Accets/images/digitalWatchCategories.webp";
-import airpods from "../../Accets/images/airpodsCategories.webp";
-import console from "../../Accets/images/consolCategories.webp";
-import CircleCategoriesSkeleton from "./CircleCategoriesSkeleton";
+import mobile from "../assets/images/mobileCategories.webp";
+import laptop from "../assets/images/laptopCategories.webp";
+import tablet from "../assets/images/tabletCategories.webp";
+import digitalWatch from "../assets/images/digitalWatchCategories.webp";
+import airpods from "../assets/images/airpodsCategories.webp";
+import console from "../assets/images/consolCategories.webp";
+import createEmptyArray from "utils/createEmptyArray";
+import Skeleton from "./Skeleton";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const CircleCategories = () => {
   const [categoriesState, setCategoriesState] = useState(0);
-  useEffect(() => {
-    const setData = () => {
-      setTimeout(() => setCategoriesState(1), 1500);
-    };
-    setData();
-  }, []);
+  setTimeout(() => setCategoriesState(1), 1500);
+
   const categories = [
     { title: "گوشی موبایل", imageUrl: mobile, path: "/categories/phones" },
     { title: "لپتاپ", imageUrl: laptop, path: "/categories/laptops" },
@@ -35,7 +32,7 @@ const CircleCategories = () => {
 
   const renderCategories = () => {
     if (!categoriesState) {
-      return <CircleCategoriesSkeleton />;
+      return <RenderSkeleton />;
     }
     if (categoriesState) {
       return (
@@ -61,6 +58,38 @@ const CircleCategories = () => {
     }
   };
   return renderCategories();
+};
+
+const RenderSkeleton = () => {
+  const dekstopSkeletons = createEmptyArray(6).map((_, i) => (
+    <div
+      key={i}
+      className="flex flex-col items-center justify-center gap-4 p-4"
+    >
+      <Skeleton width={"8.5rem"} height={"8.5rem"} radius={"100%"} />
+      <Skeleton width={"6rem"} height={"2rem"} radius={"15px"} />
+    </div>
+  ));
+  const mobileSkeletons = createEmptyArray(3).map((_, i) => (
+    <div
+      key={i}
+      className=" flex flex-col items-center justify-center gap-4 py-4"
+    >
+      <Skeleton width={"6.5rem"} height={"6.5rem"} radius={"100%"} />
+      <Skeleton width={"5rem"} height={"1.5rem"} radius={"15px"} />
+    </div>
+  ));
+
+  return (
+    <>
+      <div className="hidden w-full items-center justify-evenly lg:flex">
+        {dekstopSkeletons}
+      </div>
+      <div className="flex items-center justify-center gap-2 lg:hidden">
+        {mobileSkeletons}
+      </div>
+    </>
+  );
 };
 
 export default CircleCategories;

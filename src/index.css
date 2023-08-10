@@ -17,7 +17,7 @@ code {
 
 @font-face {
   font-family: VazirFont;
-  src: url(Accets/fonts/Vazir-FD.ttf);
+  src: url(assets/fonts/Vazir-FD.ttf);
 }
 
 * {
@@ -48,8 +48,8 @@ button {
     opacity: 1;
   }
 }
-.fadeShow{
-  animation: fadeShow 0.5s ;
+.fadeShow {
+  animation: fadeShow 0.5s;
 }
 .hideScrollbar {
   -ms-overflow-style: none; /* Internet Explorer 10+ */

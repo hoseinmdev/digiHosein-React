@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import page404 from "../Accets/images/page404.avif";
+import page404 from "../assets/images/page404.avif";
 const NotFoundPage = () => {
   return (
-    <div className="h-screen flex flex-col justify-start items-center mt-8">
+    <div className="mt-8 flex h-screen flex-col items-center justify-start">
       <img src={page404} className="w-96" />
       <Link to="/">
-        <button className="text-xl px-8 py-2 bg-violet-700 text-white rounded-full">
+        <button className="rounded-full bg-violet-700 px-8 py-2 text-xl text-white">
           بازگشت به فروشگاه دیجی حسین
         </button>
       </Link>

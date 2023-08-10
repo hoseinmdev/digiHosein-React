@@ -1,9 +1,9 @@
 import { AiOutlineInstagram, AiOutlineMail } from "react-icons/ai";
 import { FiPhoneCall } from "react-icons/fi";
 import { BsInstagram } from "react-icons/bs";
-import logo1 from "../Accets/images/download.svg";
-import logo2 from "../Accets/images/c5.webp";
-import logo3 from "../Accets/images/c4.webp";
+import logo1 from "../assets/images/download.svg";
+import logo2 from "../assets/images/c5.webp";
+import logo3 from "../assets/images/c4.webp";
 
 const Footer = () => {
   return (

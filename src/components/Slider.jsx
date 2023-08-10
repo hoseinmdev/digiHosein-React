@@ -148,7 +148,7 @@ const Slider = () => {
     if (slides) {
       return (
         <div
-          className="relative flex w-[96%] items-center justify-between overflow-hidden rounded-xl bg-none shadow-2xl lg:h-80"
+          className="relative flex w-full items-center justify-between overflow-hidden rounded-xl bg-none shadow-2xl lg:h-80"
           onTouchStart={(e) => onTouchStartHandler(e)}
           onTouchMove={(e) => onTouchMoveHandler(e)}
         >

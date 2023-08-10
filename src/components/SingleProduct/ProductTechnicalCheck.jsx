@@ -15,9 +15,12 @@ const ProductTechnicalCheck = ({ product }) => {
     });
   });
   const renderProductScores = () => {
-    return allSpecificationsNames.map((p) => {
+    return allSpecificationsNames.map((p, index) => {
       return (
-        <div className="flex w-40 flex-col items-center justify-center gap-2 text-lg text-gray-700">
+        <div
+          key={index}
+          className="flex w-40 flex-col items-center justify-center gap-2 text-lg text-gray-700"
+        >
           <span className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-r-[3px] border-t-[5px] border-violet-500 text-2xl hover:rotate-[360deg] hover:scale-110">
             {p.scoreOfSpecification}
           </span>

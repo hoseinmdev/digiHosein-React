@@ -78,7 +78,7 @@ const SingleProduct = () => {
       );
     }
     if (!singleProduct) {
-      return <SingleProductSkeleton key={1} />;
+      return <SingleProductSkeleton />;
     }
   };
   return renderSingleProduct();

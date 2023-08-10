@@ -121,25 +121,26 @@ const CategorizedProducts = () => {
         return (
           <div
             key={option.key}
-            className="flex w-full flex-col gap-4 rounded-lg bg-gray-100 px-4 py-2 text-base"
+            className="flex w-full flex-col overflow-hidden rounded-lg bg-gray-100 px-4 py-2 text-base"
           >
             <span
               className="flex cursor-pointer items-center justify-between"
               onClick={() => toggleShowFilterOptionHandler(option.key)}
             >
-              {showFilters[option.key] ? (
-                <p className="flex w-full cursor-pointer items-center justify-between text-violet-700">
-                  {option.title} <ImArrowUp2 />
-                </p>
-              ) : (
-                <>
-                  {option.title} <ImArrowDown2 />
-                </>
-              )}
+              <p
+                className={`flex w-full cursor-pointer items-center justify-between ${
+                  showFilters[option.key] ? "text-violet-700" : "text-gray-800"
+                }`}
+              >
+                {option.title}
+                <ImArrowUp2
+                  className={`${showFilters[option.key] ? "rotate-180" : ""}`}
+                />
+              </p>
             </span>
             <span
               className={`flex flex-col items-center justify-start gap-1 ${
-                showFilters[option.key] ? "flex" : "hidden"
+                showFilters[option.key] ? "pt-4 opacity-100" : "h-0 opacity-0"
               }`}
             >
               {option.options.map((item) => {
@@ -205,9 +206,9 @@ const CategorizedProducts = () => {
     } else {
       return createEmptyArray(8).map((p, index) => {
         return (
-          <>
+          <div key={index}>
             <div
-              key={p}
+              
               className="hidden h-72 w-48 flex-col items-center justify-evenly rounded-xl border border-gray-300 lg:flex"
             >
               <Skeleton width={"5.5rem"} height={"10rem"} radius={"8px"} />
@@ -216,7 +217,7 @@ const CategorizedProducts = () => {
               <Skeleton width={"6rem"} height={"1.5rem"} radius={"30px"} />
             </div>
             <div
-              key={index}
+              
               className="flex h-40 w-full flex-col items-start justify-between rounded-lg border border-gray-300 p-2 lg:hidden"
             >
               <Skeleton width={"8rem"} height={"1rem"} radius={"30px"} />
@@ -230,7 +231,7 @@ const CategorizedProducts = () => {
                 </div>
               </div>
             </div>
-          </>
+          </div>
         );
       });
     }

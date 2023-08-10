@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import React from "react";
 import CartProvider from "./context/CartProvider";
 import ProductsProvider from "./context/ProductsProvider";
@@ -11,8 +11,12 @@ import SingleProductPage from "pages/SingleProductPage";
 import HomePage from "pages/HomePage";
 import CartPage from "pages/CartPage";
 import NotFoundPage from "pages/NotFoundPage";
+import { useEffect } from "react";
+import backToUp from "utils/BackToUp";
 
 function App() {
+  const location = useLocation()
+  useEffect(() => backToUp(), [location]);
   return (
     <div className="App">
       <CustomToast />

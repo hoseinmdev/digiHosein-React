@@ -1,0 +1,107 @@
+import { useCart } from "context/CartProvider";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { FaCheckCircle, FaRibbon, FaSketch, FaTrash } from "react-icons/fa";
+import { AiOutlineClose, AiOutlineMinus } from "react-icons/ai";
+
+const PurchasedProducts = () => {
+  const { state } = useCart();
+
+  return (
+    <div className="flex w-full flex-col items-center justify-center gap-4 overflow-auto rounded-lg p-4">
+      {state.cart.map((product) => {
+        return <PurchasedProduct key={product.id} product={product} />;
+      })}
+    </div>
+  );
+};
+
+const PurchasedProduct = ({product}) => {
+  const { title, price, imageURL, quantity, id } = product;
+  const { dispatch } = useCart();
+  const [fade, setFade] = useState(1);
+  const history = useNavigate();
+  const renderProductPage = () => {
+    history(
+      { pathname: `/product/${id}` },
+      {
+        state: id,
+      },
+    );
+  };
+  const increaseHandler = () => {
+    dispatch({ type: "INCREASE", price: price, id: id });
+  };
+  const decreaseHandler = () => {
+    if (quantity === 1) {
+      setFade(0);
+      setTimeout(() => dispatch({ type: "DELETE", price: price, id: id }), 200);
+    } else {
+      dispatch({ type: "DECREASE", price: price, id: id });
+    }
+  };
+  const deleteHandler = () => {
+    setFade(0);
+    setTimeout(() => dispatch({ type: "DELETE", price: price, id: id }), 200);
+  };
+  const renderIcon = () => {
+    return quantity === 1 ? <FaTrash /> : <AiOutlineMinus />;
+  };
+
+  return (
+    <div
+      className={`flex w-full items-center justify-between gap-4 overflow-auto rounded-lg bg-white p-2 shadow-sm ${
+        fade ? "scale-100" : "scale-0"
+      }`}
+    >
+      <div className="flex w-full items-center justify-between lg:w-1/2">
+        <div className="mb-10 scale-125 cursor-pointer" onClick={deleteHandler}>
+          <AiOutlineClose />
+        </div>
+        <img
+          className="h-24 w-24 cursor-pointer lg:h-28 lg:w-28"
+          src={imageURL}
+          alt={title}
+          onClick={renderProductPage}
+        />
+        <div className="flex flex-col gap-3">
+          <p className="text-sm" onClick={renderProductPage}>
+            {title}
+          </p>
+          <p>{price.toLocaleString("en")} تومان</p>
+          <div className="mr-4 flex w-24 items-center justify-between rounded-2xl bg-slate-100 lg:mr-0">
+            <button
+              className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-2xl bg-slate-700 p-2 text-white"
+              onClick={increaseHandler}
+            >
+              +
+            </button>
+            <p>{quantity}</p>
+            <button
+              className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-2xl bg-slate-700 p-2 text-white"
+              onClick={decreaseHandler}
+            >
+              {renderIcon()}
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className="hidden w-48 flex-col items-start justify-center gap-3 lg:flex">
+        <div className="flex items-center justify-end gap-4">
+          <FaSketch className="text-sky-500" />
+          <p>ضمانت هفت روزه کالا</p>
+        </div>
+        <div className="flex items-center justify-end gap-4">
+          <FaRibbon className="text-yellow-400" />
+          <p>18 ماه گارانتی</p>
+        </div>
+        <div className="flex items-center justify-end gap-4">
+          <FaCheckCircle className="text-green-600" />
+          <p>ارسال سریع</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PurchasedProducts;

@@ -11,10 +11,6 @@ const ReplyComment = () => {
     userName: "",
     userAnswer: "",
   });
-  useEffect(() => {
-    document.body.classList.toggle("overflow-y-hidden");
-  }, []);
-
   const inputHandler = (e) => {
     setInputText({
       ...inputText,

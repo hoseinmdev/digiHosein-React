@@ -51,14 +51,14 @@ const desktopSlides = [
 ];
 const mobileSlides = [
   {
-    id: 1,
-    src: consoleBannerInMobile,
-    link: "/categories/consoles",
-  },
-  {
     id: 2,
     src: mobileBannerinMobile,
     link: "/categories/phones",
+  },
+  {
+    id: 1,
+    src: consoleBannerInMobile,
+    link: "/categories/consoles",
   },
   {
     id: 3,

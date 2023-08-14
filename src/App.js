@@ -2,7 +2,6 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import React from "react";
 import CartProvider from "./context/CartProvider";
 import ProductsProvider from "./context/ProductsProvider";
-import CategorizedProducts from "layout/CategorizedProducts";
 import "react-toastify/dist/ReactToastify.css";
 import CustomToast from "./components/common/CustomToast";
 import LoginPage from "pages/LoginPage";
@@ -13,6 +12,7 @@ import CartPage from "pages/CartPage";
 import NotFoundPage from "pages/NotFoundPage";
 import { useEffect } from "react";
 import backToUp from "utils/BackToUp";
+import ProductsPage from "pages/ProductsPage";
 
 function App() {
   const location = useLocation();
@@ -30,7 +30,7 @@ function App() {
             <Route path="login" element={<LoginPage />} />
             <Route
               path="categories/:category"
-              element={<CategorizedProducts />}
+              element={<ProductsPage />}
             />
             <Route path="product/:id" element={<SingleProductPage />} />
           </Routes>

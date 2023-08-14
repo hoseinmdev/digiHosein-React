@@ -28,6 +28,7 @@ code {
   outline: none;
   box-sizing: border-box;
   transition: 0.3s;
+  scroll-behavior: smooth;
 }
 a {
   text-decoration: none;

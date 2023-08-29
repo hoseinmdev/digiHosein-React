@@ -6,9 +6,9 @@ import HeaderOfCart from "components/CartPage/HeaderOfCart";
 import PurchasedProducts from "components/CartPage/PurchasedProducts";
 const CartPage = () => {
   const { state } = useCart();
-  const renderCart = () => {
-    if (state.cart.length !== 0) {
-      return (
+  return (
+    <SiteLayout>
+      {state.cart.length !== 0 ? (
         <div className=" mt-4 flex min-h-[33rem] w-11/12 flex-col items-start lg:mr-0 lg:mt-0">
           <HeaderOfCart />
           <div className="flex w-full flex-col items-start justify-between gap-8 lg:flex-row">
@@ -16,11 +16,11 @@ const CartPage = () => {
             <PurchaseSummary />
           </div>
         </div>
-      );
-    } else return <EmptyCart />;
-  };
-
-  return <SiteLayout>{renderCart()}</SiteLayout>;
+      ) : (
+        <EmptyCart />
+      )}
+    </SiteLayout>
+  );
 };
 
 export default CartPage;

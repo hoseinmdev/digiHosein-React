@@ -9,7 +9,7 @@ const Product = ({ product }) => {
   const { id, title, price, imageURL } = product;
   const { state, dispatch } = useCart();
   const isInCart = state.cart.find((p) => p.id === id);
-  const history = useNavigate();
+    const history = useNavigate();
   const clickHandler = () => {
     toast.success("به سبد خرید اضافه شد");
     dispatch({

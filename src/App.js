@@ -10,6 +10,7 @@ import { Provider } from "react-redux";
 import { store } from "store";
 import SiteLayout from "layout/SiteLayout";
 import Skeleton from "components/common/Skeleton";
+import { FaSpinner } from "react-icons/fa";
 const CartPage = React.lazy(() => import("pages/CartPage"));
 const ProductsPage = React.lazy(() => import("pages/ProductsPage"));
 const SingleProductPage = React.lazy(() => import("pages/SingleProductPage"));
@@ -24,9 +25,7 @@ function App() {
     <div className="App">
       <CustomToast />
       <Provider store={store}>
-          <Suspense fallback={<SiteLayout>
-            <Skeleton width={"95%"} height={"95%"} radius={"10px"}/>
-          </SiteLayout>}>
+          <Suspense fallback={<div className="animate-spin w-full h-full text-center"><FaSpinner/></div>}>
             <Routes>
               <Route path="*" element={<NotFoundPage />} />
               <Route path="/" element={<HomePage />} />

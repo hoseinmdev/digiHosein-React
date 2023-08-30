@@ -1,5 +1,4 @@
 import Product from "components/common/Product";
-// import { useProducts } from "context/ProductsProvider";
 import { allProducts } from "db";
 import { useRef } from "react";
 import { useEffect, useState } from "react";

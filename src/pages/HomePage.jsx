@@ -4,7 +4,11 @@ import BackToUpBtn from "../components/common/BackToUpBtn";
 import SiteLayout from "../layout/SiteLayout";
 import Slider from "components/HomePage/Slider";
 import ProductsSlider from "components/HomePage/ProductsSlider";
+import { useSelector } from "react-redux";
 const HomePage = () => {
+
+  const cart = useSelector((state) => state.cart)
+  console.log(cart)
   return (
     <SiteLayout>
       <Slider />

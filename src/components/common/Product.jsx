@@ -1,36 +1,38 @@
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useCart } from "../../context/CartProvider";
 import { AiFillTag, AiOutlineShoppingCart } from "react-icons/ai";
 import { RiChatDeleteFill } from "react-icons/ri";
 import { FaTrash } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addProductToCart,
+  decrementProduct,
+  deleteFromCart,
+  incrementProduct,
+} from "redux/cartSlice";
 
 const Product = ({ product }) => {
   const { id, title, price, imageURL } = product;
-  const { state, dispatch } = useCart();
-  const isInCart = state.cart.find((p) => p.id === id);
-    const history = useNavigate();
+  const cart = useSelector((state) => state.cart.products);
+  const dispatch = useDispatch();
+  const isInCart = cart.find((p) => p.id === id);
+  const history = useNavigate();
+
   const clickHandler = () => {
-    toast.success("به سبد خرید اضافه شد");
-    dispatch({
-      type: "ADD_TO_CART",
-      product,
-    });
+    dispatch(addProductToCart(product));
+    toast.success("به سبد خرید اضافه شد", { bodyClassName: "text-green-600" });
   };
-  const increaseHandler = () => {
-    dispatch({ type: "INCREASE", price: price, id: id });
+  const incrementHandler = () => {
+    dispatch(incrementProduct(product));
   };
-  const decreaseHandler = () => {
+  const decrementHandler = () => {
     if (isInCart.quantity === 1) {
-      toast.error("محصول حذف شد", {
+      toast.error("از سبد خرید حذف شد", {
         icon: <RiChatDeleteFill />,
         bodyClassName: "text-red-700",
-        progressClassName: "bg-red-700",
       });
-      dispatch({ type: "DELETE", price: price, id: id });
-    } else {
-      dispatch({ type: "DECREASE", price: price, id: id });
-    }
+      dispatch(deleteFromCart(product));
+    } else dispatch(decrementProduct(id));
   };
   const renderProductPage = () => {
     history(
@@ -46,7 +48,7 @@ const Product = ({ product }) => {
         <div className="flex w-full items-center justify-center gap-1">
           <button
             className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-800 text-white hover:bg-violet-700"
-            onClick={increaseHandler}
+            onClick={incrementHandler}
           >
             +
           </button>
@@ -62,7 +64,7 @@ const Product = ({ product }) => {
           </Link>
           <button
             className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-800 text-white hover:bg-violet-700"
-            onClick={decreaseHandler}
+            onClick={decrementHandler}
           >
             {isInCart.quantity === 1 ? (
               <FaTrash className="h-1/2 w-1/2" />

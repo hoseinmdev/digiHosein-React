@@ -1,4 +1,3 @@
-// import { useProducts } from "context/ProductsProvider";
 import { useState } from "react";
 import { HiSquares2X2 } from "react-icons/hi2";
 import { FaSearch } from "react-icons/fa";

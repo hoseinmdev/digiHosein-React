@@ -7,19 +7,20 @@ import { DiCodeigniter } from "react-icons/di";
 import { FaRibbon } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useCart } from "../../context/CartProvider";
 import fastSubmit from "../../assets/images/esraleSari.png";
+import { useDispatch, useSelector } from "react-redux";
+import { addProductToCart } from "redux/cartSlice";
+
 const Seller = ({ product }) => {
-  const { state, dispatch } = useCart();
+  const dispatch = useDispatch()
+  const cart = useSelector((state)=>state.cart.products)
+
   const clickHandler = () => {
     toast.success("به سبد خرید اضافه شد");
-    dispatch({
-      type: "ADD_TO_CART",
-      product,
-    });
+    dispatch(addProductToCart(product))
   };
   const renderAddToCartButton = () => {
-    const isInCart = state.cart.find((p) => p.id === product.id);
+    const isInCart = cart.find((p) => p.id === product.id);
     if (isInCart) {
       return (
         <Link

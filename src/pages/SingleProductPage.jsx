@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 import SiteLayout from "../layout/SiteLayout";
 import { useRef, useState } from "react";
-// import { useProducts } from "context/ProductsProvider";
 import Introduction from "components/SingleProductPage/Introduction";
 import Seller from "components/SingleProductPage/Seller";
 import TechnicalCheck from "components/SingleProductPage/TechnicalCheck";

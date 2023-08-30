@@ -25,17 +25,25 @@ function App() {
     <div className="App">
       <CustomToast />
       <Provider store={store}>
-          <Suspense fallback={<div className="animate-spin w-full h-full text-center"><FaSpinner/></div>}>
-            <Routes>
-              <Route path="*" element={<NotFoundPage />} />
-              <Route path="/" element={<HomePage />} />
-              <Route path="cart" element={<CartPage />} />
-              <Route path="sginUp" element={<SginUpPage />} />
-              <Route path="login" element={<LoginPage />} />
-              <Route path="categories/:category" element={<ProductsPage />} />
-              <Route path="product/:id" element={<SingleProductPage />} />
-            </Routes>
-          </Suspense>
+        <Suspense
+          fallback={
+            <SiteLayout>
+              <div className="h-full w-full animate-spin text-center">
+                <FaSpinner />
+              </div>
+            </SiteLayout>
+          }
+        >
+          <Routes>
+            <Route path="*" element={<NotFoundPage />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="cart" element={<CartPage />} />
+            <Route path="sginUp" element={<SginUpPage />} />
+            <Route path="login" element={<LoginPage />} />
+            <Route path="categories/:category" element={<ProductsPage />} />
+            <Route path="product/:id" element={<SingleProductPage />} />
+          </Routes>
+        </Suspense>
       </Provider>
     </div>
   );

@@ -52,6 +52,21 @@ export const cartSlice = createSlice({
   },
 });
 
+export const localStorageMiddleware = ({ getState }) => {
+  return (next) => (action) => {
+    const result = next(action);
+    localStorage.setItem(
+      "userProducts",
+      JSON.stringify(getState().cart.products),
+    );
+    localStorage.setItem(
+      "userProductsTotalPrice",
+      JSON.stringify(getState().cart.productsTotalPrice),
+    );
+    return result;
+  };
+};
+
 export const {
   addProductToCart,
   deleteFromCart,

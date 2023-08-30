@@ -1,12 +1,11 @@
-import { useProducts } from "context/ProductsProvider";
 import { useState } from "react";
 import { HiSquares2X2 } from "react-icons/hi2";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import Backdrop from "components/common/Backdrop";
+import { allProducts } from "db";
 
 const SearchProducts = () => {
-  const { productState } = useProducts();
   const [searchBoxSelected, setSearchBoxSelected] = useState();
   const [searchInput, setSearchInput] = useState("");
   const [productsFound, setProductsFound] = useState("");
@@ -20,7 +19,7 @@ const SearchProducts = () => {
     const inputValue = e.target.value.toLowerCase();
     setSearchInput(inputValue);
     setProductsFound(
-      productState.allProducts.filter((p) =>
+      allProducts.filter((p) =>
         p.title.toLowerCase().includes(inputValue),
       ),
     );
@@ -59,7 +58,7 @@ const SearchProducts = () => {
             جستجو برای ...
             {searchInput}
           </div>
-          {productsFound.length !== productState.allProducts.length && (
+          {productsFound.length !== allProducts.length && (
             <div className="flex h-full w-full flex-col items-center justify-start gap-6 overflow-auto">
               {productsFound.map((product) => {
                 return <Product key={product.id} product={product} />;

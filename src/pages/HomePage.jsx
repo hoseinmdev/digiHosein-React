@@ -3,25 +3,26 @@ import CircleCategories from "../components/HomePage/CircleCategories";
 import BackToUpBtn from "../components/common/BackToUpBtn";
 import SiteLayout from "../layout/SiteLayout";
 import Slider from "components/HomePage/Slider";
-import { useProducts } from "context/ProductsProvider";
 import ProductsSlider from "components/HomePage/ProductsSlider";
-import Product from "components/common/Product";
+import { useSelector } from "react-redux";
 const HomePage = () => {
-  const { productState } = useProducts();
+
+  const cart = useSelector((state) => state.cart)
+  console.log(cart)
   return (
     <SiteLayout>
       <Slider />
       <CircleCategories />
-      <ProductsSlider
+      {/* <ProductsSlider
         bgColor="bg-gray-900"
         title="پرفروش ترین محصولات"
         titleColor="#f8fafc"
         titleLineColor="bg-violet-600"
       >
-        {productState.bestSellerProducts.map((product) => {
+        {bestSellerProducts.map((product) => {
           return <Product key={product.id} product={product} />;
         })}
-      </ProductsSlider>
+      </ProductsSlider> */}
       <ProductsSlider
         title="موبایل ها"
         bgColor="bg-indigo-100"

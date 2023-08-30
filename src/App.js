@@ -1,18 +1,19 @@
-import { Route, Routes, useLocation } from "react-router-dom";
-import React from "react";
-import CartProvider from "./context/CartProvider";
-import ProductsProvider from "./context/ProductsProvider";
 import "react-toastify/dist/ReactToastify.css";
 import CustomToast from "./components/common/CustomToast";
-import LoginPage from "pages/LoginPage";
-import SginUpPage from "pages/SginUpPage";
-import SingleProductPage from "pages/SingleProductPage";
-import HomePage from "pages/HomePage";
-import CartPage from "pages/CartPage";
-import NotFoundPage from "pages/NotFoundPage";
+import React from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import backToUp from "utils/BackToUp";
-import ProductsPage from "pages/ProductsPage";
+import HomePage from "pages/HomePage";
+import { Suspense } from "react";
+import { Provider } from "react-redux";
+import { store } from "store";
+const CartPage = React.lazy(() => import("pages/CartPage"));
+const ProductsPage = React.lazy(() => import("pages/ProductsPage"));
+const SingleProductPage = React.lazy(() => import("pages/SingleProductPage"));
+const SginUpPage = React.lazy(() => import("pages/SginUpPage"));
+const LoginPage = React.lazy(() => import("pages/LoginPage"));
+const NotFoundPage = React.lazy(() => import("pages/NotFoundPage"));
 
 function App() {
   const location = useLocation();
@@ -20,22 +21,19 @@ function App() {
   return (
     <div className="App">
       <CustomToast />
-      <ProductsProvider>
-        <CartProvider>
-          <Routes>
-            <Route path="*" element={<NotFoundPage />} />
-            <Route path="/" element={<HomePage />} />
-            <Route path="cart" element={<CartPage />} />
-            <Route path="sginUp" element={<SginUpPage />} />
-            <Route path="login" element={<LoginPage />} />
-            <Route
-              path="categories/:category"
-              element={<ProductsPage />}
-            />
-            <Route path="product/:id" element={<SingleProductPage />} />
-          </Routes>
-        </CartProvider>
-      </ProductsProvider>
+      <Provider store={store}>
+          <Suspense fallback={""}>
+            <Routes>
+              <Route path="*" element={<NotFoundPage />} />
+              <Route path="/" element={<HomePage />} />
+              <Route path="cart" element={<CartPage />} />
+              <Route path="sginUp" element={<SginUpPage />} />
+              <Route path="login" element={<LoginPage />} />
+              <Route path="categories/:category" element={<ProductsPage />} />
+              <Route path="product/:id" element={<SingleProductPage />} />
+            </Routes>
+          </Suspense>
+      </Provider>
     </div>
   );
 }

@@ -1,12 +1,12 @@
+import { allProducts, filters } from "db";
+
 const { default: Skeleton } = require("components/common/Skeleton");
-const { useProducts } = require("context/ProductsProvider");
 const { useState } = require("react");
 const { ImArrowUp2 } = require("react-icons/im");
 const { useSearchParams } = require("react-router-dom");
 const { default: createEmptyArray } = require("utils/createEmptyArray");
 
 const Filters = ({ category }) => {
-  const { productState } = useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const serializeFormQuery = () => {
@@ -28,11 +28,11 @@ const Filters = ({ category }) => {
     }
   };
   const generateFiltersState = () => {
-    const filters = {};
-    productState.filters.phones.forEach((p) => {
-      filters[p.key] = false;
+    const currentFilters = {};
+    filters.phones.forEach((p) => {
+      currentFilters[p.key] = false;
     });
-    return filters;
+    return currentFilters;
   };
   const [showFilters, setShowFilters] = useState(generateFiltersState);
 
@@ -41,7 +41,7 @@ const Filters = ({ category }) => {
   };
 
   if (category) {
-    return productState.filters[category].map((option) => {
+    return filters[category].map((option) => {
       return (
         <div
           key={option.key}
@@ -100,4 +100,4 @@ const Filters = ({ category }) => {
     });
   }
 };
-export default Filters
+export default Filters;

@@ -1,5 +1,5 @@
 import Product from "components/common/Product";
-import { useProducts } from "context/ProductsProvider";
+import { allProducts } from "db";
 import { useRef } from "react";
 import { useEffect, useState } from "react";
 import { IoArrowRedoSharp, IoArrowUndoSharp } from "react-icons/io5";
@@ -11,15 +11,12 @@ const ProductsSlider = ({
   titleColor = "text-gray-900",
   titleLineColor = "bg-gray-900",
 }) => {
-  const { productState } = useProducts();
   const [rightBtnDisplay, setRightBtnDisplay] = useState("hidden");
   const [leftBtnDisplay, setLeftBtnDisplay] = useState("flex");
   const [productsLength, setProductsLength] = useState();
   const [step, setStep] = useState(0);
   const productsBlockRef = useRef();
-  const productsToShow = productState.allProducts.filter(
-    (p) => p.category === category,
-  );
+  const productsToShow = allProducts.filter((p) => p.category === category);
 
   useEffect(() => {
     const offsetWidth = productsBlockRef.current.offsetWidth / 215;

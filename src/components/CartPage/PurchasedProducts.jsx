@@ -1,26 +1,31 @@
-import { useCart } from "context/CartProvider";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaCheckCircle, FaRibbon, FaSketch, FaTrash } from "react-icons/fa";
 import { AiOutlineClose, AiOutlineMinus } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  decrementProduct,
+  deleteFromCart,
+  incrementProduct,
+} from "redux/cartSlice";
 
 const PurchasedProducts = () => {
-  const { state } = useCart();
-
+  const cart = useSelector((state) => state.cart.products);
   return (
     <div className="flex w-full flex-col items-center justify-center gap-4 overflow-auto rounded-lg p-4">
-      {state.cart.map((product) => {
+      {cart.map((product) => {
         return <PurchasedProduct key={product.id} product={product} />;
       })}
     </div>
   );
 };
 
-const PurchasedProduct = ({product}) => {
+const PurchasedProduct = ({ product }) => {
   const { title, price, imageURL, quantity, id } = product;
-  const { dispatch } = useCart();
   const [fade, setFade] = useState(1);
   const history = useNavigate();
+  const dispatch = useDispatch();
+
   const renderProductPage = () => {
     history(
       { pathname: `/product/${id}` },
@@ -29,20 +34,18 @@ const PurchasedProduct = ({product}) => {
       },
     );
   };
-  const increaseHandler = () => {
-    dispatch({ type: "INCREASE", price: price, id: id });
+  const incrementHandler = () => {
+    dispatch(incrementProduct(product));
   };
-  const decreaseHandler = () => {
+  const decrementHandler = () => {
     if (quantity === 1) {
       setFade(0);
-      setTimeout(() => dispatch({ type: "DELETE", price: price, id: id }), 200);
-    } else {
-      dispatch({ type: "DECREASE", price: price, id: id });
-    }
+      setTimeout(() => dispatch(deleteFromCart(product)), 200);
+    } else dispatch(decrementProduct(product));
   };
   const deleteHandler = () => {
     setFade(0);
-    setTimeout(() => dispatch({ type: "DELETE", price: price, id: id }), 200);
+    setTimeout(() => dispatch(deleteFromCart(product)), 200);
   };
   const renderIcon = () => {
     return quantity === 1 ? <FaTrash /> : <AiOutlineMinus />;
@@ -72,14 +75,14 @@ const PurchasedProduct = ({product}) => {
           <div className="mr-4 flex w-24 items-center justify-between rounded-2xl bg-slate-100 lg:mr-0">
             <button
               className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-2xl bg-slate-700 p-2 text-white"
-              onClick={increaseHandler}
+              onClick={incrementHandler}
             >
               +
             </button>
             <p>{quantity}</p>
             <button
               className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-2xl bg-slate-700 p-2 text-white"
-              onClick={decreaseHandler}
+              onClick={decrementHandler}
             >
               {renderIcon()}
             </button>

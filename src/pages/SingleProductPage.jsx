@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import SiteLayout from "../layout/SiteLayout";
 import { useRef, useState } from "react";
-import { useProducts } from "context/ProductsProvider";
+// import { useProducts } from "context/ProductsProvider";
 import Introduction from "components/SingleProductPage/Introduction";
 import Seller from "components/SingleProductPage/Seller";
 import TechnicalCheck from "components/SingleProductPage/TechnicalCheck";
@@ -9,13 +9,13 @@ import UserComments from "components/SingleProductPage/UserComments";
 import BackToUp from "components/common/BackToUpBtn";
 import SingleProductSkeleton from "components/SingleProductPage/SingleProductSkeleton";
 import Badge from "components/SingleProductPage/Badge";
+import { allProducts } from "db";
 const SingleProductPage = () => {
   const history = useLocation();
   const technicalCheckPart = useRef();
   const userCommentsPart = useRef();
   const [show, setShow] = useState(0);
-  const { productState } = useProducts();
-  const product = productState.allProducts.find((p) => p.id === history.state);
+  const product = allProducts.find((p) => p.id === history.state);
   setTimeout(() => setShow(1), 1500);
 
   const renderSingleProduct = () => {

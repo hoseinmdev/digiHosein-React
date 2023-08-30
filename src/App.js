@@ -1,7 +1,6 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import React from "react";
 import CartProvider from "./context/CartProvider";
-import ProductsProvider from "./context/ProductsProvider";
 import "react-toastify/dist/ReactToastify.css";
 import CustomToast from "./components/common/CustomToast";
 import LoginPage from "pages/LoginPage";
@@ -20,22 +19,17 @@ function App() {
   return (
     <div className="App">
       <CustomToast />
-      <ProductsProvider>
-        <CartProvider>
-          <Routes>
-            <Route path="*" element={<NotFoundPage />} />
-            <Route path="/" element={<HomePage />} />
-            <Route path="cart" element={<CartPage />} />
-            <Route path="sginUp" element={<SginUpPage />} />
-            <Route path="login" element={<LoginPage />} />
-            <Route
-              path="categories/:category"
-              element={<ProductsPage />}
-            />
-            <Route path="product/:id" element={<SingleProductPage />} />
-          </Routes>
-        </CartProvider>
-      </ProductsProvider>
+      <CartProvider>
+        <Routes>
+          <Route path="*" element={<NotFoundPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="cart" element={<CartPage />} />
+          <Route path="sginUp" element={<SginUpPage />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="categories/:category" element={<ProductsPage />} />
+          <Route path="product/:id" element={<SingleProductPage />} />
+        </Routes>
+      </CartProvider>
     </div>
   );
 }

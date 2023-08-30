@@ -28,7 +28,7 @@ function App() {
         <Suspense
           fallback={
             <SiteLayout>
-              <div className="flex h-[60vh] w-full items-center justify-center">
+              <div className="flex h-screen w-full items-start pt-40 justify-center">
                 <div className="animate-spin text-3xl text-gray-500">
                   <FaSpinner />
                 </div>

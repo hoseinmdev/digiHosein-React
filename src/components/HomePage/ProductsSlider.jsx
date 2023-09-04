@@ -52,7 +52,7 @@ const ProductsSlider = ({
   };
   return (
     <div
-      className={`relative mt-2 flex w-full flex-col ${bgColor} items-start justify-center gap-8 overflow-hidden px-8 py-6`}
+      className={`relative mt-2 flex w-full flex-col ${bgColor} items-start justify-center gap-8 overflow-hidden px-4 lg:px-8 py-6`}
     >
       <button
         className={`z-5 absolute right-0 mr-14 hidden lg:${rightBtnDisplay} h-14 w-14 items-center justify-center rounded-full bg-white text-[1.8rem] text-gray-700 shadow-lg `}
@@ -65,7 +65,7 @@ const ProductsSlider = ({
         <hr className={`h-[2px] ${titleLineColor}`} />
       </div>
       <div
-        className="z-2 hideScrollbar flex h-96 max-w-[1360px] flex-col items-start justify-center gap-8 overflow-auto lg:overflow-hidden"
+        className="z-2 hideScrollbar flex h-96 w-full lg:max-w-[1360px] flex-col items-start justify-center gap-8 overflow-auto lg:overflow-hidden"
         ref={productsBlockRef}
       >
         {/* Products */}

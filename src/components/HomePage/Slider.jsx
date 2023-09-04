@@ -137,7 +137,7 @@ const Slider = () => {
     if (slides) {
       return (
         <div
-          className="relative flex w-full items-center justify-between overflow-hidden rounded-xl bg-none shadow-2xl lg:h-80"
+          className="relative flex w-full items-center justify-between overflow-hidden bg-none shadow-2xl lg:h-80 lg:rounded-xl"
           onTouchStart={(e) => onTouchStartHandler(e)}
           onTouchMove={(e) => onTouchMoveHandler(e)}
         >
@@ -151,7 +151,7 @@ const Slider = () => {
             <img
               src={slides[index].src}
               alt={consoleBanner}
-              className="h-full w-full"
+              className="sliderAnimation h-full w-full"
               style={{ opacity: fade }}
             />
           </Link>

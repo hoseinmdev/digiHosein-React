@@ -27,15 +27,15 @@ code {
   list-style: none;
   outline: none;
   box-sizing: border-box;
-  transition: 0.3s;
+  transition: 0.20s;
   scroll-behavior: smooth;
 }
 a {
   text-decoration: none;
 }
-input {
+/* input {
   border: none;
-}
+} */
 button {
   cursor: pointer;
 }

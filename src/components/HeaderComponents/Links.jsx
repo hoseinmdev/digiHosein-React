@@ -41,11 +41,11 @@ const Links = () => {
           <NavLink
             key={item.title}
             className={({ isActive }) =>
-              `lg:border-b-2 w-full lg:w-fit flex cursor-pointer items-center justify-center gap-2 px-2 py-1 text-gray-700
+              `flex w-full items-center justify-center gap-2 px-2 py-1 text-gray-700 lg:w-fit lg:cursor-pointer lg:border-b-2
                 ${
                   isActive
-                    ? "border-violet-600 text-violet-600 font-bold"
-                    : "border-white hover:border-violet-700"
+                    ? "border-violet-600 font-bold text-violet-600 dark:text-violet-500"
+                    : "border-white dark:border-gray-800 dark:text-white/60 lg:hover:border-violet-700 dark:lg:hover:border-violet-500"
                 }
               }`
             }

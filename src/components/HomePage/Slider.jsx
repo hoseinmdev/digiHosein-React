@@ -142,7 +142,7 @@ const Slider = () => {
           onTouchMove={(e) => onTouchMoveHandler(e)}
         >
           <button
-            className="absolute right-0 z-20 hidden h-full w-14 cursor-pointer items-center justify-center rounded-l-full bg-slate-200/30 text-3xl text-white hover:w-20 hover:bg-slate-200/50 lg:flex"
+            className="absolute right-0 z-20 hidden h-full w-14 items-center justify-center rounded-l-full bg-slate-200/30 text-3xl text-white lg:flex lg:cursor-pointer lg:hover:w-20 lg:hover:bg-slate-200/50"
             onClick={nextSlide}
           >
             <IoIosArrowForward />
@@ -156,7 +156,7 @@ const Slider = () => {
             />
           </Link>
           <button
-            className="absolute left-0 z-20 hidden h-full w-14 cursor-pointer items-center justify-center rounded-r-full bg-slate-200/30 text-3xl text-white hover:w-20 hover:bg-slate-200/50 lg:flex"
+            className="absolute left-0 z-20 hidden h-full w-14 items-center justify-center rounded-r-full bg-slate-200/30 text-3xl text-white lg:flex lg:cursor-pointer lg:hover:w-20 lg:hover:bg-slate-200/50"
             onClick={backSlide}
           >
             <IoIosArrowBack />
@@ -166,7 +166,7 @@ const Slider = () => {
               return (
                 <div
                   key={e.id}
-                  className={`h-2 w-2 cursor-pointer rounded-full bg-white shadow-xl ${
+                  className={`h-2 w-2 rounded-full bg-white shadow-xl lg:cursor-pointer ${
                     slides.indexOf(e) === index
                       ? "w-6 rounded-lg opacity-100"
                       : "opacity-50"

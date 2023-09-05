@@ -20,7 +20,7 @@ const Product = ({ product }) => {
 
   const clickHandler = () => {
     dispatch(addProductToCart(product));
-    toast.success("به سبد خرید اضافه شد", { bodyClassName: "text-green-600" });
+    toast.success("به سبد خرید اضافه شد", { theme: "colored"});
   };
   const incrementHandler = () => {
     dispatch(incrementProduct(product));
@@ -29,10 +29,10 @@ const Product = ({ product }) => {
     if (isInCart.quantity === 1) {
       toast.error("از سبد خرید حذف شد", {
         icon: <RiChatDeleteFill />,
-        bodyClassName: "text-red-700",
+        theme:"colored",
       });
       dispatch(deleteFromCart(product));
-    } else dispatch(decrementProduct(id));
+    } else dispatch(decrementProduct(product));
   };
   const renderProductPage = () => {
     history(
@@ -47,7 +47,7 @@ const Product = ({ product }) => {
       return (
         <div className="flex w-full items-center justify-center gap-1">
           <button
-            className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-800 text-white hover:bg-violet-700"
+            className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-800 text-white lg:hover:bg-violet-700"
             onClick={incrementHandler}
           >
             +
@@ -63,7 +63,7 @@ const Product = ({ product }) => {
             </div>
           </Link>
           <button
-            className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-800 text-white hover:bg-violet-700"
+            className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-800 text-white lg:hover:bg-violet-700"
             onClick={decrementHandler}
           >
             {isInCart.quantity === 1 ? (
@@ -77,7 +77,7 @@ const Product = ({ product }) => {
     } else {
       return (
         <button
-          className="flex h-9 w-11/12 items-center justify-around rounded-xl bg-slate-800 p-2 text-sm text-white"
+          className="flex h-9 w-11/12 items-center justify-around rounded-xl bg-slate-800 p-2 text-sm text-white dark:border-2 dark:text-white/70 dark:border-violet-700"
           onClick={clickHandler}
         >
           <AiOutlineShoppingCart />
@@ -87,20 +87,22 @@ const Product = ({ product }) => {
     }
   };
   return (
-    <div className="flex h-[22.5rem] w-[12.5rem] flex-col items-center justify-between gap-4 overflow-hidden rounded-xl bg-white p-2 shadow-lg">
-      <img
-        className="cursor-pointer"
-        src={imageURL}
-        alt={title}
-        onClick={renderProductPage}
-      />
+    <div className="relative flex h-[17.5rem] w-[12.5rem] flex-col items-center justify-end gap-4 rounded-xl bg-white p-2 shadow-lg dark:bg-gray-800 dark:text-white/80 lg:h-[18.5rem]">
+      <div className="outline-3 absolute left-auto right-auto top-[-2rem] w-10/12 rounded-full bg-white shadow-lg p-2 dark:outline outline-gray-200 dark:bg-gray-700 dark:outline-violet-500/80 dark:outline-offset-1 lg:top-[-2rem] lg:w-11/12 lg:cursor-pointer">
+        <img
+          className=" scale-90"
+          src={imageURL}
+          alt={title}
+          onClick={renderProductPage}
+        />
+      </div>
       <p
-        className="w-full cursor-pointer text-base"
+        className="w-full text-center text-[0.9rem] lg:cursor-pointer"
         onClick={renderProductPage}
       >
-        {title}
+        {title.length > 24 ? title.slice(0, 24) + "..." : title}
       </p>
-      <div className="flex h-full w-full flex-col items-center justify-end gap-4">
+      <div className="flex w-full flex-col items-center justify-end gap-4">
         {renderAddToCartButton()}
         <p className="text-base">{price.toLocaleString("en")} تومان</p>
       </div>

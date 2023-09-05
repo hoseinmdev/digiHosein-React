@@ -14,20 +14,42 @@ const CircleCategories = () => {
   setTimeout(() => setCategoriesState(1), 1500);
 
   const categories = [
-    { title: "گوشی موبایل", imageUrl: mobile, path: "/categories/phones" },
-    { title: "لپتاپ", imageUrl: laptop, path: "/categories/laptops" },
-    { title: "تبلت", imageUrl: tablet, path: "/categories/tablets" },
+    {
+      title: "گوشی موبایل",
+      imageUrl:
+        "https://www.technolife.ir/image/banner_CircleCategories_FgGs07_040c7036-93f8-4a6d-8ff5-dedb88183674.png",
+      path: "/categories/phones",
+    },
+    {
+      title: "لپتاپ",
+      imageUrl:
+        "https://www.technolife.ir/image/banner_CircleCategories_B574Ao_90b3facc-fc2c-4044-818d-596da0f3df78.png",
+      path: "/categories/laptops",
+    },
+    {
+      title: "تبلت",
+      imageUrl:
+        "https://www.technolife.ir/image/banner_CircleCategories_oBqfhC_a9f23d81-83c5-4054-9163-083454a073dc.png",
+      path: "/categories/tablets",
+    },
     {
       title: "ساعت هوشمند",
-      imageUrl: digitalWatch,
+      imageUrl:
+        "https://www.technolife.ir/image/banner_CircleCategories_bvLDVP_a32ff3c7-d94a-43a8-98e5-6c8890d06e50.png",
       path: "/categories/digitalWatches",
     },
     {
       title: "هدفون و هندزفری",
-      imageUrl: airpods,
+      imageUrl:
+        "https://www.technolife.ir/image/banner_CircleCategories_ZF2YTy_bc869e82-f53c-40bb-b05c-65c5139585ee.png",
       path: "/categories/headphones",
     },
-    { title: "گیمینگ", imageUrl: console, path: "/categories/consoles" },
+    {
+      title: "گیمینگ",
+      imageUrl:
+        "https://www.technolife.ir/image/banner_CircleCategories_fQ1JW9_41fda70e-7de4-40b9-abb1-cd09f48a21d2.png",
+      path: "/categories/consoles",
+    },
   ];
 
   const renderCategories = () => {
@@ -36,20 +58,22 @@ const CircleCategories = () => {
     }
     if (categoriesState) {
       return (
-        <div className="no-scrollbar flex w-full items-center justify-start gap-4 overflow-auto p-4 lg:justify-evenly">
+        <div className="no-scrollbar flex w-full items-center justify-start gap-2 overflow-auto p-4 lg:justify-evenly">
           {categories.map((item) => {
             return (
               <Link
                 key={item.path}
                 to={item.path}
-                className="flex w-full min-w-[35%] cursor-pointer flex-col items-center justify-center gap-2 hover:scale-105 lg:min-w-max"
+                className="flex w-full min-w-[40%] flex-col items-center justify-center gap-2 lg:min-w-max lg:cursor-pointer lg:hover:scale-105"
               >
                 <img
                   src={item.imageUrl}
                   alt={item.imageUrl}
-                  className="h-28 w-28 rounded-full border-2 border-indigo-200 border-b-violet-500 border-t-violet-500 lg:h-32 lg:w-32 lg:border-4"
+                  className="h-32 w-32 rounded-full border-2 border-pink-600 p-1 dark:border-2 lg:h-36 lg:w-36"
                 />
-                <p className="font-bold text-slate-600">{item.title}</p>
+                <p className="font-bold text-slate-600 dark:font-normal dark:text-white">
+                  {item.title}
+                </p>
               </Link>
             );
           })}

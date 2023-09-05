@@ -15,7 +15,10 @@ const MobileProduct = ({ product }) => {
   };
   return (
     <div className="flex w-full flex-col items-start justify-center gap-3 border-b border-gray-300 pb-4">
-      <p className="cursor-pointer text-gray-600" onClick={renderProductPage}>
+      <p
+        className="text-gray-600 dark:text-white/80 lg:cursor-pointer"
+        onClick={renderProductPage}
+      >
         {title}
       </p>
       <div className="flex w-full items-center justify-between gap-4">
@@ -26,7 +29,7 @@ const MobileProduct = ({ product }) => {
           onClick={renderProductPage}
         />
         <div className="flex w-full flex-col items-end justify-center gap-4">
-          <div className="flex w-full items-start justify-around rounded-xl bg-violet-100 p-3 text-lg">
+          <div className="flex w-full items-start justify-around rounded-xl bg-violet-100 p-3 text-lg text-white/80 dark:border-2 dark:border-violet-500 dark:bg-transparent">
             <div className="flex h-full flex-col items-center justify-between gap-1">
               <AiFillCamera />
               <p className="text-sm">{product.camera}</p>
@@ -40,7 +43,9 @@ const MobileProduct = ({ product }) => {
               <p className="text-sm">{product.screen}</p>
             </div>
           </div>
-          <p>{price.toLocaleString("en")} تومان</p>
+          <p className="dark:text-white/80">
+            {price.toLocaleString("en")} تومان
+          </p>
         </div>
       </div>
     </div>

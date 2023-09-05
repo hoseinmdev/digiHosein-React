@@ -45,15 +45,17 @@ const Filters = ({ category }) => {
       return (
         <div
           key={option.key}
-          className="flex w-full flex-col overflow-hidden rounded-lg bg-gray-100 px-4 py-2 text-base"
+          className="flex w-full flex-col overflow-hidden rounded-lg bg-gray-100 px-4 py-2 text-base dark:bg-gray-600"
         >
           <span
-            className="flex cursor-pointer items-center justify-between"
+            className="flex items-center justify-between lg:cursor-pointer"
             onClick={() => toggleShowFilterOptionHandler(option.key)}
           >
             <p
-              className={`flex w-full cursor-pointer items-center justify-between ${
-                showFilters[option.key] ? "text-violet-700" : "text-gray-800"
+              className={`flex w-full items-center justify-between lg:cursor-pointer ${
+                showFilters[option.key]
+                  ? "text-violet-700 dark:font-bold dark:text-violet-400"
+                  : "text-gray-800 dark:text-white/70"
               }`}
             >
               {option.title}
@@ -75,7 +77,7 @@ const Filters = ({ category }) => {
               );
               return (
                 <label
-                  className="flex w-full items-center justify-start gap-2"
+                  className="flex w-full items-center justify-start gap-2 dark:text-white/70"
                   key={item.title}
                 >
                   <input

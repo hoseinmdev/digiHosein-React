@@ -2,7 +2,7 @@ import logo from "../../assets/images/logo.jpg";
 
 const SiteLogo = () => {
   return (
-    <img src={logo} alt="دیجی حسین" className="h-16 w-28  lg:h-20 lg:w-[12rem]" />
+    <p className="italic text-base text-violet-700 dark:text-violet-400 lg:text-2xl">Digi Hosien -</p>
   );
 };
 

@@ -7,7 +7,7 @@ import { Link, redirect, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import SiteLayout from "layout/SiteLayout";
 import backToUp from "utils/BackToUp";
-
+import signUpImage from "../assets/images/signUpImage.webp";
 const SginUpPage = () => {
   const userInformation = JSON.parse(localStorage.getItem("userInformation"));
   const [fadeShow, setFadeShow] = useState(0);
@@ -68,25 +68,15 @@ const SginUpPage = () => {
   });
 
   return (
-    <SiteLayout>
-      <div
-        className="mt-4 flex h-full w-full items-center justify-center"
-        style={{ opacity: fadeShow }}
-      >
+    <div className="flex h-screen w-full" style={{ opacity: fadeShow }}>
+      <div className="flex h-full w-full flex-col items-center justify-start gap-4 bg-white pt-10 dark:bg-gray-800 lg:w-1/2">
+        <p className="text-xl font-bold text-gray-700 dark:text-white/80">
+          به دیجی حسین خوش اومدی !
+        </p>
         <form
           onSubmit={formik.handleSubmit}
-          className="flex w-11/12 flex-col items-center justify-center gap-4 rounded-lg p-4 shadow-xl lg:w-96"
+          className="flex w-11/12 flex-col items-center justify-center gap-4 rounded-lg p-4 lg:w-96"
         >
-          <FormInput
-            label="نام"
-            placeholder="نام خود را وارد کنید ..."
-            name="name"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.name}
-            error={formik.errors.name}
-            touched={formik.touched.name}
-          />
           <FormInput
             label="آدرس ایمیل"
             placeholder="ایمیل خود را وارد کنید ..."
@@ -140,14 +130,19 @@ const SginUpPage = () => {
           </button>
           <Link
             to="/login"
-            className="flex w-full justify-start text-sm text-blue-700"
+            className="flex w-full justify-start text-sm text-blue-700 dark:text-blue-400"
           >
             {" "}
             از قبل حساب کاربری دارم
           </Link>
         </form>
       </div>
-    </SiteLayout>
+      <img
+        src={signUpImage}
+        className="hidden h-full w-full rounded-r-3xl lg:block"
+        alt=""
+      />
+    </div>
   );
 };
 

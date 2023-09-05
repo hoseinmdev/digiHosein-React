@@ -12,7 +12,7 @@ const CustomToast = () => {
       pauseOnFocusLoss
       draggable
       pauseOnHover
-      theme="light"
+      // theme="dark"
       icon={<MdAddTask style={{ fontSize: "2.5rem" }} />}
     />
   );

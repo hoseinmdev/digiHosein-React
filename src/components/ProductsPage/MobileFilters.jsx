@@ -19,7 +19,7 @@ const MobileFilters = ({ category }) => {
         }}
       ></div>
       <span
-        className="flex items-center justify-center gap-2 rounded-xl border-2 border-gray-300 p-2 text-base text-violet-600"
+        className="flex items-center justify-center gap-2 rounded-xl border-2 border-gray-300 p-2 text-base text-violet-600 dark:text-white/80"
         onClick={() => {
           setShow(0);
           document.body.classList.add("overflow-y-hidden");
@@ -29,10 +29,10 @@ const MobileFilters = ({ category }) => {
         <AiOutlineFilter />
       </span>
       <div
-        className={`absolute top-0 z-[1500] flex h-screen w-9/12 flex-col items-center justify-start gap-4 overflow-auto bg-white p-4 `}
+        className={`absolute top-0 z-[1500] flex h-screen w-9/12 flex-col items-center justify-start gap-4 overflow-auto bg-white p-4 dark:bg-gray-800 `}
         style={{ right: show + "px" }}
       >
-        <div className="flex w-full items-center justify-between">
+        <div className="flex w-full items-center justify-between dark:text-white">
           <AiOutlineClose
             onClick={() => {
               setShow(-450);

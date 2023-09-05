@@ -2,7 +2,7 @@ import Skeleton from "../common/Skeleton";
 const SingleProductSkeleton = () => {
   return (
     <>
-      <div className="mt-10 hidden h-[28rem] w-full items-center justify-between gap-12 bg-white p-8 lg:flex">
+      <div className="mt-10 hidden h-[28rem] w-full items-center justify-between gap-12 p-8 lg:flex">
         <div className="flex w-[40rem] items-center justify-between">
           <div className="flex h-72 w-[60%] flex-col items-start justify-around gap-2">
             <Skeleton width={"40%"} height={"10%"} radius={"30px"} />

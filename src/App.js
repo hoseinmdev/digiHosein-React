@@ -22,7 +22,7 @@ function App() {
   const location = useLocation();
   useEffect(() => backToUp(), [location]);
   return (
-    <div className="App">
+    <div className="App dark:bg-slate-800">
       <CustomToast />
       <Provider store={store}>
         <Suspense

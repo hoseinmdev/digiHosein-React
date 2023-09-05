@@ -6,9 +6,11 @@ import { toast } from "react-toastify";
 const ThemeButton = () => {
   const savedTheme = JSON.parse(localStorage.getItem("theme"));
   const [theme, setTheme] = useState(savedTheme);
-
   useEffect(() => {
     if (!theme) localStorage.setItem("theme", JSON.stringify("light"));
+    savedTheme === "light"
+      ? document.documentElement.classList.remove("dark")
+      : document.documentElement.classList.add("dark");
   }, []);
   const darkModeHandler = () => {
     const theme = JSON.parse(localStorage.getItem("theme"));

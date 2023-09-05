@@ -19,9 +19,7 @@ const SearchProducts = () => {
     const inputValue = e.target.value.toLowerCase();
     setSearchInput(inputValue);
     setProductsFound(
-      allProducts.filter((p) =>
-        p.title.toLowerCase().includes(inputValue),
-      ),
+      allProducts.filter((p) => p.title.toLowerCase().includes(inputValue)),
     );
   };
 
@@ -36,12 +34,12 @@ const SearchProducts = () => {
       <div
         className={
           !searchBoxSelected
-            ? "flex w-full items-center justify-start gap-4 rounded-lg bg-gray-200  p-3"
-            : "relative z-[1000] flex w-[25rem] items-center justify-start gap-4 rounded-md bg-white p-3"
+            ? "flex w-full items-center justify-start gap-4 rounded-lg bg-gray-200 p-3 dark:bg-slate-600"
+            : "relative z-[1000] flex w-[25rem] items-center justify-start gap-4 rounded-md bg-white p-3 dark:bg-slate-500"
         }
         onClick={() => !searchBoxSelected && searchBoxSelectedHandler()}
       >
-        <FaSearch className="cursor-pointer" />
+        <FaSearch className="lg:cursor-pointer" />
         <input
           className="flex w-full items-center justify-start bg-transparent"
           placeholder="محصول مورد نظرتان را جستجو کنید"
@@ -52,8 +50,8 @@ const SearchProducts = () => {
 
       {/* Found Products  */}
       {productsFound && searchBoxSelected && (
-        <div className="absolute right-3 top-[140px] z-[1000] flex max-h-64 w-[21.5rem] flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-white p-4 lg:right-[200px] lg:top-[100px] lg:max-h-[30rem] lg:w-[28rem]">
-          <div className="mr-8 flex w-full items-center justify-start gap-2 text-lg text-gray-700">
+        <div className="absolute right-3 top-[140px] z-[1000] flex max-h-64 w-[21.5rem] flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-white p-4 dark:bg-gray-800 lg:right-[200px] lg:top-[100px] lg:max-h-[30rem] lg:w-[28rem]">
+          <div className="mr-8 flex w-full items-center justify-start gap-2 text-lg text-gray-700 dark:text-white/80">
             <HiSquares2X2 />
             جستجو برای ...
             {searchInput}
@@ -85,11 +83,11 @@ const Product = ({ product }) => {
   };
   return (
     <div
-      className="flex h-24 w-11/12 cursor-pointer items-center justify-start gap-4 rounded-2xl p-2"
+      className="flex h-24 w-11/12 items-center justify-start gap-4 rounded-2xl p-2 lg:cursor-pointer"
       onClick={renderProductPage}
     >
       <img className="w-1/4" src={imageURL} alt={title} />
-      <p className="text-lg text-gray-600">{title}</p>
+      <p className="text-lg text-gray-600 dark:text-white/80">{title}</p>
     </div>
   );
 };

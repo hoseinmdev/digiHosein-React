@@ -53,16 +53,19 @@ const PurchasedProduct = ({ product }) => {
 
   return (
     <div
-      className={`flex w-full items-center justify-between gap-4 overflow-auto rounded-lg bg-white p-2 shadow-sm ${
+      className={`flex w-full items-center justify-between gap-4 overflow-auto rounded-lg bg-white p-2 shadow-sm dark:bg-gray-700 dark:text-white/80 ${
         fade ? "scale-100" : "scale-0"
       }`}
     >
       <div className="flex w-full items-center justify-between lg:w-1/2">
-        <div className="mb-10 scale-125 cursor-pointer" onClick={deleteHandler}>
+        <div
+          className="mb-10 scale-125 lg:cursor-pointer"
+          onClick={deleteHandler}
+        >
           <AiOutlineClose />
         </div>
         <img
-          className="h-24 w-24 cursor-pointer lg:h-28 lg:w-28"
+          className="h-24 w-24 lg:h-28 lg:w-28 lg:cursor-pointer"
           src={imageURL}
           alt={title}
           onClick={renderProductPage}
@@ -72,16 +75,16 @@ const PurchasedProduct = ({ product }) => {
             {title}
           </p>
           <p>{price.toLocaleString("en")} تومان</p>
-          <div className="mr-4 flex w-24 items-center justify-between rounded-2xl bg-slate-100 lg:mr-0">
+          <div className="mr-4 flex w-24 items-center justify-between rounded-2xl bg-slate-100 dark:bg-gray-800 lg:mr-0">
             <button
-              className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-2xl bg-slate-700 p-2 text-white"
+              className="flex h-7 w-7 items-center justify-center rounded-2xl bg-slate-700 p-2 text-white lg:cursor-pointer"
               onClick={incrementHandler}
             >
               +
             </button>
             <p>{quantity}</p>
             <button
-              className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-2xl bg-slate-700 p-2 text-white"
+              className="flex h-7 w-7 items-center justify-center rounded-2xl bg-slate-700 p-2 text-white lg:cursor-pointer"
               onClick={decrementHandler}
             >
               {renderIcon()}

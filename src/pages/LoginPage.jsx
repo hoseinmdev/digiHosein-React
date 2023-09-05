@@ -6,8 +6,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { BiCommentError } from "react-icons/bi";
-import SiteLayout from "layout/SiteLayout";
 import backToUp from "utils/BackToUp";
+import signUpImage from "../assets/images/signUpImage.webp";
 
 const LoginPage = () => {
   const [fadeShow, setFadeShow] = useState(0);
@@ -53,13 +53,13 @@ const LoginPage = () => {
   });
 
   return (
-    <SiteLayout>
-      <div
-        className="flex w-full items-center justify-center gap-4"
-        style={{ opacity: fadeShow }}
-      >
+    <div className="flex h-screen w-full" style={{ opacity: fadeShow }}>
+      <div className="flex h-full w-full flex-col items-center justify-start gap-4 bg-white pt-10 dark:bg-gray-800 lg:w-1/2">
+        <p className="text-xl font-bold text-gray-700 dark:text-white/80">
+          به دیجی حسین خوش اومدی !
+        </p>
         <form
-          className="flex h-64 w-11/12 w-full flex-col items-center justify-center gap-4 px-6 py-4 shadow-xl lg:w-96"
+          className="flex w-11/12 flex-col items-center justify-center gap-4 rounded-lg p-4 lg:w-96"
           onSubmit={formik.handleSubmit}
         >
           <FormInput
@@ -93,7 +93,12 @@ const LoginPage = () => {
           </button>
         </form>
       </div>
-    </SiteLayout>
+      <img
+        src={signUpImage}
+        className="hidden h-full w-full rounded-r-3xl lg:block"
+        alt=""
+      />
+    </div>
   );
 };
 

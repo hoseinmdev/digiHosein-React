@@ -9,12 +9,12 @@ const TechnicalCheck = ({ product }) => {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex w-full items-center justify-center">
-        <p className="w-2/4 text-lg font-bold text-violet-700 lg:w-1/4 lg:text-3xl">
+        <p className="w-2/4 text-lg font-bold text-violet-700 dark:text-violet-400 lg:w-1/4 lg:text-3xl">
           بررسی فنی
         </p>
         <hr className="h-[1px] w-full bg-black lg:h-[2px]" />
       </div>
-      <p className="text-base text-gray-700 lg:text-xl">
+      <p className="text-base text-gray-700 dark:text-white/60 lg:text-lg">
         {product.technicalCheck}
       </p>
       <Points type="positivePoints" points={product.positivePoints} />
@@ -86,8 +86,8 @@ const Scores = ({ specifications }) => {
 
   return (
     <div className="mt-8 flex flex-col items-center justify-center gap-6 lg:mr-8 lg:flex-row lg:items-start lg:justify-evenly">
-      <div className="flex w-32 flex-col items-center justify-center gap-2 text-2xl text-gray-700">
-        <span className="border-right-[3px] flex h-24 w-24 items-center justify-center rounded-full border-2 border-t-[5px] border-green-400 text-3xl hover:rotate-[360deg] hover:scale-110">
+      <div className="flex w-32 flex-col items-center justify-center gap-2 text-2xl text-gray-700 dark:text-white">
+        <span className="border-right-[3px] flex h-24 w-24 items-center justify-center rounded-full border-2 border-t-[5px] border-green-400 text-3xl lg:hover:rotate-[360deg] lg:hover:scale-110">
           {Math.round(totalScores / allSpecifications.length)}
         </span>
         امتیاز کلی
@@ -98,9 +98,9 @@ const Scores = ({ specifications }) => {
           return (
             <div
               key={index}
-              className="flex w-40 flex-col items-center justify-center gap-2 text-lg text-gray-700"
+              className="flex w-40 flex-col items-center justify-center gap-2 text-lg text-gray-700 dark:text-white"
             >
-              <span className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-r-[3px] border-t-[5px] border-violet-500 text-2xl hover:rotate-[360deg] hover:scale-110">
+              <span className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-r-[3px] border-t-[5px] border-violet-500 text-2xl lg:hover:rotate-[360deg] lg:hover:scale-110">
                 {p.scoreOfSpecification}
               </span>
               {p.nameOfSpecification}

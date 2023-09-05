@@ -37,13 +37,13 @@ const Input = ({
       return showPassword ? (
         <FaEyeSlash
           style={{ opacity: `${showIcon.hide}` }}
-          className="flex-1 cursor-pointer"
+          className="flex-1 dark:text-white/70 lg:cursor-pointer"
           onClick={iconClickHandler}
         />
       ) : (
         <FaEye
           style={{ opacity: `${showIcon.unHide}` }}
-          className="flex-1 cursor-pointer"
+          className="flex-1 dark:text-white/70 lg:cursor-pointer"
           onClick={iconClickHandler}
         />
       );
@@ -52,17 +52,17 @@ const Input = ({
     <>
       <label
         htmlFor={name}
-        className="flex w-full flex-col items-start justify-center"
+        className="flex w-full flex-col items-start justify-center gap-2"
       >
-        <div className="flex w-full items-center justify-start gap-4">
+        <div className="flex w-full items-center justify-start gap-4 pr-3 dark:text-white/70">
           <span>{label}</span>
-          <span className="flex justify-end text-sm text-red-600">
+          <span className="flex justify-end text-sm text-red-600 dark:text-red-400">
             {error && touched && error}
           </span>
         </div>
-        <div className="flex w-full items-center justify-center">
+        <div className="flex w-full items-center justify-center overflow-hidden  rounded-2xl border border-violet-300 dark:border-none bg-gray-100 p-3 dark:bg-gray-600 lg:p-4">
           <input
-            className="w-full rounded p-2 text-sm shadow-md"
+            className="h-full w-full rounded text-sm bg-transparent dark:text-white"
             id={name}
             placeholder={placeholder}
             type={showPassword && type === "password" ? "password" : "text"}

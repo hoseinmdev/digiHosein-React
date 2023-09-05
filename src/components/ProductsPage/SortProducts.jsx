@@ -4,25 +4,25 @@ const { default: createEmptyArray } = require("utils/createEmptyArray");
 const SortProducts = ({ category, products }) => {
   if (category) {
     return (
-      <div className="flex w-full items-center justify-between text-base lg:justify-start lg:gap-6">
+      <div className="flex w-full items-center justify-between text-base dark:text-white/70 lg:justify-start lg:gap-6">
         <p className="hidden lg:block">ترتیب :</p>
         <div className="hidden items-center justify-center gap-2 lg:flex">
-          <span className="cursor-pointer border-r border-gray-300 px-4 py-1 font-bold text-violet-700">
+          <span className="border-r border-gray-300 px-4 py-1 font-bold text-violet-700 dark:font-normal dark:text-violet-400 lg:cursor-pointer">
             پرفروش ترین
           </span>
-          <span className="cursor-pointer border-r border-gray-300 px-4 py-1 font-bold text-violet-700">
+          <span className="border-r border-gray-300 px-4 py-1 font-bold text-violet-700 dark:font-normal dark:text-violet-400 lg:cursor-pointer">
             کمترین قیمت
           </span>
-          <span className="cursor-pointer border-r border-gray-300 px-4 py-1 font-bold text-violet-700">
+          <span className="border-r border-gray-300 px-4 py-1 font-bold text-violet-700 dark:font-normal dark:text-violet-400 lg:cursor-pointer">
             بیشترین قیمت
           </span>
-          <span className="cursor-pointer rounded-lg bg-violet-100 px-4 py-1 font-bold text-violet-700">
+          <span className="rounded-lg bg-violet-100 px-4 py-1 font-bold text-violet-700 lg:cursor-pointer">
             جدیدترین
           </span>
         </div>
         <div>
           {products ? (
-            <span className="cursor-pointer rounded-lg bg-violet-100 px-4 py-1 font-bold text-violet-700">
+            <span className="rounded-lg bg-violet-100 px-4 py-1 font-bold text-violet-700 lg:cursor-pointer">
               تعداد محصولات : {products.length}
             </span>
           ) : (
@@ -51,4 +51,4 @@ const SortProducts = ({ category, products }) => {
     );
   }
 };
-export default SortProducts
+export default SortProducts;

@@ -8,8 +8,8 @@ const ProductsSlider = ({
   category,
   title,
   bgColor,
-  titleColor = "text-gray-900",
-  titleLineColor = "bg-gray-900",
+  titleColor = "text-gray-900 dark:text-white/70",
+  titleLineColor = "bg-gray-900 dark:bg-gray-800",
 }) => {
   const [rightBtnDisplay, setRightBtnDisplay] = useState("hidden");
   const [leftBtnDisplay, setLeftBtnDisplay] = useState("flex");
@@ -52,10 +52,10 @@ const ProductsSlider = ({
   };
   return (
     <div
-      className={`relative mt-2 flex w-full flex-col ${bgColor} items-start justify-center gap-8 overflow-hidden px-4 lg:px-8 py-6`}
+      className={`relative mt-2 flex w-full flex-col  rounded-2xl ${bgColor} items-start justify-center gap-8 overflow-hidden px-4 py-6 lg:rounded-xl lg:px-8`}
     >
       <button
-        className={`z-5 absolute right-0 mr-14 hidden lg:${rightBtnDisplay} h-14 w-14 items-center justify-center rounded-full bg-white text-[1.8rem] text-gray-700 shadow-lg `}
+        className={`absolute right-0 z-[1400] mr-14 hidden lg:${rightBtnDisplay} h-14 w-14 items-center justify-center rounded-full bg-white text-[1.8rem] text-gray-700 shadow-lg `}
         onClick={() => passingProducts("NEXT_PRODUCT")}
       >
         <IoArrowRedoSharp />
@@ -65,7 +65,7 @@ const ProductsSlider = ({
         <hr className={`h-[2px] ${titleLineColor}`} />
       </div>
       <div
-        className="z-2 hideScrollbar flex h-96 w-full lg:max-w-[1360px] flex-col items-start justify-center gap-8 overflow-auto lg:overflow-hidden"
+        className="z-2 hideScrollbar flex h-[19.7rem] w-full flex-col items-start justify-end gap-8 overflow-auto lg:h-[21.7rem] lg:max-w-[1360px] lg:justify-end lg:pb-4 "
         ref={productsBlockRef}
       >
         {/* Products */}

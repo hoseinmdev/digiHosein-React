@@ -20,9 +20,9 @@ const SingleProductPage = () => {
   const renderSingleProduct = () => {
     if (show) {
       return (
-        <div className="flex w-full flex-col items-start justify-center gap-12 rounded-lg bg-white p-5">
+        <div className="flex w-full flex-col items-start justify-center gap-12 rounded-lg p-3 dark:bg-gray-700/30 dark:text-white">
           <div className="flex w-full flex-col items-start justify-center gap-6 rounded-lg">
-            <h2>{product.title}</h2>
+            <h2 className="text-lg">{product.title}</h2>
             <div className=" flex items-center justify-center gap-3">
               <Badge
                 refrens={userCommentsPart}
@@ -32,14 +32,20 @@ const SingleProductPage = () => {
             </div>
             <div className="flex w-full flex-col items-start justify-center gap-4 lg:flex-row lg:justify-between">
               <Introduction product={product} />
-              <hr className="w-[1px]" />
+              <hr className="bg-white/60 lg:h-80 lg:w-[1px]" />
               <Seller product={product} />
             </div>
           </div>
-          <div ref={technicalCheckPart} className="w-full">
+          <div
+            ref={technicalCheckPart}
+            className="w-full dark:rounded-xl "
+          >
             <TechnicalCheck product={product} />
           </div>
-          <div ref={userCommentsPart} className="w-full">
+          <div
+            ref={userCommentsPart}
+            className="w-full dark:rounded-xl "
+          >
             <UserComments product={product} />
           </div>
           <BackToUp />

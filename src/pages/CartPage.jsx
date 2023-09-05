@@ -9,7 +9,7 @@ const CartPage = () => {
   return (
     <SiteLayout>
       {cart.length !== 0 ? (
-        <div className=" mt-4 flex min-h-[33rem] w-11/12 flex-col items-start lg:mr-0 lg:mt-0">
+        <div className=" mt-4 flex min-h-[33rem] w-full flex-col items-start lg:mr-0 lg:mt-0">
           <HeaderOfCart />
           <div className="flex w-full flex-col items-start justify-between gap-8 lg:flex-row">
             <PurchasedProducts />

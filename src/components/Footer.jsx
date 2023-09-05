@@ -7,7 +7,7 @@ import logo3 from "../assets/images/c4.webp";
 
 const Footer = () => {
   return (
-    <div className="mt-8 flex w-full flex-col items-center justify-between gap-12 overflow-hidden bg-slate-800 px-12 py-8 text-white">
+    <div className="mt-8 flex w-full flex-col items-center justify-between gap-12 overflow-hidden bg-slate-800 px-12 py-8 text-white dark:text-white/70 dark:bg-gray-900">
       <div className="hidden w-full items-start justify-evenly lg:flex">
         <div className="flex flex-col items-start justify-center gap-2 text-sm">
           <span>دسترسی سریع</span>
@@ -66,18 +66,18 @@ const Footer = () => {
             <FiPhoneCall />
             تلفن : 989222365685 +
           </span>
-          <span className="flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-violet-700 p-2">
+          <span className="flex items-center justify-center gap-2 rounded-lg bg-violet-700 p-2 lg:cursor-pointer">
             اینستاگرام <BsInstagram />
           </span>
         </div>
         <div className="hidden items-center justify-center gap-2 lg:flex">
-          <div className="flex h-32 w-28 cursor-pointer items-center justify-center rounded-lg bg-white">
+          <div className="flex h-32 w-28 items-center justify-center rounded-lg bg-white lg:cursor-pointer">
             <img src={logo1} alt={logo1} className="w-20" />
           </div>
-          <div className="flex h-32 w-28 cursor-pointer items-center justify-center rounded-lg bg-white">
+          <div className="flex h-32 w-28 items-center justify-center rounded-lg bg-white lg:cursor-pointer">
             <img src={logo2} alt={logo2} className="w-20" />
           </div>
-          <div className="flex h-32 w-28 cursor-pointer items-center justify-center rounded-lg bg-white">
+          <div className="flex h-32 w-28 items-center justify-center rounded-lg bg-white lg:cursor-pointer">
             <img src={logo3} alt={logo3} className="w-20" />
           </div>
         </div>

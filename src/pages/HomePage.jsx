@@ -22,18 +22,18 @@ const HomePage = () => {
       </ProductsSlider> */}
         <ProductsSlider
           title="موبایل ها"
-          bgColor="bg-indigo-100"
+          bgColor="bg-indigo-100 dark:bg-indigo-500/30"
           category="phones"
         />
         <LandingBanner />
         <ProductsSlider
           title="لپتاپ ها"
-          bgColor="bg-violet-100"
+          bgColor="bg-violet-100 dark:bg-gray-700/50"
           category="laptops"
         />
         <ProductsSlider
           title="تبلت ها"
-          bgColor="bg-rose-50"
+          bgColor="bg-rose-50 dark:bg-violet-500/30"
           category="tablets"
         />
       </div>

@@ -21,14 +21,14 @@ const UserAccountButton = () => {
   const renderUserAccountOptions = () => {
     return (
       <div className="absolute left-0 top-[45px] z-[3000] flex w-72 scale-0 flex-col items-start justify-center gap-3 rounded-2xl bg-white p-2 text-base shadow-lg group-hover/submitBtn:scale-100">
-        <div className="flex w-full cursor-pointer items-center justify-between rounded-md p-2 text-gray-700 hover:bg-violet-500 hover:text-white">
+        <div className="flex w-full items-center justify-between rounded-md p-2 text-gray-700 lg:cursor-pointer lg:hover:bg-violet-500 lg:hover:text-white">
           <span className="flex items-center justify-center gap-2">
             حساب کاربری | {userInformation.phoneNumber}
           </span>
           <BsArrowReturnLeft />
         </div>
         <div
-          className="flex w-full cursor-pointer items-center justify-between rounded-md p-2 text-gray-700 hover:bg-violet-500 hover:text-white"
+          className="flex w-full items-center justify-between rounded-md p-2 text-gray-700 lg:cursor-pointer lg:hover:bg-violet-500 lg:hover:text-white"
           onClick={() => navigate("/cart")}
         >
           <span className="flex items-center justify-center gap-2">
@@ -37,7 +37,7 @@ const UserAccountButton = () => {
           <AiOutlineShoppingCart />
         </div>
         <div
-          className="flex w-full cursor-pointer items-center justify-between rounded-md p-2 text-gray-700 hover:bg-violet-500 hover:text-white"
+          className="flex w-full items-center justify-between rounded-md p-2 text-gray-700 lg:cursor-pointer lg:hover:bg-violet-500 lg:hover:text-white"
           onClick={renderModal}
         >
           <span className="flex items-center justify-center gap-2">
@@ -74,7 +74,7 @@ const UserAccountButton = () => {
           </div>
         </div>
       </div>
-      <div className="group/submitBtn relative z-[1] flex cursor-pointer items-center justify-center gap-2 rounded-full border border-gray-400 bg-white p-2 text-sm text-gray-800">
+      <div className="group/submitBtn relative z-[1] flex items-center justify-center gap-2 rounded-full border border-gray-400 bg-white p-2 text-sm text-gray-800 lg:cursor-pointer">
         <AiOutlineUser className="text-2xl text-violet-600" />
         {renderUserAccountOptions()}
       </div>

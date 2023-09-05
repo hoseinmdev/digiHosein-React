@@ -19,7 +19,7 @@ const LandingBanner = () => {
         <img src={speakerBanner} alt={speakerBanner}></img>
       </Link>
       <Link
-        to="/categories/mobiles"
+        to="/categories/phones"
         className=" w-11/12 overflow-hidden rounded-xl lg:hidden"
       >
         <img

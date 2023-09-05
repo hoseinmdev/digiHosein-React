@@ -1,20 +1,22 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
-import { toast } from "react-toastify";
 
 const ThemeButton = () => {
-  const savedTheme = JSON.parse(localStorage.getItem("theme"));
-  const [theme, setTheme] = useState(savedTheme);
+  const savedTheme = JSON.parse(localStorage.getItem("theme") || `[]`);
+  const [theme, setTheme] = useState(savedTheme.length !==0 ? savedTheme : "light");
+
   useEffect(() => {
-    if (!savedTheme) {
+    if (savedTheme.length === 0) {
       localStorage.setItem("theme", JSON.stringify("light"));
       setTheme("light");
     }
-    savedTheme === "light"
+    console.log(theme)
+    theme === "light"
       ? document.documentElement.classList.remove("dark")
       : document.documentElement.classList.add("dark");
   }, []);
+
   const darkModeHandler = () => {
     const theme = JSON.parse(localStorage.getItem("theme") || `{}`);
     if (theme === "light") {
@@ -29,7 +31,7 @@ const ThemeButton = () => {
   };
   return (
     <div
-      className="MdDarkMode h-full rounded-lg border shadow-lg border-yellow-500 px-4 py-2 text-lg dark:border-2 dark:border-violet-500 lg:cursor-pointer"
+      className="MdDarkMode h-full rounded-lg border border-yellow-500 px-4 py-2 text-lg shadow-lg dark:border-2 dark:border-violet-500 lg:cursor-pointer"
       onClick={darkModeHandler}
     >
       {theme === "dark" ? (

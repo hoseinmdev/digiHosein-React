@@ -30,9 +30,9 @@ const ThemeButton = () => {
       onClick={darkModeHandler}
     >
       {theme === "dark" ? (
-        <MdDarkMode className="fadeShow text-xl text-white/80" />
+        <MdDarkMode className="text-xl text-white/80" />
       ) : (
-        <MdLightMode className="fadeShow text-xl text-yellow-500" />
+        <MdLightMode className="text-xl text-yellow-500" />
       )}
     </div>
   );

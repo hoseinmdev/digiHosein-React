@@ -29,7 +29,7 @@ const MobileProduct = ({ product }) => {
           onClick={renderProductPage}
         />
         <div className="flex w-full flex-col items-end justify-center gap-4">
-          <div className="flex w-full items-start justify-around rounded-xl bg-violet-100 p-3 text-lg text-white/80 dark:border-2 dark:border-violet-500 dark:bg-transparent">
+          <div className="flex w-full items-start justify-around rounded-xl bg-violet-100 p-3 text-lg text-gray-800 dark:text-white/80 dark:border-2 dark:border-violet-500 dark:bg-transparent">
             <div className="flex h-full flex-col items-center justify-between gap-1">
               <AiFillCamera />
               <p className="text-sm">{product.camera}</p>

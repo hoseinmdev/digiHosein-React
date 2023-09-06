@@ -1,7 +1,9 @@
  👋🏻 Hi, this is a Shop, like Technolife and DigiKala 
+
 ***😵‍💫 With amazing feauters***
 
-1️⃣ - This is Persian 🇮🇷
+1️ - This is Persian 🌱
+2 - Have DarkMode & LightMode 🌓
 
 ### You can visit Digi-Hosein online in : [LiveDemo](https://hoseinshopcartreact.netlify.app)
 

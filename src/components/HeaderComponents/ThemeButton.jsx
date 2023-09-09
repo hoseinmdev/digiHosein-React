@@ -11,7 +11,6 @@ const ThemeButton = () => {
       localStorage.setItem("theme", JSON.stringify("light"));
       setTheme("light");
     }
-    console.log(theme)
     theme === "light"
       ? document.documentElement.classList.remove("dark")
       : document.documentElement.classList.add("dark");

@@ -26,12 +26,12 @@ const TechnicalCheck = ({ product }) => {
 const Points = ({ type, points }) => {
   if (type === "positivePoints") {
     return (
-      <div className="flex w-full flex-col items-start justify-start gap-2 rounded-md bg-violet-100 p-5">
-        <div className="flex items-center justify-center gap-2 text-2xl font-bold text-violet-700">
+      <div className="flex w-full flex-col items-start justify-start gap-2 rounded-md bg-violet-100 p-5 dark:bg-violet-800">
+        <div className="flex items-center justify-center gap-2 text-2xl font-bold text-violet-700 dark:text-violet-100">
           <AiOutlineLike />
           مزایا :
         </div>
-        <div className="flex flex-col items-start justify-center gap-1 text-base text-violet-600 lg:text-lg ">
+        <div className="flex flex-col items-start justify-center gap-1 text-base text-violet-600 dark:text-violet-100 lg:text-lg">
           {points.map((p) => {
             return (
               <div
@@ -49,12 +49,12 @@ const Points = ({ type, points }) => {
   }
   if (type === "negativePoints") {
     return (
-      <div className="flex w-full flex-col items-start justify-start gap-2 rounded-md bg-red-100 p-5">
-        <div className="flex items-center justify-center gap-2 text-2xl font-bold text-red-700">
+      <div className="flex w-full flex-col items-start justify-start gap-2 rounded-md bg-red-100 p-5 dark:bg-red-900">
+        <div className="flex items-center justify-center gap-2 text-2xl font-bold text-red-700 dark:text-red-100">
           <AiOutlineDislike />
           معایب :
         </div>
-        <div className="flex flex-col items-start justify-center gap-1 text-base text-red-600 lg:text-lg ">
+        <div className="flex flex-col items-start justify-center gap-1 text-base text-red-600 dark:text-red-100 lg:text-lg">
           {points.map((p) => {
             return (
               <div

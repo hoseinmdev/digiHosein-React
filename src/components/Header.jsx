@@ -9,11 +9,7 @@ import Links from "./HeaderComponents/Links";
 import ThemeButton from "./HeaderComponents/ThemeButton";
 
 const Header = () => {
-  const [isLogin, setIsLogin] = useState();
-  const userInformation = JSON.parse(localStorage.getItem("userInformation"));
-  useEffect(() => {
-    if (userInformation && userInformation.islogin) setIsLogin(1);
-  }, [userInformation]);
+  const user = JSON.parse(localStorage.getItem("token"));
   return (
     <>
       <div className="sticky left-0 top-0 z-[1000] flex w-full flex-col items-center justify-center gap-4 bg-white p-3 shadow-lg dark:bg-gray-800 dark:text-white lg:items-start lg:px-8 lg:py-4">
@@ -34,8 +30,8 @@ const Header = () => {
             <div className="flex lg:hidden">
               <SiteLogo />
             </div>
-            <ThemeButton/>
-            {isLogin ? <UserAccountButton /> : <SubmitButton />}
+            <ThemeButton />
+            {user ? <UserAccountButton /> : <SubmitButton />}
             <div className="hidden lg:flex">
               <CartButton />
             </div>

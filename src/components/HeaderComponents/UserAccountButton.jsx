@@ -6,48 +6,48 @@ import { useNavigate } from "react-router-dom";
 const UserAccountButton = () => {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(0);
-  const userInformation = JSON.parse(localStorage.getItem("userInformation"));
+  // const userInformation = JSON.parse(localStorage.getItem("userInformation"));
 
-  const exitOfAccount = () => {
-    localStorage.setItem(
-      "userInformation",
-      JSON.stringify({ ...userInformation, islogin: false }),
-    );
-    window.location.reload();
-  };
+  // const exitOfAccount = () => {
+  //   localStorage.setItem(
+  //     "userInformation",
+  //     JSON.stringify({ ...userInformation, islogin: false }),
+  //   );
+  //   window.location.reload();
+  // };
   const renderModal = () => {
     setShowModal(!showModal);
   };
-  const renderUserAccountOptions = () => {
-    return (
-      <div className="absolute left-0 top-[45px] z-[3000] flex w-72 scale-0 flex-col items-start justify-center gap-3 rounded-2xl bg-white p-2 text-base shadow-lg group-hover/submitBtn:scale-100">
-        <div className="flex w-full items-center justify-between rounded-md p-2 text-gray-700 lg:cursor-pointer lg:hover:bg-violet-500 lg:hover:text-white">
-          <span className="flex items-center justify-center gap-2">
-            حساب کاربری | {userInformation.phoneNumber}
-          </span>
-          <BsArrowReturnLeft />
-        </div>
-        <div
-          className="flex w-full items-center justify-between rounded-md p-2 text-gray-700 lg:cursor-pointer lg:hover:bg-violet-500 lg:hover:text-white"
-          onClick={() => navigate("/cart")}
-        >
-          <span className="flex items-center justify-center gap-2">
-            سبد خرید
-          </span>
-          <AiOutlineShoppingCart />
-        </div>
-        <div
-          className="flex w-full items-center justify-between rounded-md p-2 text-gray-700 lg:cursor-pointer lg:hover:bg-violet-500 lg:hover:text-white"
-          onClick={renderModal}
-        >
-          <span className="flex items-center justify-center gap-2">
-            خروج از حساب کاربری
-          </span>
-          <ImExit />
-        </div>
-      </div>
-    );
-  };
+  // const renderUserAccountOptions = () => {
+  //   return (
+  //     <div className="absolute left-0 top-[45px] z-[3000] flex w-72 scale-0 flex-col items-start justify-center gap-3 rounded-2xl bg-white p-2 text-base shadow-lg group-hover/submitBtn:scale-100">
+  //       <div className="flex w-full items-center justify-between rounded-md p-2 text-gray-700 lg:cursor-pointer lg:hover:bg-violet-500 lg:hover:text-white">
+  //         <span className="flex items-center justify-center gap-2">
+  //           حساب کاربری | {userInformation.phoneNumber}
+  //         </span>
+  //         <BsArrowReturnLeft />
+  //       </div>
+  //       <div
+  //         className="flex w-full items-center justify-between rounded-md p-2 text-gray-700 lg:cursor-pointer lg:hover:bg-violet-500 lg:hover:text-white"
+  //         onClick={() => navigate("/cart")}
+  //       >
+  //         <span className="flex items-center justify-center gap-2">
+  //           سبد خرید
+  //         </span>
+  //         <AiOutlineShoppingCart />
+  //       </div>
+  //       <div
+  //         className="flex w-full items-center justify-between rounded-md p-2 text-gray-700 lg:cursor-pointer lg:hover:bg-violet-500 lg:hover:text-white"
+  //         onClick={renderModal}
+  //       >
+  //         <span className="flex items-center justify-center gap-2">
+  //           خروج از حساب کاربری
+  //         </span>
+  //         <ImExit />
+  //       </div>
+  //     </div>
+  //   );
+  // };
 
   return (
     <>
@@ -67,7 +67,7 @@ const UserAccountButton = () => {
             </button>
             <button
               className="rounded-2xl bg-red-500 px-4 py-2 text-sm text-white"
-              onClick={exitOfAccount}
+              // onClick={exitOfAccount}
             >
               خروج از حساب
             </button>
@@ -76,7 +76,7 @@ const UserAccountButton = () => {
       </div>
       <div className="group/submitBtn relative z-[1] flex items-center justify-center gap-2 rounded-full border border-gray-400 bg-white p-2 text-sm text-gray-800 lg:cursor-pointer">
         <AiOutlineUser className="text-2xl text-violet-600" />
-        {renderUserAccountOptions()}
+        {/* {renderUserAccountOptions()} */}
       </div>
     </>
   );

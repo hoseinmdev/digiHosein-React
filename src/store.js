@@ -5,7 +5,7 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
+      middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(localStorageMiddleware),
     }),
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(localStorageMiddleware),
 });

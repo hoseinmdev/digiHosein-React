@@ -44,7 +44,7 @@ const ReplyComment = () => {
         <BsReply className="hidden lg:block" />
       </button>
       <div
-        className={`fixed left-0 top-0 z-[1499] h-screen w-screen bg-slate-700 opacity-70 ${
+        className={`fixed left-0 top-0 z-[1499] h-screen w-screen bg-slate-700 opacity-70 dark:opacity-90 ${
           show ? "block" : "hidden"
         }`}
         onClick={closeReplyBox}

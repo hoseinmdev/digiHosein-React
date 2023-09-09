@@ -8,10 +8,10 @@ import { useEffect, useState } from "react";
 import { BiCommentError } from "react-icons/bi";
 import backToUp from "utils/BackToUp";
 import signUpImage from "../assets/images/signUpImage.webp";
+import axios from "axios";
 
 const LoginPage = () => {
   const [fadeShow, setFadeShow] = useState(0);
-  const userInformation = JSON.parse(localStorage.getItem("userInformation"));
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -30,20 +30,36 @@ const LoginPage = () => {
       .required("رمز عبور اجباری است"),
   });
   const onSubmit = (values, helpers) => {
+    axios
+      .post(
+        "http://127.0.0.1:8000/Account/Login/",
+        {
+          email: values.email,
+          Password: values.password,
+        },
+        {
+          headers: {
+            "User-Agent": "Your User Agent String",
+            Host: "www.example.com",
+            Accept: "application/json",
+            "Accept-Encoding": "gzip, deflate, br",
+            Connection: "keep-alive",
+          },
+        },
+      )
+      .then(function (response) {
+        toast.success("خوش آمدید", { theme: "colored" });
+        localStorage.setItem(
+          "token",
+          JSON.stringify(response.data.Authorization),
+        );
+        navigate("/")
+      })
+      .catch(function (error) {
+        toast.error(`${error.response.data.Error}`, { theme: "colored" });
+      });
+
     helpers.resetForm();
-    if (
-      values.email === userInformation.email &&
-      values.password === userInformation.password
-    ) {
-      localStorage.setItem(
-        "userInformation",
-        JSON.stringify({ ...userInformation, islogin: true }),
-      );
-      navigate("/");
-      toast.success("خوش آمدید !");
-    } else {
-      toast.error("اطلاعات وارد شده صحیح نیست", { icon: <BiCommentError /> });
-    }
   };
   const formik = useFormik({
     initialValues,
@@ -59,7 +75,7 @@ const LoginPage = () => {
           به دیجی حسین خوش اومدی !
         </p>
         <form
-          className="flex w-11/12 flex-col items-center justify-center gap-4 rounded-lg p-4 lg:w-96"
+          className="flex w-11/12 flex-col items-start justify-center gap-4 rounded-lg p-4 lg:w-96"
           onSubmit={formik.handleSubmit}
         >
           <FormInput
@@ -87,10 +103,17 @@ const LoginPage = () => {
           <button
             disabled={!formik.isValid}
             type="submit"
-            className="mt-2 w-1/2 rounded-lg bg-violet-700 p-2 text-base text-white outline-none"
+            className="mt-8 w-full rounded-xl bg-violet-700 px-4 py-3 text-lg text-white shadow-[1px_10px_14px_rgba(241,231,254,1)] outline-none dark:shadow-none dark:outline dark:outline-violet-400"
           >
             ورود
           </button>
+          <Link
+            to="/login"
+            className="mt-2 flex justify-start text-sm text-blue-700 dark:text-blue-400"
+          >
+            {" "}
+            رمز عبور را فراموش کردم !
+          </Link>
         </form>
       </div>
       <img

@@ -62,7 +62,8 @@ const Input = ({
         </div>
         <div className="flex w-full items-center justify-center overflow-hidden rounded-2xl border  border-transparent bg-neutral-200/60 p-3 focus-within:border-violet-300 focus-within:bg-white focus-within:shadow-[1px_10px_14px_rgba(241,231,254,1)] hover:border-violet-200 dark:border-none dark:bg-gray-600 dark:shadow-none dark:focus-within:outline dark:focus-within:outline-violet-400 lg:border-2 lg:bg-neutral-100 lg:p-4">
           <input
-            className="pointer-events-none h-full w-full rounded bg-transparent text-sm autofill:shadow-[inset_0_0_0px_1000px_rgb(241,231,254,0.1)] dark:text-white lg:text-base"
+            autoComplete="off"
+            className="h-full w-full rounded bg-transparent text-sm dark:text-white lg:text-base"
             id={name}
             placeholder={placeholder}
             type={showPassword && type === "password" ? "password" : "text"}

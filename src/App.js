@@ -11,6 +11,7 @@ import { store } from "store";
 import SiteLayout from "layout/SiteLayout";
 import Skeleton from "components/common/Skeleton";
 import { FaSpinner } from "react-icons/fa";
+import ForgotPassword from "pages/ForgotPassword";
 const CartPage = React.lazy(() => import("pages/CartPage"));
 const ProductsPage = React.lazy(() => import("pages/ProductsPage"));
 const SingleProductPage = React.lazy(() => import("pages/SingleProductPage"));
@@ -28,7 +29,7 @@ function App() {
         <Suspense
           fallback={
             <SiteLayout>
-              <div className="flex h-screen w-full items-start pt-40 justify-center">
+              <div className="flex h-screen w-full items-start justify-center pt-40">
                 <div className="animate-spin text-3xl text-gray-500">
                   <FaSpinner />
                 </div>
@@ -42,6 +43,7 @@ function App() {
             <Route path="cart" element={<CartPage />} />
             <Route path="sginUp" element={<SginUpPage />} />
             <Route path="login" element={<LoginPage />} />
+            <Route path="forgotPassword" element={<ForgotPassword />} />
             <Route path="categories/:category" element={<ProductsPage />} />
             <Route path="product/:id" element={<SingleProductPage />} />
           </Routes>

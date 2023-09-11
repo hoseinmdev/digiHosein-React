@@ -32,7 +32,7 @@ const LoginPage = () => {
   const onSubmit = (values, helpers) => {
     axios
       .post(
-        "http://127.0.0.1:8000/Account/Login/",
+        "https://digihosein.pythonanywhere.com/Account/Login/",
         {
           email: values.email,
           Password: values.password,
@@ -111,7 +111,7 @@ const LoginPage = () => {
             ورود
           </button>
           <Link
-            to="/login"
+            to="/forgotPassword"
             className="mt-2 flex justify-start text-sm text-blue-700 dark:text-blue-400"
           >
             {" "}

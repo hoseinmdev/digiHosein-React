@@ -4,8 +4,9 @@ import { useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import SendCodeAgain from "./SnedCodeAgain";
 
-const EnterCode = ({ userEmail }) => {
+const EnterCode = ({ userEmail,password }) => {
   const [inputValues, setInputValues] = useState(["", "", "", "", "", ""]);
   const [isLoading, setIsLoading] = useState(0);
   const inputRef = useRef([]);
@@ -42,46 +43,43 @@ const EnterCode = ({ userEmail }) => {
 
   const sendCodeToBackend = async (e) => {
     e.preventDefault();
-    const code = inputValues
-      .map((num) => Number(num))
-      .filter((num) => num !== 0);
-      
-    if (code.length === 6) {
-      await axios
-        .post(
-          "http://127.0.0.1:8000/Account/Register/",
-          {
-            email: userEmail,
-            otp: code.join(""),
+    const code = inputValues.map((num) => Number(num));
+    // if (code.length === 6) {
+    await axios
+      .post(
+        "https://digihosein.pythonanywhere.com/Account/Register/",
+        {
+          email: userEmail,
+          otp: code.join(""),
+        },
+        {
+          headers: {
+            "User-Agent": "Your User Agent String",
+            Host: "www.example.com",
+            Accept: "application/json",
+            "Accept-Encoding": "gzip, deflate, br",
+            Connection: "keep-alive",
           },
-          {
-            headers: {
-              "User-Agent": "Your User Agent String",
-              Host: "www.example.com",
-              Accept: "application/json",
-              "Accept-Encoding": "gzip, deflate, br",
-              Connection: "keep-alive",
-            },
-          },
-        )
-        .then((response) => {
-          toast.success("ثبت نام موفقیت آمیز بود", { theme: "colored" });
-          localStorage.setItem(
-            "token",
-            JSON.stringify(response.data.Authorization),
-          );
-          navigate("/", { replace: true });
-          inputRef.current[0]?.focus();
-        })
-        .catch((error) => {
-          toast.error(`${error.response.data.Error}`, {
-            theme: "colored",
-          });
-          setInputValues(["", "", "", "", "", ""]);
-          setIsLoading(0);
-          inputRef.current[0]?.focus();
+        },
+      )
+      .then((response) => {
+        toast.success("ثبت نام موفقیت آمیز بود", { theme: "colored" });
+        localStorage.setItem(
+          "token",
+          JSON.stringify(response.data.Authorization),
+        );
+        navigate("/", { replace: true });
+        inputRef.current[0]?.focus();
+      })
+      .catch((error) => {
+        toast.error(`${error.response.data.Error}`, {
+          theme: "colored",
         });
-    } else return toast.error("کد را کامل وارد کنید");
+        setInputValues(["", "", "", "", "", ""]);
+        setIsLoading(0);
+        inputRef.current[0]?.focus();
+      });
+    // } else return toast.error("کد را کامل وارد کنید");
   };
 
   return (
@@ -119,6 +117,7 @@ const EnterCode = ({ userEmail }) => {
             <AiOutlineLoading3Quarters className=" fadeShow w-full animate-spin text-center text-lg text-white" />
           )}
         </button>
+        <SendCodeAgain password={password} email={userEmail} />
       </div>
     </form>
   );

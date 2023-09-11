@@ -1,18 +1,21 @@
-import axios from "axios";
-import { useFormik } from "formik";
-import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
-import FormInput from "../common/FormInput";
+import signUpImage from "../assets/images/signUpImage.webp";
+import FormInput from "../components/common/FormInput";
+import { useFormik } from "formik";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
-const SignUpForm = ({ setUserEmail, setSendCode, setUserPassword }) => {
-  const [isLoading, setIsLoading] = useState(0);
+import EnterCode from "components/SignUpPage/EnterCode";
+
+const ForgotPassword = () => {
   const navigate = useNavigate();
+  const [sendCode, setSendCode] = useState(0);
+  const [userEmail, setUserEmail] = useState("");
+  const [userPassword, setUserPassword] = useState("");
   const initialValues = {
     email: "",
     password: "",
-    passwordConfirmation: "",
   };
   const yup = Yup.string();
   const validationSchema = Yup.object({
@@ -25,10 +28,9 @@ const SignUpForm = ({ setUserEmail, setSendCode, setUserPassword }) => {
       .required("تایید رمز عبور اجباری است"),
   });
   const onSubmit = (values, helpers) => {
-    setIsLoading(1);
     axios
       .post(
-        "https://digihosein.pythonanywhere.com/Account/Send_otp/",
+        "https://digihosein.pythonanywhere.com/Account/ForgetPassword/",
         {
           email: values.email,
           Password: values.password,
@@ -44,22 +46,22 @@ const SignUpForm = ({ setUserEmail, setSendCode, setUserPassword }) => {
         },
       )
       .then((response) => {
-        if (response.data.status === false) {
-          toast.warn(`${response.data.Error}`);
-          navigate("/login");
-        } else {
-          setSendCode(1);
-          setIsLoading(0);
-          toast.success(`${response.data.Error}`);
-          setUserEmail(values.email);
-          setUserPassword(values.password);
-          helpers.resetForm();
-        }
+        console.log(response);
+        setUserEmail(values.email);
+        setUserPassword(values.password);
+        toast.success(`${response.data.Error}`);
+        setSendCode(1);
+        //   localStorage.setItem(
+        //     "token",
+        //     JSON.stringify(response.data.Authorization),
+        //   );
+        //   helpers.resetForm();
+        //   navigate("/login", { replace: true });
       })
       .catch((error) => {
-        toast.warn(`${error.response.data.Error}`);
-        navigate("/login");
+        toast.error(`${error.response.data.Error}`, { theme: "colored" });
       });
+    helpers.resetForm();
   };
   const formik = useFormik({
     initialValues,
@@ -67,15 +69,13 @@ const SignUpForm = ({ setUserEmail, setSendCode, setUserPassword }) => {
     validationSchema,
     validateOnMount: true,
   });
-  return (
-    <>
+
+  const renderForgotPasswordForm = () => {
+    return (
       <form
+        className="flex w-11/12 flex-col items-start justify-center gap-4 rounded-lg p-4 lg:w-96"
         onSubmit={formik.handleSubmit}
-        className="mt-10 flex w-11/12 flex-col items-start justify-center gap-4 rounded-3xl bg-white p-2 dark:bg-transparent lg:absolute lg:left-[-9rem] lg:top-[10rem] lg:mt-0 lg:w-[25rem] lg:p-10 lg:dark:bg-gray-700"
       >
-        <p className="mb-5 hidden w-full border-b border-b-violet-200 p-4 text-right text-xl font-bold text-gray-700 dark:text-white/80 lg:block">
-          ورود | ثبت نام
-        </p>
         <FormInput
           label="آدرس ایمیل"
           name="email"
@@ -87,7 +87,7 @@ const SignUpForm = ({ setUserEmail, setSendCode, setUserPassword }) => {
           type="email"
         />
         <FormInput
-          label="رمز عبور"
+          label="رمز عبور جدید را وارد کنید"
           name="password"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
@@ -109,25 +109,33 @@ const SignUpForm = ({ setUserEmail, setSendCode, setUserPassword }) => {
         <button
           disabled={!formik.isValid}
           style={{ opacity: !formik.isValid && 0.6 }}
-          className="mt-6 w-full rounded-xl bg-violet-700 px-4 py-3 text-lg text-white shadow-[1px_10px_14px_rgba(241,231,254,1)] outline-none dark:shadow-none dark:outline dark:outline-violet-400"
           type="submit"
+          className="mt-8 w-full rounded-xl bg-violet-700 px-4 py-3 text-lg text-white shadow-[1px_10px_14px_rgba(241,231,254,1)] outline-none dark:shadow-none dark:outline dark:outline-violet-400"
         >
-          {!isLoading ? (
-            "ثبت نام"
-          ) : (
-            <AiOutlineLoading3Quarters className="w-full animate-spin text-center text-xl text-white" />
-          )}
+          تایید
         </button>
-        <Link
-          to="/login"
-          className="flex justify-start text-sm text-blue-700 dark:text-blue-400"
-        >
-          {" "}
-          از قبل حساب کاربری دارم
-        </Link>
       </form>
-    </>
+    );
+  };
+  return (
+    <div className="fadeShow flex h-screen w-full">
+      <div className="relative flex h-full w-full flex-col items-center justify-start gap-4 bg-white pt-10 dark:bg-gray-800 lg:w-1/2 ">
+        <p className="text-xl font-bold text-gray-700 dark:text-white/80">
+          فراموشی رمز عبور
+        </p>
+        {!sendCode ? (
+          renderForgotPasswordForm()
+        ) : (
+          <EnterCode userEmail={userEmail} password={userPassword} />
+        )}
+      </div>
+      <img
+        src={signUpImage}
+        className="hidden h-full w-full rounded-r-3xl lg:block"
+        alt=""
+      />
+    </div>
   );
 };
 
-export default SignUpForm;
+export default ForgotPassword;

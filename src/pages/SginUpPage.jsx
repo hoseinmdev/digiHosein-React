@@ -6,6 +6,7 @@ import EnterCode from "components/SignUpPage/EnterCode";
 const SginUpPage = () => {
   const [sendCode, setSendCode] = useState(0);
   const [userEmail, setUserEmail] = useState("");
+  const [userPassword, setUserPassword] = useState("");
   return (
     <div className="fadeShow flex h-screen w-full">
       <div className="relative flex h-full w-full flex-col items-center justify-start gap-4 bg-white pt-10 dark:bg-gray-800 lg:w-1/2 lg:bg-gray-100">
@@ -13,9 +14,13 @@ const SginUpPage = () => {
           به دیجی حسین خوش اومدی !
         </p>
         {!sendCode ? (
-          <SignUpForm setSendCode={setSendCode} setUserEmail={setUserEmail} />
+          <SignUpForm
+            setSendCode={setSendCode}
+            setUserEmail={setUserEmail}
+            setUserPassword={setUserPassword}
+          />
         ) : (
-          <EnterCode userEmail={userEmail} />
+          <EnterCode userEmail={userEmail} password={userPassword} />
         )}
       </div>
       <img

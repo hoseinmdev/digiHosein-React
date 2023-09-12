@@ -53,7 +53,10 @@ const EnterCode = ({ userEmail, password }) => {
         toast.success("ثبت نام موفقیت آمیز بود", { theme: "colored" });
         localStorage.setItem(
           "token",
-          JSON.stringify({ token: response.data.Authorization , email:userEmail}),
+          JSON.stringify({
+            token: response.data.Authorization,
+            email: userEmail,
+          }),
         );
         axiosBase.defaults.headers["Authorization"] =
           response.data.Authorization;
@@ -102,7 +105,7 @@ const EnterCode = ({ userEmail, password }) => {
           {!isLoading ? (
             <p className="fadeShow">تایید</p>
           ) : (
-            <AiOutlineLoading3Quarters className=" fadeShow w-full animate-spin text-center text-lg text-white" />
+            <AiOutlineLoading3Quarters className="w-full animate-spin text-center text-xl text-white" />
           )}
         </button>
         <Timer password={password} email={userEmail} />

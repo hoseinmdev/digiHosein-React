@@ -1,38 +1,37 @@
-import axios from "axios";
+import axiosBase from "axiosConfig";
+import { useState } from "react";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { toast } from "react-toastify";
 
-const SendCodeAgain = ({ password, email }) => {
+const SendCodeAgain = ({ password, email, setDuration }) => {
+  const [isSendingCode, setIsSendingCode] = useState(0);
   const sendCode = () => {
-    axios
-      .post(
-        "https://digihosein.pythonanywhere.com/Account/ForgetPassword/",
-        {
-          email: email,
-          Password: password,
-        },
-        {
-          headers: {
-            "User-Agent": "Your User Agent String",
-            Host: "www.example.com",
-            Accept: "application/json",
-            "Accept-Encoding": "gzip, deflate, br",
-            Connection: "keep-alive",
-          },
-        },
-      )
+    setIsSendingCode(1);
+    axiosBase
+      .post("Account/ForgetPassword/", {
+        email: email,
+        Password: password,
+      })
       .then((response) => {
+        setIsSendingCode(0);
         toast.success(`${response.data.Error}`);
+        setDuration(120);
       })
       .catch((error) => {
-        console.log(error);
+        setIsSendingCode(0);
+        toast.warn(`${error.response.data.Error}`);
       });
   };
   return (
     <p
-      className="w-full text-right text-indigo-500 lg:cursor-pointer"
+      className="fadeShow w-full text-right text-indigo-500 lg:cursor-pointer dark:text-indigo-400"
       onClick={() => sendCode()}
     >
-      ارسال مجدد کد تایید
+      {!isSendingCode ? (
+        "ارسال مجدد کد تایید"
+      ) : (
+        <AiOutlineLoading3Quarters className="animate-spin text-right text-xl text-violet-700 dark:text-violet-400" />
+      )}
     </p>
   );
 };

@@ -3,13 +3,13 @@ import * as Yup from "yup";
 import signUpImage from "../assets/images/signUpImage.webp";
 import FormInput from "../components/common/FormInput";
 import { useFormik } from "formik";
-import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import EnterCode from "components/SignUpPage/EnterCode";
+import axiosBase from "axiosConfig";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const ForgotPassword = () => {
-  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(0);
   const [sendCode, setSendCode] = useState(0);
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
@@ -28,37 +28,22 @@ const ForgotPassword = () => {
       .required("تایید رمز عبور اجباری است"),
   });
   const onSubmit = (values, helpers) => {
-    axios
-      .post(
-        "https://digihosein.pythonanywhere.com/Account/ForgetPassword/",
-        {
-          email: values.email,
-          Password: values.password,
-        },
-        {
-          headers: {
-            "User-Agent": "Your User Agent String",
-            Host: "www.example.com",
-            Accept: "application/json",
-            "Accept-Encoding": "gzip, deflate, br",
-            Connection: "keep-alive",
-          },
-        },
-      )
+    setIsLoading(1);
+    axiosBase
+      .post("Account/ForgetPassword/", {
+        email: values.email,
+        Password: values.password,
+      })
       .then((response) => {
+        setIsLoading(0);
         console.log(response);
         setUserEmail(values.email);
         setUserPassword(values.password);
         toast.success(`${response.data.Error}`);
         setSendCode(1);
-        //   localStorage.setItem(
-        //     "token",
-        //     JSON.stringify(response.data.Authorization),
-        //   );
-        //   helpers.resetForm();
-        //   navigate("/login", { replace: true });
       })
       .catch((error) => {
+        setIsLoading(0);
         toast.error(`${error.response.data.Error}`, { theme: "colored" });
       });
     helpers.resetForm();
@@ -112,7 +97,11 @@ const ForgotPassword = () => {
           type="submit"
           className="mt-8 w-full rounded-xl bg-violet-700 px-4 py-3 text-lg text-white shadow-[1px_10px_14px_rgba(241,231,254,1)] outline-none dark:shadow-none dark:outline dark:outline-violet-400"
         >
-          تایید
+          {!isLoading ? (
+            "تایید"
+          ) : (
+            <AiOutlineLoading3Quarters className="w-full animate-spin text-center text-xl text-white" />
+          )}
         </button>
       </form>
     );

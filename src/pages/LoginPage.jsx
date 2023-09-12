@@ -3,20 +3,19 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { BiCommentError } from "react-icons/bi";
 import backToUp from "utils/BackToUp";
 import signUpImage from "../assets/images/signUpImage.webp";
-import axios from "axios";
+import axiosBase from "axiosConfig";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const LoginPage = () => {
-  const [fadeShow, setFadeShow] = useState(0);
+  const [isLoading, setIsLoading] = useState(0);
   let navigate = useNavigate();
 
   useEffect(() => {
     backToUp();
-    setTimeout(() => setFadeShow(1), 300);
   }, []);
   const initialValues = {
     email: "",
@@ -30,33 +29,29 @@ const LoginPage = () => {
       .required("رمز عبور اجباری است"),
   });
   const onSubmit = (values, helpers) => {
-    axios
-      .post(
-        "https://digihosein.pythonanywhere.com/Account/Login/",
-        {
-          email: values.email,
-          Password: values.password,
-        },
-        {
-          headers: {
-            "User-Agent": "Your User Agent String",
-            Host: "www.example.com",
-            Accept: "application/json",
-            "Accept-Encoding": "gzip, deflate, br",
-            Connection: "keep-alive",
-          },
-        },
-      )
+    setIsLoading(1);
+    axiosBase
+      .post("http://127.0.0.1:8000/Account/Login/", {
+        email: values.email,
+        Password: values.password,
+      })
       .then((response) => {
+        setIsLoading(0);
         toast.success("خوش آمدید", { theme: "colored" });
         localStorage.setItem(
           "token",
-          JSON.stringify(response.data.Authorization),
+          JSON.stringify({
+            token: response.data.Authorization,
+            email: values.email,
+          }),
         );
+        axiosBase.defaults.headers["Authorization"] =
+          response.data.Authorization;
         helpers.resetForm();
         navigate("/", { replace: true });
       })
       .catch((error) => {
+        setIsLoading(0);
         toast.error(`${error.response.data.Error}`, { theme: "colored" });
       });
   };
@@ -68,10 +63,7 @@ const LoginPage = () => {
   });
 
   return (
-    <div
-      className="fadeShow flex h-screen w-full"
-      style={{ opacity: fadeShow }}
-    >
+    <div className="fadeShow flex h-screen w-full">
       <div className="flex h-full w-full flex-col items-center justify-start gap-4 bg-white pt-10 dark:bg-gray-800 lg:w-1/2">
         <p className="text-xl font-bold text-gray-700 dark:text-white/80">
           ورود به حساب
@@ -108,7 +100,11 @@ const LoginPage = () => {
             type="submit"
             className="mt-8 w-full rounded-xl bg-violet-700 px-4 py-3 text-lg text-white shadow-[1px_10px_14px_rgba(241,231,254,1)] outline-none dark:shadow-none dark:outline dark:outline-violet-400"
           >
-            ورود
+            {!isLoading ? (
+              "ورود"
+            ) : (
+              <AiOutlineLoading3Quarters className="w-full animate-spin text-center text-xl text-white" />
+            )}
           </button>
           <Link
             to="/forgotPassword"

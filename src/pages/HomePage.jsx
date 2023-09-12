@@ -5,21 +5,16 @@ import SiteLayout from "../layout/SiteLayout";
 import Slider from "components/HomePage/Slider";
 import ProductsSlider from "components/HomePage/ProductsSlider";
 const HomePage = () => {
+  // console.log(window.navigator.userAgent)
+  // fetch("https://api.ipify.org?format=json")
+  //   .then((response) => response.json())
+  //   .then((data) => console.log(data.ip));
+  
   return (
     <SiteLayout>
       <div className="flex flex-col gap-4">
         <Slider />
         <CircleCategories />
-        {/* <ProductsSlider
-        bgColor="bg-gray-900"
-        title="پرفروش ترین محصولات"
-        titleColor="#f8fafc"
-        titleLineColor="bg-violet-600"
-      >
-        {bestSellerProducts.map((product) => {
-          return <Product key={product.id} product={product} />;
-        })}
-      </ProductsSlider> */}
         <ProductsSlider
           title="موبایل ها"
           bgColor="bg-indigo-100 dark:bg-indigo-500/30"

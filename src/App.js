@@ -9,7 +9,6 @@ import { Suspense } from "react";
 import { Provider } from "react-redux";
 import { store } from "store";
 import SiteLayout from "layout/SiteLayout";
-import Skeleton from "components/common/Skeleton";
 import { FaSpinner } from "react-icons/fa";
 import ForgotPassword from "pages/ForgotPassword";
 const CartPage = React.lazy(() => import("pages/CartPage"));

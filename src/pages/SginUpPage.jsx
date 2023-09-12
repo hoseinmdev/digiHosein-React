@@ -3,6 +3,7 @@ import { useState } from "react";
 import signUpImage from "../assets/images/signUpImage.webp";
 import SignUpForm from "components/SignUpPage/SignUpForm";
 import EnterCode from "components/SignUpPage/EnterCode";
+import Timer from "components/common/Timer";
 const SginUpPage = () => {
   const [sendCode, setSendCode] = useState(0);
   const [userEmail, setUserEmail] = useState("");

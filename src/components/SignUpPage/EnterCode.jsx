@@ -1,12 +1,12 @@
-import axios from "axios";
 import { useRef } from "react";
 import { useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import SendCodeAgain from "./SnedCodeAgain";
+import Timer from "components/common/Timer";
+import axiosBase from "axiosConfig";
 
-const EnterCode = ({ userEmail,password }) => {
+const EnterCode = ({ userEmail, password }) => {
   const [inputValues, setInputValues] = useState(["", "", "", "", "", ""]);
   const [isLoading, setIsLoading] = useState(0);
   const inputRef = useRef([]);
@@ -44,30 +44,19 @@ const EnterCode = ({ userEmail,password }) => {
   const sendCodeToBackend = async (e) => {
     e.preventDefault();
     const code = inputValues.map((num) => Number(num));
-    // if (code.length === 6) {
-    await axios
-      .post(
-        "https://digihosein.pythonanywhere.com/Account/Register/",
-        {
-          email: userEmail,
-          otp: code.join(""),
-        },
-        {
-          headers: {
-            "User-Agent": "Your User Agent String",
-            Host: "www.example.com",
-            Accept: "application/json",
-            "Accept-Encoding": "gzip, deflate, br",
-            Connection: "keep-alive",
-          },
-        },
-      )
+    await axiosBase
+      .post("Account/Register/", {
+        email: userEmail,
+        otp: code.join(""),
+      })
       .then((response) => {
         toast.success("ثبت نام موفقیت آمیز بود", { theme: "colored" });
         localStorage.setItem(
           "token",
-          JSON.stringify(response.data.Authorization),
+          JSON.stringify({ token: response.data.Authorization , email:userEmail}),
         );
+        axiosBase.defaults.headers["Authorization"] =
+          response.data.Authorization;
         navigate("/", { replace: true });
         inputRef.current[0]?.focus();
       })
@@ -79,7 +68,6 @@ const EnterCode = ({ userEmail,password }) => {
         setIsLoading(0);
         inputRef.current[0]?.focus();
       });
-    // } else return toast.error("کد را کامل وارد کنید");
   };
 
   return (
@@ -97,7 +85,7 @@ const EnterCode = ({ userEmail,password }) => {
                 value={input}
                 ref={(ref) => (inputRef.current[index] = ref)}
                 key={index}
-                className="w-full rounded-xl border border-violet-200 p-4 text-center text-base text-black focus-within:border-violet-600 focus-within:shadow-[1px_10px_14px_rgba(213,184,255,0.7)] dark:bg-gray-600 dark:text-white dark:shadow-none dark:focus-within:outline dark:focus-within:outline-violet-400 lg:p-4 lg:text-lg"
+                className="w-full rounded-xl border border-violet-200 p-4 text-center text-base text-black focus-within:border-violet-600 focus-within:shadow-[1px_10px_14px_rgba(213,184,255,0.7)] dark:bg-gray-600 dark:text-white dark:shadow-none dark:focus-within:outline dark:focus-within:outline-violet-400 lg:p-3 lg:text-lg"
                 maxLength={1}
                 onChange={(e) => onChangeHandler(e, index)}
                 type="tel"
@@ -117,7 +105,7 @@ const EnterCode = ({ userEmail,password }) => {
             <AiOutlineLoading3Quarters className=" fadeShow w-full animate-spin text-center text-lg text-white" />
           )}
         </button>
-        <SendCodeAgain password={password} email={userEmail} />
+        <Timer password={password} email={userEmail} />
       </div>
     </form>
   );

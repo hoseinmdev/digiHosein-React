@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useFormik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -6,6 +5,7 @@ import * as Yup from "yup";
 import FormInput from "../common/FormInput";
 import { useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import axiosBase from "axiosConfig";
 const SignUpForm = ({ setUserEmail, setSendCode, setUserPassword }) => {
   const [isLoading, setIsLoading] = useState(0);
   const navigate = useNavigate();
@@ -26,23 +26,11 @@ const SignUpForm = ({ setUserEmail, setSendCode, setUserPassword }) => {
   });
   const onSubmit = (values, helpers) => {
     setIsLoading(1);
-    axios
-      .post(
-        "https://digihosein.pythonanywhere.com/Account/Send_otp/",
-        {
-          email: values.email,
-          Password: values.password,
-        },
-        {
-          headers: {
-            "User-Agent": "Your User Agent String",
-            Host: "www.example.com",
-            Accept: "application/json",
-            "Accept-Encoding": "gzip, deflate, br",
-            Connection: "keep-alive",
-          },
-        },
-      )
+    axiosBase
+      .post("Account/Send_otp/", {
+        email: values.email,
+        Password: values.password,
+      })
       .then((response) => {
         if (response.data.status === false) {
           toast.warn(`${response.data.Error}`);
@@ -58,6 +46,8 @@ const SignUpForm = ({ setUserEmail, setSendCode, setUserPassword }) => {
       })
       .catch((error) => {
         toast.warn(`${error.response.data.Error}`);
+        setIsLoading(0);
+        helpers.resetForm();
         navigate("/login");
       });
   };

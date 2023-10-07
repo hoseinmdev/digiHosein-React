@@ -29,7 +29,7 @@ const ShowProducts = () => {
   );
   const navigate = useNavigate();
   return (
-    <div className="absolute left-0 top-[50%] flex w-[27rem] scale-0 flex-col items-center justify-center gap-4 rounded-2xl border border-gray-200 bg-white dark:bg-gray-700 dark:border-none dark:text-white/80 p-4 shadow-lg group-hover/cartBtn:scale-100">
+    <div className="absolute left-0 top-[50%] flex w-[27rem] scale-0 flex-col items-center justify-center gap-4 rounded-2xl border border-gray-200 bg-white dark:bg-gray-700 dark:border-none dark:text-white/80 p-4 shadow-lg">
       <div className="flex w-full items-center justify-between gap-8 rounded-md bg-gray-100 p-2 text-sm text-black dark:bg-gray-800 dark:text-white/80">
         <div className="flex items-center justify-center gap-2">
           <p>سبد خرید شما</p>

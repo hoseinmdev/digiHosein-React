@@ -24,3 +24,4 @@
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=27&duration=2000&pause=1000&color=ACACAC&repeat=false&width=468&height=41&lines=%F0%9F%92%8EWatch+my+another+projects)](https://git.io/typing-svg)
 
 You can also visit **Music-City** online in : [LiveDemo](https://hosein-music-city.netlify.app/)<br />
+You can visit **Movie-City** online in : [LiveDemo](https://movie-city-nextjs.netlify.app/)<br />

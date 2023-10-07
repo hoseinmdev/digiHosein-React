@@ -3,17 +3,18 @@
 ***😵‍💫 With amazing feauters***
 
 1️ - This is Persian 🌱<br />
-2 - Full Responsive 💥<br />
-3 - Have DarkMode & LightMode 🌓<br />
-4 - SignUp and Login in site 😃<br />
-5 - A lot of products (Phones - Laptops - Speakers...) 📱💻<br />
-6 - You can buy products and they will be in your cart 🛒<br />
-7 - You Can Filter Products 👌🏻<br />
-8 - Landing Slider 💎<br />
-9 - Search Products 🔍<br />
-10 - Any product have a single page 🖼<br />
-11 - Any Product have qnique comments and tecknichal check !🥰<br />
-12 - And ...
+2 - Signup , login with Authentication 😍<br />
+3 - Full Responsive 💥<br />
+4 - Have DarkMode & LightMode 🌓<br />
+5 - SignUp and Login in site 😃<br />
+6 - A lot of products (Phones - Laptops - Speakers...) 📱💻<br />
+7 - You can buy products and they will be in your cart 🛒<br />
+8 - You Can Filter Products 👌🏻<br />
+9 - Landing Slider 💎<br />
+10 - Search Products 🔍<br />
+11 - Any product have a single page 🖼<br />
+12 - Any Product have qnique comments and tecknichal check !🥰<br />
+13 - And ...
 
 
 ### You can visit Digi-Hosein online in : [LiveDemo](https://hoseinshopcartreact.netlify.app)<br />

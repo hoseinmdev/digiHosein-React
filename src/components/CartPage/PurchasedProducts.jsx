@@ -77,14 +77,14 @@ const PurchasedProduct = ({ product }) => {
           <p>{price.toLocaleString("en")} تومان</p>
           <div className="mr-4 flex w-24 items-center justify-between rounded-2xl bg-slate-100 dark:bg-gray-800 lg:mr-0">
             <button
-              className="flex h-7 w-7 items-center justify-center rounded-2xl bg-slate-700 p-2 text-white lg:cursor-pointer"
+              className="flex h-7 w-7 items-center justify-center rounded-2xl bg-slate-700 dark:bg-slate-900 p-2 text-white lg:cursor-pointer"
               onClick={incrementHandler}
             >
               +
             </button>
             <p>{quantity}</p>
             <button
-              className="flex h-7 w-7 items-center justify-center rounded-2xl bg-slate-700 p-2 text-white lg:cursor-pointer"
+              className="flex h-7 w-7 items-center justify-center rounded-2xl bg-slate-700 dark:bg-slate-900 p-2 text-white lg:cursor-pointer"
               onClick={decrementHandler}
             >
               {renderIcon()}

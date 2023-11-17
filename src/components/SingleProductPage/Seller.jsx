@@ -43,7 +43,7 @@ const Seller = ({ product }) => {
 
   return (
     <>
-      <div className="flex w-full flex-col justify-center gap-6 px-6 py-0 text-lg text-gray-700 dark:text-white/60 lg:w-3/4 lg:text-base">
+      <div className="flex w-full flex-col justify-center gap-6 px-6 py-0 text-lg text-gray-700 dark:text-white/60 lg:w-3/4 lg:text-base ">
         <div className="flex flex-col items-start gap-4">
           <img
             src={fastSubmit}

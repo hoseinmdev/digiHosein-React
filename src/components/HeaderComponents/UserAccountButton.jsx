@@ -23,7 +23,7 @@ const UserAccountButton = () => {
     setShowModal(!showModal);
   };
   const renderUserAccountOptions = () => {
-    const userEmail = JSON.parse(localStorage.getItem("token")).email.split("@")[0]
+    const userEmail = JSON.parse(localStorage.getItem("token")).email.split("@")[0] || ""
     return (
       <div className=" absolute left-0 top-[41px] z-[3000] flex w-72 scale-0 flex-col items-start justify-center gap-3 rounded-2xl bg-white p-2 text-base shadow-lg group-hover/submitBtn:scale-100 dark:bg-gray-700">
         <div className="flex w-full items-center justify-between rounded-md p-2 text-gray-700 dark:text-white lg:cursor-pointer lg:hover:bg-violet-200 dark:lg:hover:bg-violet-500">

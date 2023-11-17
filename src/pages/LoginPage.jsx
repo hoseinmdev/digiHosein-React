@@ -31,7 +31,7 @@ const LoginPage = () => {
   const onSubmit = (values, helpers) => {
     setIsLoading(1);
     axiosBase
-      .post("http://127.0.0.1:8000/Account/Login/", {
+      .post("Account/Login/", {
         email: values.email,
         Password: values.password,
       })

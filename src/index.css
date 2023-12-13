@@ -18,6 +18,10 @@ code {
   font-family: VazirFont;
   src: url(assets/fonts/Vazir-FD.ttf);
 }
+@font-face {
+  font-family: EstedadFont;
+  src: url(assets/fonts/Estedad-Bold.ttf);
+}
 
 * {
   font-family: "VazirFont";
@@ -55,7 +59,7 @@ button {
   }
   90% {
     rotate: 1deg;
-    transform: scale(1.06);
+    transform: scale(1.02);
   }
   100% {
     rotate: 0deg;

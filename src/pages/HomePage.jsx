@@ -5,11 +5,7 @@ import SiteLayout from "../layout/SiteLayout";
 import Slider from "components/HomePage/Slider";
 import ProductsSlider from "components/HomePage/ProductsSlider";
 const HomePage = () => {
-  // console.log(window.navigator.userAgent)
-  // fetch("https://api.ipify.org?format=json")
-  //   .then((response) => response.json())
-  //   .then((data) => console.log(data.ip));
-  
+
   return (
     <SiteLayout>
       <div className="flex flex-col gap-4">

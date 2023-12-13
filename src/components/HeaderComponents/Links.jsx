@@ -35,7 +35,7 @@ const routes = [
 
 const Links = () => {
   return (
-    <div className="flex w-full flex-col items-start justify-start gap-5 text-gray-700 lg:w-auto lg:flex-row lg:items-center lg:gap-3">
+    <div className="flex w-full flex-col items-start justify-start gap-5 text-gray-700 lg:w-auto lg:flex-row lg:items-center lg:gap-3 ">
       {routes.map((item) => {
         return (
           <NavLink
@@ -44,7 +44,7 @@ const Links = () => {
               `flex w-full items-center justify-center gap-2 px-2 py-1 text-gray-700 lg:w-fit lg:cursor-pointer lg:border-b-2
                 ${
                   isActive
-                    ? "border-violet-600 font-bold dark:font-normal text-violet-600 dark:border-violet-400 dark:text-violet-400 "
+                    ? "border-violet-600 font-bold text-violet-600 dark:border-violet-400 dark:font-normal dark:text-violet-400 "
                     : "border-white dark:border-gray-800 dark:text-white/60 lg:hover:border-violet-700 dark:lg:hover:border-violet-500"
                 }
               }`
@@ -52,7 +52,7 @@ const Links = () => {
             to={item.path}
           >
             <div className="hidden lg:flex">{item.icon}</div>
-            <div className="flex w-full justify-between">
+            <div className="flex w-full justify-between font-EstedadFont">
               {item.title}
               <AiOutlineArrowLeft className="lg:hidden" />
             </div>

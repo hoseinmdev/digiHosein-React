@@ -7,7 +7,7 @@ import logo3 from "../assets/images/c4.webp";
 
 const Footer = () => {
   return (
-    <div className="mt-8 flex w-full flex-col items-center justify-between gap-12 overflow-hidden bg-slate-800 px-12 py-8 text-white dark:text-white/70 dark:bg-gray-900">
+    <div className="mt-8 flex w-full max-w-[2000px] flex-col items-center justify-between gap-12 overflow-hidden bg-slate-800 px-12 py-8 text-white dark:bg-gray-900 dark:text-white/70">
       <div className="hidden w-full items-start justify-evenly lg:flex">
         <div className="flex flex-col items-start justify-center gap-2 text-sm">
           <span>دسترسی سریع</span>

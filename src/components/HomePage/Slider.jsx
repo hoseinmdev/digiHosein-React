@@ -137,31 +137,32 @@ const Slider = () => {
     if (slides) {
       return (
         <div
-          className="relative flex w-full items-center justify-between overflow-hidden bg-none shadow-2xl lg:h-80 lg:rounded-xl"
+          className="relative ml-auto mr-auto flex w-full max-w-[2000px]  items-center justify-between overflow-hidden bg-none shadow-2xl lg:h-[20rem]  lg:rounded-none 2xl:h-[27rem]"
           onTouchStart={(e) => onTouchStartHandler(e)}
           onTouchMove={(e) => onTouchMoveHandler(e)}
         >
           <button
-            className="absolute right-0 z-20 hidden h-full w-14 items-center justify-center rounded-l-full bg-slate-200/30 text-3xl text-white lg:flex lg:cursor-pointer lg:hover:w-20 lg:hover:bg-slate-200/50"
+            className="absolute right-0 z-20 hidden h-full w-20 items-center justify-center rounded-l-full bg-slate-200/50 text-3xl text-white lg:flex lg:cursor-pointer lg:hover:w-24 lg:hover:bg-slate-200/70"
             onClick={nextSlide}
           >
             <IoIosArrowForward />
           </button>
-          <Link to={slides[index].link}>
+          <Link to={slides[index].link} className="h-full w-full">
             <img
               src={slides[index].src}
               alt={consoleBanner}
-              className="sliderAnimation h-full w-full"
+              className="sliderAnimation h-full w-full bg-cover object-cover"
+              // className="sliderAnimation h-full w-full"
               style={{ opacity: fade }}
             />
           </Link>
           <button
-            className="absolute left-0 z-20 hidden h-full w-14 items-center justify-center rounded-r-full bg-slate-200/30 text-3xl text-white lg:flex lg:cursor-pointer lg:hover:w-20 lg:hover:bg-slate-200/50"
+            className="absolute left-0 z-20 hidden h-full w-20 items-center justify-center rounded-r-full bg-slate-200/50 text-3xl text-white lg:flex lg:cursor-pointer lg:hover:w-24 lg:hover:bg-slate-200/70"
             onClick={backSlide}
           >
             <IoIosArrowBack />
           </button>
-          <div className="absolute bottom-2 left-auto right-auto flex w-full transform items-center justify-center  gap-3 p-2 lg:top-[290px] lg:-scale-x-100">
+          <div className="absolute bottom-2 left-auto right-auto flex w-full transform items-center justify-center  gap-3 p-2 lg:top-[280px] lg:-scale-x-100 2xl:top-[380px]">
             {slides.map((e, i) => {
               return (
                 <div

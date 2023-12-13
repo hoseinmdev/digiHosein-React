@@ -5,7 +5,7 @@ import mobileBannerinMobile from "../../assets/images/mobileIsStyle.webp";
 import { Link } from "react-router-dom";
 const LandingBanner = () => {
   return (
-    <div className="flex w-full items-center justify-center gap-4 lg:p-2">
+    <div className="flex w-full max-w-[2000px] items-center justify-center gap-4 ml-auto mr-auto">
       <Link
         to="/categories/consoles"
         className="hidden w-full overflow-hidden lg:block lg:rounded-lg"

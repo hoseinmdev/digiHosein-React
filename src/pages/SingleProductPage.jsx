@@ -22,7 +22,9 @@ const SingleProductPage = () => {
       return (
         <div className="flex w-full flex-col items-start justify-center gap-12 rounded-lg p-3 dark:bg-gray-700/30 dark:text-white">
           <div className="flex w-full flex-col items-start justify-center gap-6 rounded-lg">
-            <h2 className="text-lg fadeShow">{product.title}</h2>
+            <h2 className="fadeShow font-EstedadFont text-lg">
+              {product.title}
+            </h2>
             <div className=" flex items-center justify-center gap-3">
               <Badge
                 refrens={userCommentsPart}
@@ -36,16 +38,10 @@ const SingleProductPage = () => {
               <Seller product={product} />
             </div>
           </div>
-          <div
-            ref={technicalCheckPart}
-            className="w-full dark:rounded-xl "
-          >
+          <div ref={technicalCheckPart} className="w-full dark:rounded-xl ">
             <TechnicalCheck product={product} />
           </div>
-          <div
-            ref={userCommentsPart}
-            className="w-full dark:rounded-xl "
-          >
+          <div ref={userCommentsPart} className="w-full dark:rounded-xl ">
             <UserComments product={product} />
           </div>
           <BackToUp />

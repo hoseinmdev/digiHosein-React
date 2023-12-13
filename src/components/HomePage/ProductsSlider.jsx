@@ -52,7 +52,7 @@ const ProductsSlider = ({
   };
   return (
     <div
-      className={`relative mt-2 flex w-full flex-col  rounded-2xl ${bgColor} items-start justify-center gap-8 overflow-hidden px-4 py-6 lg:rounded-xl lg:px-8`}
+      className={`relative mt-2 flex w-full max-w-[1360px] ml-auto mr-auto flex-col  rounded-2xl ${bgColor} items-start justify-center gap-8 overflow-hidden px-4 py-6 lg:rounded-xl lg:px-8`}
     >
       <button
         className={`absolute right-0 z-[1400] mr-14 hidden lg:${rightBtnDisplay} h-14 w-14 items-center justify-center rounded-full bg-white text-[1.8rem] text-gray-700 shadow-lg `}
@@ -61,7 +61,7 @@ const ProductsSlider = ({
         <IoArrowRedoSharp />
       </button>
       <div className="flex w-full flex-col gap-3 text-white">
-        <p className={`text-2xl ${titleColor}`}>{title}</p>
+        <p className={`font-EstedadFont text-2xl ${titleColor}`}>{title}</p>
         <hr className={`h-[2px] ${titleLineColor}`} />
       </div>
       <div

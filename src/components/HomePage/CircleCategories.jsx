@@ -58,7 +58,7 @@ const CircleCategories = () => {
     }
     if (categoriesState) {
       return (
-        <div className="no-scrollbar flex w-full items-center justify-start gap-2 overflow-auto p-4 lg:justify-evenly">
+        <div className="no-scrollbar ml-auto mr-auto flex w-full max-w-[1800px] items-center justify-start gap-2 overflow-auto p-4 lg:justify-evenly">
           {categories.map((item) => {
             return (
               <Link
@@ -71,7 +71,7 @@ const CircleCategories = () => {
                   alt={item.imageUrl}
                   className="h-32 w-32 rounded-full border-2 border-pink-600 p-1 dark:border-2 lg:h-36 lg:w-36"
                 />
-                <p className="font-bold text-slate-600 dark:font-normal dark:text-white">
+                <p className="font-EstedadFont text-slate-600 dark:font-normal dark:text-white">
                   {item.title}
                 </p>
               </Link>

@@ -38,7 +38,7 @@ const ReplyComment = () => {
           document.body.classList.add("overflow-y-hidden");
           backToUp();
         }}
-        className="flex w-full items-center justify-center gap-2 rounded-lg border border-gray-300 px-5 py-2 text-gray-700 dark:bg-gray-200 dark:text-gray-700 lg:w-auto"
+        className="flex w-full items-center justify-center gap-2 rounded-lg border border-gray-300 px-5 py-2 font-EstedadFont text-gray-700 dark:bg-gray-200 dark:text-gray-700 lg:w-auto"
       >
         پاسخ دهید
         <BsReply className="hidden lg:block" />

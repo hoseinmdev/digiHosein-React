@@ -52,25 +52,25 @@ const Seller = ({ product }) => {
           />
           <div className="flex w-full items-center justify-start gap-2 text-base">
             <span className="h-[2px] w-[16%] bg-violet-700 dark:bg-violet-400 lg:w-[26%]"></span>
-            <p>ارسال سریع به تمام نقاط کشور</p>
+            <p className="font-EstedadFont">ارسال سریع به تمام نقاط کشور</p>
             <span className="h-[2px] w-0 bg-violet-700 dark:bg-violet-400 lg:w-[24%]"></span>
           </div>
         </div>
-        <div className="flex flex-col items-start gap-4">
-          <div className="flex items-center justify-center gap-2">
+        <div className="flex flex-col items-start gap-4 ">
+          <div className="flex items-center justify-center gap-2 font-EstedadFont">
             <BsShop />
             فروشنده : حسین محمودی
           </div>
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex items-center justify-center gap-2 font-EstedadFont">
             <DiCodeigniter style={{ color: "#f97316" }} />
             18 ماه گارانتی شرکتی
           </div>
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex items-center justify-center gap-2 font-EstedadFont">
             <FaRibbon style={{ color: "#eab308" }} />
             قابلیت خرید بیمه نامه
           </div>
         </div>
-        <div className="flex flex-col items-start gap-4">
+        <div className="flex flex-col items-start gap-4 ">
           <p>قیمت : {product.price.toLocaleString("en")} تومان</p>
           {renderAddToCartButton()}
         </div>

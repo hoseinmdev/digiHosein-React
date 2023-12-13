@@ -77,7 +77,7 @@ const Product = ({ product }) => {
     } else {
       return (
         <button
-          className="flex h-9 w-11/12 items-center justify-around rounded-xl bg-slate-800 p-2 text-sm text-white dark:border-2 dark:text-white/70 dark:border-violet-700"
+          className="flex  h-9 w-11/12 items-center justify-around rounded-xl bg-slate-800 p-2 text-sm text-white dark:border-2 dark:text-white/70 dark:border-violet-700"
           onClick={clickHandler}
         >
           <AiOutlineShoppingCart />
@@ -88,7 +88,7 @@ const Product = ({ product }) => {
   };
   return (
     <div className="relative flex h-[17.5rem] w-[12.5rem] flex-col items-center justify-end gap-4 rounded-xl bg-white p-2 shadow-lg dark:bg-gray-800 dark:text-white/80 lg:h-[18.5rem]">
-      <div className="outline-3 absolute left-auto right-auto top-[-2rem] w-10/12 rounded-full bg-white shadow-lg p-2 dark:outline outline-gray-200 dark:bg-gray-700 dark:outline-violet-500/80 dark:outline-offset-1 lg:top-[-2rem] lg:w-11/12 lg:cursor-pointer">
+      <div className="outline-3 absolute left-auto right-auto top-[-2rem] w-10/12 rounded-full bg-white p-2 shadow-lg outline-gray-200 dark:bg-gray-700 dark:outline dark:outline-offset-1 dark:outline-violet-500/80 lg:top-[-2rem] lg:w-11/12 lg:cursor-pointer">
         <img
           className=" scale-90"
           src={imageURL}
@@ -97,7 +97,7 @@ const Product = ({ product }) => {
         />
       </div>
       <p
-        className="w-full text-center text-[0.9rem] lg:cursor-pointer"
+        className="w-full text-center font-EstedadFont text-[0.85rem] lg:cursor-pointer"
         onClick={renderProductPage}
       >
         {title.length > 24 ? title.slice(0, 24) + "..." : title}

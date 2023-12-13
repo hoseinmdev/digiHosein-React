@@ -11,7 +11,7 @@ const SginUpPage = () => {
   return (
     <div className="fadeShow flex h-screen w-full">
       <div className="relative flex h-full w-full flex-col items-center justify-start gap-4 bg-white pt-10 dark:bg-gray-800 lg:w-1/2 lg:bg-gray-100">
-        <p className="text-xl font-bold text-gray-700 dark:text-white/80 lg:hidden">
+        <p className="text-xl text-gray-700 dark:text-white/80 lg:hidden font-EstedadFont">
           به دیجی حسین خوش اومدی !
         </p>
         {!sendCode ? (

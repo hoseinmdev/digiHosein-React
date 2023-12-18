@@ -97,7 +97,7 @@ const SignUpForm = ({ setUserEmail, setSendCode, setUserPassword }) => {
           type="password"
         />
         <button
-          disabled={!formik.isValid}
+            disabled={!formik.isValid}
           style={{ opacity: !formik.isValid && 0.6 }}
           className="mt-6 w-full rounded-xl bg-violet-700 px-4 py-3 text-lg text-white shadow-[1px_10px_14px_rgba(241,231,254,1)] outline-none dark:shadow-none dark:outline dark:outline-violet-400"
           type="submit"

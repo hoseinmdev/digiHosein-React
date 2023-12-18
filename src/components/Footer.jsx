@@ -7,7 +7,7 @@ import logo3 from "../assets/images/c4.webp";
 
 const Footer = () => {
   return (
-    <div className="mt-8 flex w-full max-w-[2000px] flex-col items-center justify-between gap-12 overflow-hidden bg-slate-800 px-12 py-8 text-white dark:bg-gray-900 dark:text-white/70">
+    <div className="mt-8 flex w-full max-w-[2000px] flex-col items-center justify-between lg:gap-12 overflow-hidden bg-slate-800 px-12 py-8 text-white dark:bg-gray-900 dark:text-white/70">
       <div className="hidden w-full items-start justify-evenly lg:flex">
         <div className="flex flex-col items-start justify-center gap-2 text-sm">
           <span>دسترسی سریع</span>
@@ -58,7 +58,7 @@ const Footer = () => {
       </div>
       <div className="flex w-full items-center justify-between lg:px-8">
         <div className="flex flex-col items-start justify-center gap-4">
-          <span className="flex items-center justify-center gap-2">
+          {/* <span className="flex items-center justify-center gap-2">
             <AiOutlineMail />
             ایمیل : Hoseinmdev@gmail.com
           </span>
@@ -68,7 +68,7 @@ const Footer = () => {
           </span>
           <span className="flex items-center justify-center gap-2 rounded-lg bg-violet-700 p-2 lg:cursor-pointer">
             اینستاگرام <BsInstagram />
-          </span>
+          </span> */}
         </div>
         <div className="hidden items-center justify-center gap-2 lg:flex">
           <div className="flex h-32 w-28 items-center justify-center rounded-lg bg-white lg:cursor-pointer">
@@ -82,7 +82,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex w-full justify-center border-t border-slate-400">
+      <div className="flex w-full justify-center lg:border-t border-slate-400">
         <p className="pt-8 font-bold text-gray-400">
           تمامی حقوق مادی معنوی این سایت متعلق به حسین محمودی می باشد
         </p>
